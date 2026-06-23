@@ -21,6 +21,9 @@ upload_single.py
 # PowerShell 脚本
 *.ps1
 
+# 本地推送脚本
+git-push.bat
+
 # 大文件
 smrtdesk-deploy.zip
 
