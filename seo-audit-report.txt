@@ -1,0 +1,14 @@
+SmrtDesk SEO Audit - 2026-06-23 16:20 UTC
+Content pages: 184
+
+=== SUMMARY ===
+Title:       OK=55 short=0 long=129 miss=0
+Meta Desc:   OK=122 short=28 long=34 miss=0
+H1:          OK=183 multi=1 miss=0
+Canonical:   OK=184 miss=0
+Schema:      OK=183 miss=1
+OG Title:    OK=184 miss=0
+OG Desc:     OK=184 miss=0
+OG Image:    OK=0 miss=184
+
+=== ISSUES ===
