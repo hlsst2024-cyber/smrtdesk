@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Standing Desk Height Calculator | Find Your Perfect Desk Height | SmrtDesk</title>
+<meta name="description" content="Calculate your ideal sitting and standing desk height based on your body measurements. Free ergonomic calculator with monitor height recommendations.">
+<link rel="stylesheet" href="main.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ0GPH0Z15"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-NQ0GPH0Z15');
+</script>
+
+<meta name="google-site-verification" content="Bxzbnrpb6heWVhL6yBCQGT00E4vAVT2LL9tl0RJiTyk" />
+<link rel="canonical" href="https://smrtdesk.xyz/desk-height-calculator.html" />
+<link rel="alternate" type="application/rss+xml" title="SmrtDesk RSS Feed" href="/rss.xml" />
+<meta property="og:title" content="Standing Desk Height Calculator | Find Your Perfect Desk Height | SmrtDesk" />
+<meta property="og:description" content="Calculate your ideal sitting and standing desk height based on your body measurements. Free ergonomic calculator with monitor height recommendations." />
+<meta property="og:url" content="https://smrtdesk.xyz/desk-height-calculator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://smrtdesk.xyz/product_images/og-default.jpg" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Standing Desk Height Calculator",
+  "description": "Calculate your ideal sitting and standing desk height based on your body measurements.",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Web",
+  "url": "https://smrtdesk.xyz/desk-height-calculator.html",
+  "author": {
+    "@type": "Organization",
+    "name": "SmrtDesk"
+  }
+}
+</script>
+<style>
+.calculator-hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+.calculator-hero h1 {
+  font-size: 2.4em;
+  margin: 0 0 12px 0;
+  font-weight: 800;
+}
+.calculator-hero p {
+  font-size: 1.15em;
+  opacity: 0.85;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.calc-container {
+  max-width: 800px;
+  margin: -30px auto 40px;
+  padding: 0 20px;
+}
+.calc-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+  padding: 40px;
+}
+.calc-card h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.4em;
+  color: #1a1a2e;
+}
+.calc-card .subtitle {
+  color: #666;
+  margin: 0 0 24px 0;
+  font-size: 0.95em;
+}
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.form-row label {
+  font-weight: 600;
+  font-size: 1.05em;
+  white-space: nowrap;
+  color: #333;
+}
+.form-row input {
+  flex: 1;
+  min-width: 120px;
+  padding: 12px 16px;
+  font-size: 1.1em;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-row input:focus {
+  border-color: #0f3460;
+}
+.form-row .unit {
+  color: #666;
+  font-weight: 500;
+}
+.btn-calc {
+  background: #0f3460;
+  color: #fff;
+  border: none;
+  padding: 14px 40px;
+  font-size: 1.1em;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+.btn-calc:hover {
+  background: #1a4a8a;
+}
+.results {
+  margin-top: 32px;
+  display: none;
+}
+.results.visible {
+  display: block;
+}
+.results h3 {
+  font-size: 1.2em;
+  color: #1a1a2e;
+  margin: 0 0 16px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #0f3460;
+}
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+.result-item {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+.result-item .value {
+  font-size: 2em;
+  font-weight: 800;
+  color: #0f3460;
+}
+.result-item .value span {
+  font-size: 0.5em;
+  color: #666;
+}
+.result-item .label {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 4px;
+}
+.result-note {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: #fff8e1;
+  border-left: 4px solid #f59e0b;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.9em;
+  color: #92400e;
+  line-height: 1.5;
+}
+.faq-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.faq-section h2 {
+  font-size: 1.5em;
+  color: #1a1a2e;
+  margin-bottom: 20px;
+}
+.faq-item {
+  margin-bottom: 16px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+.faq-item h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.05em;
+  color: #0f3460;
+}
+.faq-item p {
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+@media (max-width: 600px) {
+  .calc-card {
+    padding: 24px 16px;
+  }
+  .calculator-hero h1 {
+    font-size: 1.6em;
+  }
+  .form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP ROW: Logo + Search -->
+<div class="top-row">
+  <div class="top-row-inner">
+    <a href="/" class="header-logo"><span class="logo-smrt">SMRT</span><span class="logo-desk">DESK</span></a>
+    <div class="top-row-right">
+      <input type="text" class="search-input" placeholder="What are you looking for today?" aria-label="Search">
+      <button class="btn-search">SEARCH</button>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="calculator-hero">
+  <h1>Standing Desk Height Calculator</h1>
+  <p>Enter your height to find your ideal sitting desk height, standing desk height, and optimal monitor position — based on ergonomic science.</p>
+</div>
+
+<!-- CALCULATOR -->
+<div class="calc-container">
+  <div class="calc-card">
+    <h2>Find Your Perfect Desk Height</h2>
+    <p class="subtitle">Based on ANSI/BIFMA ergonomic guidelines and anthropometric data.</p>
+    <form id="calculator" onsubmit="return false;">
+      <div class="form-row">
+        <label for="height">Your Height:</label>
+        <input type="number" id="height" name="height" min="140" max="220" value="170" step="0.5" required>
+        <span class="unit">cm</span>
+        <span style="color: #888; font-size: 0.85em;">(or <a href="#" onclick="switchToImperial();return false;" style="color:#0f3460;">ft/in</a>)</span>
+      </div>
+      <div id="imperialRow" class="form-row" style="display:none;">
+        <label for="heightFt">Your Height:</label>
+        <input type="number" id="heightFt" min="4" max="7" value="5" style="max-width:80px;">
+        <span class="unit">ft</span>
+        <input type="number" id="heightIn" min="0" max="11" value="7" style="max-width:80px;">
+        <span class="unit">in</span>
+        <span style="color: #888; font-size: 0.85em;">(<a href="#" onclick="switchToMetric();return false;" style="color:#0f3460;">cm</a>)</span>
+      </div>
+      <button type="submit" class="btn-calc" onclick="calculate()">Calculate My Desk Height</button>
+    </form>
+    <div class="results" id="results">
+      <h3>Your Ergonomic Recommendations</h3>
+      <div class="result-grid">
+        <div class="result-item">
+          <div class="value" id="sittingHeight">74<span> cm</span></div>
+          <div class="label">Sitting Desk Height</div>
+        </div>
+        <div class="result-item">
+          <div class="value" id="standingHeight">107<span> cm</span></div>
+          <div class="label">Standing Desk Height</div>
+        </div>
+        <div class="result-item">
+          <div class="value" id="monitorHeight">136<span> cm</span></div>
+          <div class="label">Monitor Top Edge</div>
+        </div>
+        <div class="result-item">
+          <div class="value" id="seatHeight">46<span> cm</span></div>
+          <div class="label">Seat Height</div>
+        </div>
+      </div>
+      <div class="result-note">
+        <strong>Pro Tip:</strong> These are starting points based on average proportions. Adjust ±2 cm for personal comfort. Your elbows should rest at 90° when typing, and your eyes should align with the top third of the screen.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <h3>What is the standard standing desk height?</h3>
+    <p>There is no single "standard" — standing desk height depends on your height. For someone 170 cm (5'7"), the ideal standing height is about 107 cm. Use the calculator above for your exact measurement.</p>
+  </div>
+  <div class="faq-item">
+    <h3>How do I know if my desk is at the right height?</h3>
+    <p>When seated, your forearms should be parallel to the floor with elbows at 90° while typing. When standing, the same rule applies — your wrists should be straight, not bent up or down.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Can I use this calculator for an L-shaped standing desk?</h3>
+    <p>Yes! The height recommendations apply regardless of desk shape. If you use a keyboard tray, subtract the tray height from the desk height recommendation.</p>
+  </div>
+  <div class="faq-item">
+    <h3>What about monitor height?</h3>
+    <p>The top of your monitor should be at or slightly below eye level. This calculator gives you the height from the floor to the top edge of your screen when seated.</p>
+  </div>
+</div>
+
+<script>
+function switchToImperial() {
+  document.getElementById('imperialRow').style.display = 'flex';
+  document.getElementById('height').parentElement.style.display = 'none';
+  // Convert current cm to ft/in
+  var cm = parseFloat(document.getElementById('height').value) || 170;
+  var totalIn = cm / 2.54;
+  var ft = Math.floor(totalIn / 12);
+  var inch = Math.round(totalIn % 12);
+  if (inch === 12) { ft++; inch = 0; }
+  document.getElementById('heightFt').value = ft;
+  document.getElementById('heightIn').value = inch;
+}
+function switchToMetric() {
+  document.getElementById('imperialRow').style.display = 'none';
+  document.getElementById('height').parentElement.style.display = 'flex';
+  var ft = parseFloat(document.getElementById('heightFt').value) || 5;
+  var inch = parseFloat(document.getElementById('heightIn').value) || 7;
+  var cm = Math.round((ft * 12 + inch) * 2.54 * 10) / 10;
+  document.getElementById('height').value = cm;
+}
+function calculate() {
+  var heightCm;
+  if (document.getElementById('imperialRow').style.display === 'flex') {
+    var ft = parseFloat(document.getElementById('heightFt').value) || 5;
+    var inch = parseFloat(document.getElementById('heightIn').value) || 7;
+    heightCm = (ft * 12 + inch) * 2.54;
+    document.getElementById('height').value = Math.round(heightCm * 10) / 10;
+  } else {
+    heightCm = parseFloat(document.getElementById('height').value) || 170;
+  }
+  if (heightCm < 120 || heightCm > 230) {
+    alert('Please enter a height between 120 cm and 230 cm.');
+    return;
+  }
+  // Ergonomic formulas (based on ANSI/BIFMA G1-2013 and anthropometric studies)
+  var sittingDesk  = Math.round(heightCm * 0.438);
+  var standingDesk = Math.round(heightCm * 0.629);
+  var monitorTop   = Math.round(heightCm * 0.800 + sittingDesk - 17); // eye height + desk - screen top offset
+  var seatHeight   = Math.round(heightCm * 0.270); // popliteal height estimate
+  
+  document.getElementById('sittingHeight').innerHTML = sittingDesk + '<span> cm</span>';
+  document.getElementById('standingHeight').innerHTML = standingDesk + '<span> cm</span>';
+  document.getElementById('monitorHeight').innerHTML = monitorTop + '<span> cm</span>';
+  document.getElementById('seatHeight').innerHTML = seatHeight + '<span> cm</span>';
+  document.getElementById('results').classList.add('visible');
+  
+  // Track calculation
+  if (typeof gtag === 'function') {
+    gtag('event', 'calculator_use', { event_category: 'engagement', event_label: 'desk_height_calc' });
+  }
+}
+
+// Auto-calculate on page load and on input change
+window.addEventListener('DOMContentLoaded', function() {
+  var input = document.getElementById('height');
+  input.addEventListener('input', function() {
+    // Debounced auto-calculate
+    clearTimeout(input._timer);
+    input._timer = setTimeout(calculate, 500);
+  });
+  var ftInput = document.getElementById('heightFt');
+  var inInput = document.getElementById('heightIn');
+  if (ftInput) ftInput.addEventListener('input', function() { clearTimeout(ftInput._timer); ftInput._timer = setTimeout(calculate, 500); });
+  if (inInput) inInput.addEventListener('input', function() { clearTimeout(inInput._timer); inInput._timer = setTimeout(calculate, 500); });
+  // Initial calculation
+  calculate();
+});
+</script>
+
+<div class="breadcrumb-section" style="max-width:1200px;margin:0 auto;padding:12px 20px;">
+  <a href="/" style="color:#0f3460;text-decoration:none;">Home</a> &rsaquo; <strong>Standing Desk Height Calculator</strong>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-title">SmrtDesk</div>
+      <p>Honest product reviews & buying guides for your home and office.</p>
+    </div>
+    <div>
+      <div class="footer-title">Tools</div>
+      <ul class="footer-nav">
+        <li><a href="desk-height-calculator.html">Desk Height Calculator</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-title">Quick Links</div>
+      <ul class="footer-nav">
+        <li><a href="page-about.html">About Us</a></li>
+        <li><a href="page-contact.html">Contact</a></li>
+        <li><a href="page-privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="page-terms.html">Terms of Service</a></li>
+        <li><a href="page-about.html">Affiliate Disclosure</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copyright">&copy; 2026 <strong>SmrtDesk</strong>. All rights reserved.</span>
+    <span class="affiliate-disclosure">SmrtDesk is reader-supported. As an Amazon Associate, we earn from qualifying purchases. <a href="page-about.html">Learn more &rarr;</a></span>
+  </div>
+</footer>
+<script>
+!function(){var z=document.querySelectorAll(".top-row-right .btn-search");Array.prototype.forEach.call(z,function(b){var i=b.parentNode.querySelector(".search-input");if(!i)return;b.onclick=function(){var v=i.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}};i.onkeydown=function(e){if(e.key==="Enter"){var v=i.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}}};});var s=document.querySelector(".btn-search");if(s&&s.parentNode.className.indexOf("top-row-right")===-1){s.onclick=function(){var i=s.parentNode.querySelector(".search-input");if(!i)return;var v=i.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}};var x=s.parentNode.querySelector(".search-input");x.onkeydown=function(e){if(e.key==="Enter"){var v=x.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}}};}
+</script>
+</body>
+</html>
