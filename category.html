@@ -1,114 +1,225 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Office Furniture Reviews &mdash; SmrtDesk</title>
-<meta name="description" content="Find the best office furniture. Our experts review standing desks, ergonomic chairs, filing cabinets, and more.">
-<link rel="stylesheet" href="main.css?v=16">
-<style>
-/* ===== CATEGORY INNER PAGE STYLES ===== */
-.page-wrap { max-width: var(--max-width); margin: 0 auto; padding: 30px 24px 60px; }
-
-/* Breadcrumb */
-.breadcrumb { font-size: 0.82rem; color: var(--text-light); margin-bottom: 20px; }
-.breadcrumb a { color: var(--orange); }
-.breadcrumb a:hover { text-decoration: underline; }
-.breadcrumb span { color: #999; }
-
-/* Category Hero */
-.cat-hero { margin-bottom: 36px; }
-.cat-hero h1 { font-size: 2.2rem; font-weight: 800; color: var(--text); margin-bottom: 10px; }
-.cat-hero h1 span { color: var(--orange); }
-.cat-hero p { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; max-width: 700px; }
-
-/* Subcategory Tags */
-.subcat-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
-.subcat-tag { display: inline-block; background: #f0f2f5; color: var(--text); font-size: 0.85rem; font-weight: 600; padding: 8px 18px; border-radius: 20px; transition: all .2s; }
-.subcat-tag:hover { background: var(--orange); color: #fff; }
-
-/* Top Picks Section &mdash; Hero Product Card */
-.top-pick-hero { display: flex; gap: 30px; background: #f8f9fc; border: 1px solid var(--border); border-radius: var(--radius); padding: 30px; margin-bottom: 36px; align-items: flex-start; }
-.top-pick-badge { display: inline-block; background: var(--orange); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5px; padding: 3px 14px; border-radius: 12px; text-transform: uppercase; margin-bottom: 10px; }
-.top-pick-info { flex: 1; }
-.top-pick-info h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 10px; }
-.top-pick-info .rating { color: var(--orange); font-size: 1.1rem; margin-bottom: 8px; }
-.top-pick-info .rating-stars { color: var(--orange); font-size: 1rem; letter-spacing: 2px; }
-.top-pick-info .rating-text { color: var(--text-light); font-size: 0.85rem; margin-left: 6px; }
-.top-pick-info p { color: var(--text-light); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px; }
-.top-pick-actions { display: flex; gap: 10px; flex-wrap: wrap; }
-.top-pick-visual { width: 220px; min-height: 180px; background: #fff; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); padding: 20px; flex-shrink: 0; }
-.top-pick-visual .placeholder { color: #ccc; font-size: 3rem; }
-
-/* Pros & Cons */
-.pros-cons { display: flex; gap: 20px; margin-top: 16px; }
-.pros, .cons { flex: 1; }
-.pros h4 { color: #2e7d32; font-size: 0.85rem; font-weight: 700; margin-bottom: 6px; }
-.cons h4 { color: #c62828; font-size: 0.85rem; font-weight: 700; margin-bottom: 6px; }
-.pros ul, .cons ul { list-style: none; padding: 0; }
-.pros li, .cons li { font-size: 0.82rem; color: var(--text-light); padding: 3px 0; line-height: 1.4; }
-.pros li::before { content: "+ "; color: #2e7d32; font-weight: 700; }
-.cons li::before { content: "- "; color: #c62828; font-weight: 700; }
-
-/* Product Grid &mdash; other top picks */
-.product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 40px; }
-.product-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; transition: all .3s; background: #fff; }
-.product-card:hover { box-shadow: var(--shadow-hover); }
-.product-card .card-badge { display: inline-block; background: #e8f0fe; color: #1a4a7a; font-size: 0.7rem; font-weight: 700; padding: 2px 12px; border-radius: 10px; margin-bottom: 10px; }
-.product-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
-.product-card .card-rating { color: var(--orange); font-size: 0.85rem; margin-bottom: 8px; }
-.product-card p { font-size: 0.82rem; color: var(--text-light); line-height: 1.5; margin-bottom: 12px; }
-.product-card .btn-sm { display: inline-block; background: var(--orange); color: #fff; padding: 8px 20px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; }
-
-/* Product card mini pros-cons */
-.card-pc { display: flex; gap: 14px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
-.card-pros, .card-cons { flex: 1; }
-.card-pros h5, .card-cons h5 { font-size: 0.75rem; font-weight: 700; margin-bottom: 3px; }
-.card-pros h5 { color: #2e7d32; }
-.card-cons h5 { color: #c62828; }
-.card-pros li, .card-cons li { font-size: 0.75rem; color: var(--text-light); padding: 1px 0; list-style: none; }
-.card-pros li::before { content: "+ "; color: #2e7d32; font-weight: 700; }
-.card-cons li::before { content: "- "; color: #c62828; font-weight: 700; }
-
-/* Buying Guide Section */
-.guide-section { border-top: 1px solid var(--border); padding-top: 36px; margin-top: 36px; }
-.guide-section h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 16px; }
-.guide-section h3 { font-size: 1.1rem; font-weight: 700; margin: 24px 0 10px; }
-.guide-section p { color: var(--text-light); font-size: 0.92rem; line-height: 1.7; margin-bottom: 14px; }
-.guide-section .faq-item { border-bottom: 1px solid var(--border); padding: 16px 0; }
-.guide-section .faq-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
-.guide-section .faq-item p { font-size: 0.88rem; margin-bottom: 0; }
-
-/* Expert Tip Box */
-.expert-tip { background: #fff8e8; border-left: 4px solid var(--orange); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 16px 20px; margin: 20px 0; }
-.expert-tip .tip-label { font-size: 0.75rem; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
-.expert-tip p { font-size: 0.88rem; color: var(--text); margin-bottom: 0; }
-
-/* Table of Contents */
-.toc-card { background: #f8f9fc; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 18px 22px; margin-bottom: 30px; display: inline-block; }
-.toc-card h4 { font-size: 0.85rem; font-weight: 700; margin-bottom: 8px; }
-.toc-card ol { padding-left: 18px; }
-.toc-card li { font-size: 0.82rem; margin-bottom: 4px; }
-.toc-card li a { color: var(--orange); }
-.toc-card li a:hover { text-decoration: underline; }
-
-/* Responsive */
-@media(max-width:768px){
-  .top-pick-hero { flex-direction: column; }
-  .top-pick-visual { width: 100%; min-height: 140px; }
-  .product-grid { grid-template-columns: 1fr; }
-  .pros-cons { flex-direction: column; }
-  .cat-hero h1 { font-size: 1.6rem; }
-}
-</style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Office Furniture Reviews &mdash; SmrtDesk",
-  "description": "Find the best office furniture. Our experts review standing desks, ergonomic chairs, filing cabinets, and more."
-}
-</script>
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Office Furniture Reviews &mdash; SmrtDesk</title>
+
+<meta name="description" content="Find the best office furniture. Our experts review standing desks, ergonomic chairs, filing cabinets, and more.">
+
+<link rel="stylesheet" href="main.css?v=16">
+
+<style>
+
+/* ===== CATEGORY INNER PAGE STYLES ===== */
+
+.page-wrap { max-width: var(--max-width); margin: 0 auto; padding: 30px 24px 60px; }
+
+
+
+/* Breadcrumb */
+
+.breadcrumb { font-size: 0.82rem; color: var(--text-light); margin-bottom: 20px; }
+
+.breadcrumb a { color: var(--orange); }
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.breadcrumb span { color: #999; }
+
+
+
+/* Category Hero */
+
+.cat-hero { margin-bottom: 36px; }
+
+.cat-hero h1 { font-size: 2.2rem; font-weight: 800; color: var(--text); margin-bottom: 10px; }
+
+.cat-hero h1 span { color: var(--orange); }
+
+.cat-hero p { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; max-width: 700px; }
+
+
+
+/* Subcategory Tags */
+
+.subcat-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
+
+.subcat-tag { display: inline-block; background: #f0f2f5; color: var(--text); font-size: 0.85rem; font-weight: 600; padding: 8px 18px; border-radius: 20px; transition: all .2s; }
+
+.subcat-tag:hover { background: var(--orange); color: #fff; }
+
+
+
+/* Top Picks Section &mdash; Hero Product Card */
+
+.top-pick-hero { display: flex; gap: 30px; background: #f8f9fc; border: 1px solid var(--border); border-radius: var(--radius); padding: 30px; margin-bottom: 36px; align-items: flex-start; }
+
+.top-pick-badge { display: inline-block; background: var(--orange); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5px; padding: 3px 14px; border-radius: 12px; text-transform: uppercase; margin-bottom: 10px; }
+
+.top-pick-info { flex: 1; }
+
+.top-pick-info h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 10px; }
+
+.top-pick-info .rating { color: var(--orange); font-size: 1.1rem; margin-bottom: 8px; }
+
+.top-pick-info .rating-stars { color: var(--orange); font-size: 1rem; letter-spacing: 2px; }
+
+.top-pick-info .rating-text { color: var(--text-light); font-size: 0.85rem; margin-left: 6px; }
+
+.top-pick-info p { color: var(--text-light); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px; }
+
+.top-pick-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.top-pick-visual { width: 220px; min-height: 180px; background: #fff; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); padding: 20px; flex-shrink: 0; }
+
+.top-pick-visual .placeholder { color: #ccc; font-size: 3rem; }
+
+
+
+/* Pros & Cons */
+
+.pros-cons { display: flex; gap: 20px; margin-top: 16px; }
+
+.pros, .cons { flex: 1; }
+
+.pros h4 { color: #2e7d32; font-size: 0.85rem; font-weight: 700; margin-bottom: 6px; }
+
+.cons h4 { color: #c62828; font-size: 0.85rem; font-weight: 700; margin-bottom: 6px; }
+
+.pros ul, .cons ul { list-style: none; padding: 0; }
+
+.pros li, .cons li { font-size: 0.82rem; color: var(--text-light); padding: 3px 0; line-height: 1.4; }
+
+.pros li::before { content: "+ "; color: #2e7d32; font-weight: 700; }
+
+.cons li::before { content: "- "; color: #c62828; font-weight: 700; }
+
+
+
+/* Product Grid &mdash; other top picks */
+
+.product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 40px; }
+
+.product-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; transition: all .3s; background: #fff; }
+
+.product-card:hover { box-shadow: var(--shadow-hover); }
+
+.product-card .card-badge { display: inline-block; background: #e8f0fe; color: #1a4a7a; font-size: 0.7rem; font-weight: 700; padding: 2px 12px; border-radius: 10px; margin-bottom: 10px; }
+
+.product-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+
+.product-card .card-rating { color: var(--orange); font-size: 0.85rem; margin-bottom: 8px; }
+
+.product-card p { font-size: 0.82rem; color: var(--text-light); line-height: 1.5; margin-bottom: 12px; }
+
+.product-card .btn-sm { display: inline-block; background: var(--orange); color: #fff; padding: 8px 20px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; }
+
+
+
+/* Product card mini pros-cons */
+
+.card-pc { display: flex; gap: 14px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
+
+.card-pros, .card-cons { flex: 1; }
+
+.card-pros h5, .card-cons h5 { font-size: 0.75rem; font-weight: 700; margin-bottom: 3px; }
+
+.card-pros h5 { color: #2e7d32; }
+
+.card-cons h5 { color: #c62828; }
+
+.card-pros li, .card-cons li { font-size: 0.75rem; color: var(--text-light); padding: 1px 0; list-style: none; }
+
+.card-pros li::before { content: "+ "; color: #2e7d32; font-weight: 700; }
+
+.card-cons li::before { content: "- "; color: #c62828; font-weight: 700; }
+
+
+
+/* Buying Guide Section */
+
+.guide-section { border-top: 1px solid var(--border); padding-top: 36px; margin-top: 36px; }
+
+.guide-section h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 16px; }
+
+.guide-section h3 { font-size: 1.1rem; font-weight: 700; margin: 24px 0 10px; }
+
+.guide-section p { color: var(--text-light); font-size: 0.92rem; line-height: 1.7; margin-bottom: 14px; }
+
+.guide-section .faq-item { border-bottom: 1px solid var(--border); padding: 16px 0; }
+
+.guide-section .faq-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+
+.guide-section .faq-item p { font-size: 0.88rem; margin-bottom: 0; }
+
+
+
+/* Expert Tip Box */
+
+.expert-tip { background: #fff8e8; border-left: 4px solid var(--orange); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 16px 20px; margin: 20px 0; }
+
+.expert-tip .tip-label { font-size: 0.75rem; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+
+.expert-tip p { font-size: 0.88rem; color: var(--text); margin-bottom: 0; }
+
+
+
+/* Table of Contents */
+
+.toc-card { background: #f8f9fc; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 18px 22px; margin-bottom: 30px; display: inline-block; }
+
+.toc-card h4 { font-size: 0.85rem; font-weight: 700; margin-bottom: 8px; }
+
+.toc-card ol { padding-left: 18px; }
+
+.toc-card li { font-size: 0.82rem; margin-bottom: 4px; }
+
+.toc-card li a { color: var(--orange); }
+
+.toc-card li a:hover { text-decoration: underline; }
+
+
+
+/* Responsive */
+
+@media(max-width:768px){
+
+  .top-pick-hero { flex-direction: column; }
+
+  .top-pick-visual { width: 100%; min-height: 140px; }
+
+  .product-grid { grid-template-columns: 1fr; }
+
+  .pros-cons { flex-direction: column; }
+
+  .cat-hero h1 { font-size: 1.6rem; }
+
+}
+
+</style>
+
+<script type="application/ld+json">
+
+{
+
+  "@context": "https://schema.org",
+
+  "@type": "WebPage",
+
+  "name": "Office Furniture Reviews &mdash; SmrtDesk",
+
+  "description": "Find the best office furniture. Our experts review standing desks, ergonomic chairs, filing cabinets, and more."
+
+}
+
+</script>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ0GPH0Z15"></script>
 <script>
@@ -125,304 +236,614 @@
 <meta property="og:description" content="Find the best office furniture. Our experts review standing desks, ergonomic chairs, filing cabinets, and more." />
 <meta property="og:url" content="https://smrtdesk.xyz/category.html" />
 <meta property="og:type" content="website" />
-</head>
-<body>
-
-
-<!-- AFFILIATE BANNER -->
-<div class="affiliate-banner">
-  SmrtDesk is reader-supported. When you buy through links on our site, we may earn an affiliate commission.
-  <a href="#">Learn more</a>
-</div>
-
-<!-- TOP ROW -->
-<div class="top-row">
-  <div class="top-row-inner">
-    <a href="/" class="header-logo"><span class="logo-smrt">SMRT</span><span class="logo-desk">DESK</span></a>
-    <div class="top-row-right">
-      <input type="text" class="search-input" placeholder="What are you looking for today?" aria-label="Search">
-      <button class="btn-search">SEARCH</button>
-    </div>
-  </div>
-</div>
-<nav class="nav-bar">
-  <div class="nav-bar-inner">
-    <a href="/" class="nav-link">Home</a>
-    <div class="nav-link has-dropdown">
-      <a href="category-storage-cabinet.html">Storage Cabinet</a>
-      <div class="nav-dropdown">
-        <a href="category-vertical-file-cabinet.html">Vertical File Cabinet</a>
-        <a href="category-steel-lockers.html">Steel Lockers</a>
-        <a href="category-storage-shelves.html">Storage Shelves</a>
-        <a href="category-garage-cabinets.html">Garage Cabinets</a>
-      </div>
-    </div>
-    <div class="nav-link has-dropdown">
-      <a href="category-office-furniture.html">Office Furniture</a>
-      <div class="nav-dropdown">
-        <a href="category-standing-desk.html">Standing Desk</a>
-        <a href="category-office-chair.html">Office Chair</a>
-        <a href="category-executive-desk.html">Executive Desk</a>
-        <a href="category-monitor-stand.html">Monitor Stand</a>
-      </div>
-    </div>
-    <div class="nav-link has-dropdown">
-      <a href="category-bunk-bed.html">Bunk Bed</a>
-      <div class="nav-dropdown">
-        <a href="category-twin-over-twin.html">Twin Over Twin</a>
-        <a href="category-twin-over-full.html">Twin Over Full</a>
-        <a href="category-loft-bed.html">Loft Bed</a>
-        <a href="category-heavy-duty-bunk.html">Heavy Duty Bunk</a>
-      </div>
-    </div>
-    <div class="nav-link has-dropdown">
-      <a href="category-kitchen.html">Kitchen</a>
-      <div class="nav-dropdown">
-        <a href="category-small-appliances.html">Small Appliances</a>
-        <a href="category-cookware-bakeware.html">Cookware Bakeware</a>
-        <a href="category-kitchen-utensils-gadgets.html">Kitchen Utensils &amp; Gadgets</a>
-        <a href="category-kitchen-storage-organization.html">Kitchen Storage &amp; Organization</a>
-        <a href="category-coffee-tea-espresso.html">Coffee, Tea &amp; Espresso</a>
-        <a href="category-bbq-grilling-tools.html">BBQ &amp; Grilling Tools</a>
-      </div>
-    </div>
-    <div class="nav-link has-dropdown">
-      <a href="category-electronics.html">Electronics</a>
-      <div class="nav-dropdown">
-        <a href="category-cell-phones.html">Cell Phones &amp; Accessories</a>
-        <a href="category-computers-tablets.html">Computers &amp; Tablets</a>
-        <a href="category-audio-headphones.html">Audio &amp; Headphones</a>
-        <a href="category-cameras.html">Cameras</a>
-        <a href="category-wearable-tech.html">Wearable Tech</a>
-        <a href="category-car-electronics.html">Car Electronics</a>
-        <a href="category-office-electronics.html">Office Electronics</a>
-        <a href="category-smart-home.html">Smart Home</a>
-        <a href="category-gaming.html">Gaming</a>
-        <a href="category-portable-devices.html">Portable Devices</a>
-      </div>
-    </div>
-    <a href="category-gifts.html" class="nav-link nav-gold">Gifts</a>
-  </div>
-</nav>
-
-<!-- PAGE CONTENT -->
-<div class="page-wrap">
-
-  <!-- BREADCRUMB -->
-  <div class="breadcrumb">
-    <a href="/">Home</a> <span>/</span>
-    <span>Office Furniture</span>
-  </div>
-
-  <!-- CATEGORY HERO -->
-  <div class="cat-hero">
-    <h1>Best <span>Office Furniture</span> of 2026</h1>
-    <p>Our experts review the best standing desks, ergonomic chairs, filing cabinets, and office storage solutions. We test each product for build quality, comfort, adjustability, and real-world durability. Updated June 2026.</p>
-  </div>
-
-  <!-- SUBCATEGORY TAGS -->
-  <div class="subcat-row">
-    <a href="#" class="subcat-tag">Standing Desk</a>
-    <a href="#" class="subcat-tag">Office Chair</a>
-    <a href="#" class="subcat-tag">Executive Desk</a>
-    <a href="#" class="subcat-tag">Monitor Stand</a>
-    <a href="#" class="subcat-tag">Filing Cabinet</a>
-  </div>
-
-  <!-- TABLE OF CONTENTS -->
-  <div class="toc-card">
-    <h4>In this guide:</h4>
-    <ol>
-      <li><a href="#top-pick">Our Top Pick</a></li>
-      <li><a href="#grid">All Top Picks</a></li>
-      <li><a href="#guide">Buying Guide</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ol>
-  </div>
-
-  <!-- TOP PICK HERO -->
-  <div class="top-pick-hero" id="top-pick">
-    <div class="top-pick-info">
-      <div class="top-pick-badge">BEST OF THE BEST</div>
-      <h2>ErGear Electric Standing Desk</h2>
-      <div class="rating">
-        <span class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <span class="rating-text">4.6/5 &mdash; Editor's Choice</span>
-      </div>
-      <p>The ErGear electric standing desk delivers outstanding build quality, smooth height adjustment, and excellent cable management &mdash; all at a price that undercuts competitors by 30%.</p>
-      <div class="pros-cons">
-        <div class="pros">
-          <h4>PROS</h4>
-          <ul>
-            <li>Smooth dual-motor lift system</li>
-            <li>Spacious 55" desktop</li>
-            <li>Easy assembly (under 30 min)</li>
-          </ul>
-        </div>
-        <div class="cons">
-          <h4>CONS</h4>
-          <ul>
-            <li>No memory presets on base model</li>
-            <li>Desktop finish shows fingerprints</li>
-          </ul>
-        </div>
-      </div>
-      <div class="top-pick-actions">
-        <a href="#" class="btn-primary">Check Price on Amazon &rarr;</a>
-        <a href="#" class="btn-secondary">Read Full Review &rarr;</a>
-      </div>
-    </div>
-    <div class="top-pick-visual">
-      <span class="placeholder">?&rarr;</span>
-    </div>
-  </div>
-
-  <!-- PRODUCT GRID -->
-  <h2 style="font-size:1.3rem;font-weight:800;margin-bottom:16px;" id="grid">All Top Picks</h2>
-  <div class="product-grid">
-    <div class="product-card">
-      <div class="card-badge">BEST BANG FOR THE BUCK</div>
-      <h3>BestOffice Ergonomic Chair</h3>
-      <div class="card-rating">&#9733;&#9733;&#9733;&#9733;&#9733; 4.5/5</div>
-      <p>High-back mesh chair with adjustable lumbar support. Great value under $200.</p>
-      <div class="card-pc">
-        <div class="card-pros">
-          <h5>PROS</h5>
-          <ul><li>Excellent lumbar support</li><li>Breathable mesh</li></ul>
-        </div>
-        <div class="card-cons">
-          <h5>CONS</h5>
-          <ul><li>Armrests not adjustable</li><li>Seat cushion could be thicker</li></ul>
-        </div>
-      </div>
-      <a href="#" class="btn-sm">Check Price &rarr;</a>
-    </div>
-    <div class="product-card">
-      <div class="card-badge">POPULAR PICK</div>
-      <h3>Mount-It! Monitor Stand</h3>
-      <div class="card-rating">&#9733;&#9733;&#9733;&#9733;? 4.4/5</div>
-      <p>Gas spring dual monitor mount with cable management. Supports up to 32".</p>
-      <div class="card-pc">
-        <div class="card-pros">
-          <h5>PROS</h5>
-          <ul><li>Smooth gas spring</li><li>Clean cable routing</li></ul>
-        </div>
-        <div class="card-cons">
-          <h5>CONS</h5>
-          <ul><li>Clamp could be wider</li></ul>
-        </div>
-      </div>
-      <a href="#" class="btn-sm">Check Price &rarr;</a>
-    </div>
-    <div class="product-card">
-      <div class="card-badge">PREMIUM CHOICE</div>
-      <h3>Uplift V2 Standing Desk</h3>
-      <div class="card-rating">&#9733;&#9733;&#9733;&#9733;&#9733; 4.7/5</div>
-      <p>High-end commercial-grade standing desk with programmable memory. 15-year warranty.</p>
-      <div class="card-pc">
-        <div class="card-pros">
-          <h5>PROS</h5>
-          <ul><li>Rock-solid stability</li><li>Best warranty</li></ul>
-        </div>
-        <div class="card-cons">
-          <h5>CONS</h5>
-          <ul><li>Expensive</li><li>Heavy to assemble alone</li></ul>
-        </div>
-      </div>
-      <a href="#" class="btn-sm">Check Price &rarr;</a>
-    </div>
-  </div>
-
-  <!-- BUYING GUIDE -->
-  <div class="guide-section" id="guide">
-    <h2>Buying Guide: How to Choose Office Furniture</h2>
-    <p>Choosing the right office furniture depends on your workspace, budget, and ergonomic needs. Here are the key factors to consider before making a purchase.</p>
-
-    <div class="expert-tip">
-      <div class="tip-label">EXPERT TIP</div>
-      <p><strong>Measure your space first.</strong> Many buyers overlook dimensions. Always measure your room height, desk area, and door clearance before ordering large furniture pieces. Allow at least 36" of walking space around your desk.</p>
-    </div>
-
-    <h3>1. Standing Desks: Height Range & Stability</h3>
-    <p>Look for a minimum height range of 28"?C48" to accommodate both sitting and standing positions. Dual-motor systems are quieter and lift faster than single-motor. Check weight capacity &mdash; most quality desks support 250?C350 lbs.</p>
-
-    <h3>2. Office Chairs: Lumbar Support & Adjustability</h3>
-    <p>An ergonomic chair should have adjustable seat height (16?C21"), lumbar support, and tilt tension. Mesh backs are breathable for long hours. Look for a 5-star base and at least 2" of seat depth adjustment.</p>
-
-    <h3>3. Filing Cabinets: Locking & Fire Rating</h3>
-    <p>For home offices, a 2-drawer file cabinet is usually sufficient. Look for central locking, ball-bearing drawer slides, and if storing important documents, choose a model with a fire rating of at least 30 minutes (Class 350).</p>
-
-    <!-- FAQ -->
-    <h2 style="margin-top:36px" id="faq">Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h4>What's the best height for a standing desk</h4>
-      <p>Your elbows should form a 90&mdash; angle when typing. Most desks adjust from 28" to 48". The exact height depends on your height &mdash; a 6' person typically uses 42?C44" standing, 28?C30" sitting.</p>
-    </div>
-    <div class="faq-item">
-      <h4>How much should I spend on an office chair</h4>
-      <p>A good ergonomic chair starts around $200?C$300. Budget chairs ($100?C$200) work for occasional use. For 8+ hour daily use, invest $400+ in chairs from brands like Herman Miller, Steelcase, or Haworth.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Are standing desks worth it</h4>
-      <p>Yes &mdash; research shows alternating between sitting and standing improves posture, reduces back pain, and may increase productivity. However, standing all day is not recommended either. The key is to alternate every 30?C60 minutes.</p>
-    </div>
-  </div>
-</div>
-
-<!-- FOOTER (excerpt from index.html) -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div>
-      <div class="footer-title">About SmrtDesk</div>
-      <p class="footer-sub-text">
-        We research and recommend the best home &amp; office products. 
-        <a href="page-about.html" class="footer-link">Read our story</a>
-      </p>
-      <div class="footer-form">
-        <input type="email" class="footer-input" placeholder="Your email address">
-        <a href="#" class="footer-subscribe-text" style="background:#4159bb;border-radius:99px;padding:10px;text-align:center;display:block">&#10095; Subscribe for deals</a>
-      </div>
-      <div class="footer-google">
-        <span class="gg-icon">G</span>
-        <span>Trusted by 50,000+ readers monthly. <a href="category-trending.html" class="footer-link">See all reviews</a></span>
-      </div>
-      <div class="footer-social">
-        <a href="#" class="social-icon" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-        <a href="#" class="social-icon" aria-label="Twitter"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M4 4l6 8-6 8h1.5l5.5-7 5.5 7H22l-6-8 6-8h-1.5L15 11.5 9.5 4H4z"/></svg></a>
-        <a href="#" class="social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2"/></svg></a>
-        <a href="#" class="social-icon" aria-label="Pinterest"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.237 2.636 7.855 6.356 9.312-.087-.791-.166-2.005.035-2.869.182-.78 1.172-4.97 1.172-4.97s-.299-.599-.299-1.484c0-1.39.806-2.428 1.81-2.428.852 0 1.264.64 1.264 1.408 0 .857-.546 2.139-.828 3.328-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.394-1.72-4.068-4.177-4.068-2.845 0-4.515 2.135-4.515 4.34 0 .859.331 1.781.744 2.282a.3.3 0 0 1 .069.288l-.278 1.133c-.044.183-.145.223-.335.134-1.249-.582-2.03-2.408-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.78 0 3.448-2.173 6.224-5.19 6.224-1.013 0-1.965-.527-2.292-1.15l-.624 2.378c-.226.87-.835 1.958-1.244 2.622.935.29 1.93.446 2.96.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
-      </div>
-    </div>
-    <div>
-      <div class="footer-title">Top Categories</div>
-      <ul class="footer-nav">
-        <li><a href="category-storage-cabinet.html">Storage Cabinet</a></li>
-        <li><a href="category-office-furniture.html">Office Furniture</a></li>
-        <li><a href="category-bunk-bed.html">Bunk Bed</a></li>
-        <li><a href="category-kitchen.html">Kitchen</a></li>
-        <li><a href="category-electronics.html">Electronics</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-title">Quick Links</div>
-      <ul class="footer-nav">
-        <li><a href="page-about.html">About Us</a></li>
-        <li><a href="page-contact.html">Contact</a></li>
-        <li><a href="page-privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="page-terms.html">Terms of Service</a></li>
-        <li><a href="page-about.html">Affiliate Disclosure</a></li>
-      </ul>
-    </div>
+</head>
+
+<body>
+
+
+
+
+
+<!-- AFFILIATE BANNER -->
+
+<div class="affiliate-banner">
+
+  SmrtDesk is reader-supported. When you buy through links on our site, we may earn an affiliate commission.
+
+  <a href="#">Learn more</a>
+
+</div>
+
+
+
+<!-- TOP ROW -->
+
+<div class="top-row">
+
+  <div class="top-row-inner">
+
+    <a href="/" class="header-logo"><span class="logo-smrt">SMRT</span><span class="logo-desk">DESK</span></a>
+
+    <div class="top-row-right">
+
+      <input type="text" class="search-input" placeholder="What are you looking for today?" aria-label="Search">
+
+      <button class="btn-search">SEARCH</button>
+      <button class="hamburger-menu" aria-label="Toggle navigation menu" onclick="document.getElementById('mobileNav').classList.toggle('active');this.classList.toggle('open');">&#9776;</button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Mobile navigation overlay -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-inner">
+    <a href="/">Home</a>
+    <a href="category-storage-cabinet.html">Storage Cabinet</a>
+    <a href="category-office-furniture.html">Office Furniture</a>
+    <a href="category-bunk-bed.html">Bunk Bed</a>
+    <a href="category-kitchen.html">Kitchen</a>
+    <a href="category-electronics.html">Electronics</a>
+    <a href="category-gifts.html" class="nav-gold">Gifts</a>
+  </div>
+</div>
+<nav class="nav-bar">
+
+  <div class="nav-bar-inner">
+
+    <a href="/" class="nav-link">Home</a>
+
+    <div class="nav-link has-dropdown">
+
+      <a href="category-storage-cabinet.html">Storage Cabinet</a>
+
+      <div class="nav-dropdown">
+
+        <a href="category-vertical-file-cabinet.html">Vertical File Cabinet</a>
+
+        <a href="category-steel-lockers.html">Steel Lockers</a>
+
+        <a href="category-storage-shelves.html">Storage Shelves</a>
+
+        <a href="category-garage-cabinets.html">Garage Cabinets</a>
+
+      </div>
+
+    </div>
+
+    <div class="nav-link has-dropdown">
+
+      <a href="category-office-furniture.html">Office Furniture</a>
+
+      <div class="nav-dropdown">
+
+        <a href="category-standing-desk.html">Standing Desk</a>
+
+        <a href="category-office-chair.html">Office Chair</a>
+
+        <a href="category-executive-desk.html">Executive Desk</a>
+
+        <a href="category-monitor-stand.html">Monitor Stand</a>
+
+      </div>
+
+    </div>
+
+    <div class="nav-link has-dropdown">
+
+      <a href="category-bunk-bed.html">Bunk Bed</a>
+
+      <div class="nav-dropdown">
+
+        <a href="category-twin-over-twin.html">Twin Over Twin</a>
+
+        <a href="category-twin-over-full.html">Twin Over Full</a>
+
+        <a href="category-loft-bed.html">Loft Bed</a>
+
+        <a href="category-heavy-duty-bunk.html">Heavy Duty Bunk</a>
+
+      </div>
+
+    </div>
+
+    <div class="nav-link has-dropdown">
+
+      <a href="category-kitchen.html">Kitchen</a>
+
+      <div class="nav-dropdown">
+
+        <a href="category-small-appliances.html">Small Appliances</a>
+
+        <a href="category-cookware-bakeware.html">Cookware Bakeware</a>
+
+        <a href="category-kitchen-utensils-gadgets.html">Kitchen Utensils &amp; Gadgets</a>
+
+        <a href="category-kitchen-storage-organization.html">Kitchen Storage &amp; Organization</a>
+
+        <a href="category-coffee-tea-espresso.html">Coffee, Tea &amp; Espresso</a>
+
+        <a href="category-bbq-grilling-tools.html">BBQ &amp; Grilling Tools</a>
+
+      </div>
+
+    </div>
+
+    <div class="nav-link has-dropdown">
+
+      <a href="category-electronics.html">Electronics</a>
+
+      <div class="nav-dropdown">
+
+        <a href="category-cell-phones.html">Cell Phones &amp; Accessories</a>
+
+        <a href="category-computers-tablets.html">Computers &amp; Tablets</a>
+
+        <a href="category-audio-headphones.html">Audio &amp; Headphones</a>
+
+        <a href="category-cameras.html">Cameras</a>
+
+        <a href="category-wearable-tech.html">Wearable Tech</a>
+
+        <a href="category-car-electronics.html">Car Electronics</a>
+
+        <a href="category-office-electronics.html">Office Electronics</a>
+
+        <a href="category-smart-home.html">Smart Home</a>
+
+        <a href="category-gaming.html">Gaming</a>
+
+        <a href="category-portable-devices.html">Portable Devices</a>
+
+      </div>
+
+    </div>
+
+    <a href="category-gifts.html" class="nav-link nav-gold">Gifts</a>
+
+  </div>
+
+</nav>
+
+
+
+<!-- PAGE CONTENT -->
+
+<div class="page-wrap">
+
+
+
+  <!-- BREADCRUMB -->
+
+  <div class="breadcrumb">
+
+    <a href="/">Home</a> <span>/</span>
+
+    <span>Office Furniture</span>
+
+  </div>
+
+
+
+  <!-- CATEGORY HERO -->
+
+  <div class="cat-hero">
+
+    <h1>Best <span>Office Furniture</span> of 2026</h1>
+
+    <p>Our experts review the best standing desks, ergonomic chairs, filing cabinets, and office storage solutions. We test each product for build quality, comfort, adjustability, and real-world durability. Updated June 2026.</p>
+
+  </div>
+
+
+
+  <!-- SUBCATEGORY TAGS -->
+
+  <div class="subcat-row">
+
+    <a href="#" class="subcat-tag">Standing Desk</a>
+
+    <a href="#" class="subcat-tag">Office Chair</a>
+
+    <a href="#" class="subcat-tag">Executive Desk</a>
+
+    <a href="#" class="subcat-tag">Monitor Stand</a>
+
+    <a href="#" class="subcat-tag">Filing Cabinet</a>
+
+  </div>
+
+
+
+  <!-- TABLE OF CONTENTS -->
+
+  <div class="toc-card">
+
+    <h4>In this guide:</h4>
+
+    <ol>
+
+      <li><a href="#top-pick">Our Top Pick</a></li>
+
+      <li><a href="#grid">All Top Picks</a></li>
+
+      <li><a href="#guide">Buying Guide</a></li>
+
+      <li><a href="#faq">FAQ</a></li>
+
+    </ol>
+
+  </div>
+
+
+
+  <!-- TOP PICK HERO -->
+
+  <div class="top-pick-hero" id="top-pick">
+
+    <div class="top-pick-info">
+
+      <div class="top-pick-badge">BEST OF THE BEST</div>
+
+      <h2>ErGear Electric Standing Desk</h2>
+
+      <div class="rating">
+
+        <span class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+
+        <span class="rating-text">4.6/5 &mdash; Editor's Choice</span>
+
+      </div>
+
+      <p>The ErGear electric standing desk delivers outstanding build quality, smooth height adjustment, and excellent cable management &mdash; all at a price that undercuts competitors by 30%.</p>
+
+      <div class="pros-cons">
+
+        <div class="pros">
+
+          <h4>PROS</h4>
+
+          <ul>
+
+            <li>Smooth dual-motor lift system</li>
+
+            <li>Spacious 55" desktop</li>
+
+            <li>Easy assembly (under 30 min)</li>
+
+          </ul>
+
+        </div>
+
+        <div class="cons">
+
+          <h4>CONS</h4>
+
+          <ul>
+
+            <li>No memory presets on base model</li>
+
+            <li>Desktop finish shows fingerprints</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div class="top-pick-actions">
+
+        <a href="#" class="btn-primary">Check Price on Amazon &rarr;</a>
+
+        <a href="#" class="btn-secondary">Read Full Review &rarr;</a>
+
+      </div>
+
+    </div>
+
+    <div class="top-pick-visual">
+
+      <span class="placeholder">?&rarr;</span>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- PRODUCT GRID -->
+
+  <h2 style="font-size:1.3rem;font-weight:800;margin-bottom:16px;" id="grid">All Top Picks</h2>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+
+      <div class="card-badge">BEST BANG FOR THE BUCK</div>
+
+      <h3>BestOffice Ergonomic Chair</h3>
+
+      <div class="card-rating">&#9733;&#9733;&#9733;&#9733;&#9733; 4.5/5</div>
+
+      <p>High-back mesh chair with adjustable lumbar support. Great value under $200.</p>
+
+      <div class="card-pc">
+
+        <div class="card-pros">
+
+          <h5>PROS</h5>
+
+          <ul><li>Excellent lumbar support</li><li>Breathable mesh</li></ul>
+
+        </div>
+
+        <div class="card-cons">
+
+          <h5>CONS</h5>
+
+          <ul><li>Armrests not adjustable</li><li>Seat cushion could be thicker</li></ul>
+
+        </div>
+
+      </div>
+
+      <a href="#" class="btn-sm">Check Price &rarr;</a>
+
+    </div>
+
+    <div class="product-card">
+
+      <div class="card-badge">POPULAR PICK</div>
+
+      <h3>Mount-It! Monitor Stand</h3>
+
+      <div class="card-rating">&#9733;&#9733;&#9733;&#9733;? 4.4/5</div>
+
+      <p>Gas spring dual monitor mount with cable management. Supports up to 32".</p>
+
+      <div class="card-pc">
+
+        <div class="card-pros">
+
+          <h5>PROS</h5>
+
+          <ul><li>Smooth gas spring</li><li>Clean cable routing</li></ul>
+
+        </div>
+
+        <div class="card-cons">
+
+          <h5>CONS</h5>
+
+          <ul><li>Clamp could be wider</li></ul>
+
+        </div>
+
+      </div>
+
+      <a href="#" class="btn-sm">Check Price &rarr;</a>
+
+    </div>
+
+    <div class="product-card">
+
+      <div class="card-badge">PREMIUM CHOICE</div>
+
+      <h3>Uplift V2 Standing Desk</h3>
+
+      <div class="card-rating">&#9733;&#9733;&#9733;&#9733;&#9733; 4.7/5</div>
+
+      <p>High-end commercial-grade standing desk with programmable memory. 15-year warranty.</p>
+
+      <div class="card-pc">
+
+        <div class="card-pros">
+
+          <h5>PROS</h5>
+
+          <ul><li>Rock-solid stability</li><li>Best warranty</li></ul>
+
+        </div>
+
+        <div class="card-cons">
+
+          <h5>CONS</h5>
+
+          <ul><li>Expensive</li><li>Heavy to assemble alone</li></ul>
+
+        </div>
+
+      </div>
+
+      <a href="#" class="btn-sm">Check Price &rarr;</a>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- BUYING GUIDE -->
+
+  <div class="guide-section" id="guide">
+
+    <h2>Buying Guide: How to Choose Office Furniture</h2>
+
+    <p>Choosing the right office furniture depends on your workspace, budget, and ergonomic needs. Here are the key factors to consider before making a purchase.</p>
+
+
+
+    <div class="expert-tip">
+
+      <div class="tip-label">EXPERT TIP</div>
+
+      <p><strong>Measure your space first.</strong> Many buyers overlook dimensions. Always measure your room height, desk area, and door clearance before ordering large furniture pieces. Allow at least 36" of walking space around your desk.</p>
+
+    </div>
+
+
+
+    <h3>1. Standing Desks: Height Range & Stability</h3>
+
+    <p>Look for a minimum height range of 28"?C48" to accommodate both sitting and standing positions. Dual-motor systems are quieter and lift faster than single-motor. Check weight capacity &mdash; most quality desks support 250?C350 lbs.</p>
+
+
+
+    <h3>2. Office Chairs: Lumbar Support & Adjustability</h3>
+
+    <p>An ergonomic chair should have adjustable seat height (16?C21"), lumbar support, and tilt tension. Mesh backs are breathable for long hours. Look for a 5-star base and at least 2" of seat depth adjustment.</p>
+
+
+
+    <h3>3. Filing Cabinets: Locking & Fire Rating</h3>
+
+    <p>For home offices, a 2-drawer file cabinet is usually sufficient. Look for central locking, ball-bearing drawer slides, and if storing important documents, choose a model with a fire rating of at least 30 minutes (Class 350).</p>
+
+
+
+    <!-- FAQ -->
+
+    <h2 style="margin-top:36px" id="faq">Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+
+      <h4>What's the best height for a standing desk</h4>
+
+      <p>Your elbows should form a 90&mdash; angle when typing. Most desks adjust from 28" to 48". The exact height depends on your height &mdash; a 6' person typically uses 42?C44" standing, 28?C30" sitting.</p>
+
+    </div>
+
+    <div class="faq-item">
+
+      <h4>How much should I spend on an office chair</h4>
+
+      <p>A good ergonomic chair starts around $200?C$300. Budget chairs ($100?C$200) work for occasional use. For 8+ hour daily use, invest $400+ in chairs from brands like Herman Miller, Steelcase, or Haworth.</p>
+
+    </div>
+
+    <div class="faq-item">
+
+      <h4>Are standing desks worth it</h4>
+
+      <p>Yes &mdash; research shows alternating between sitting and standing improves posture, reduces back pain, and may increase productivity. However, standing all day is not recommended either. The key is to alternate every 30?C60 minutes.</p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- FOOTER (excerpt from index.html) -->
+
+<footer class="site-footer">
+
+  <div class="footer-inner">
+
+    <div>
+
+      <div class="footer-title">About SmrtDesk</div>
+
+      <p class="footer-sub-text">
+
+        We research and recommend the best home &amp; office products. 
+
+        <a href="page-about.html" class="footer-link">Read our story</a>
+
+      </p>
+
+      <div class="footer-form">
+
+        <input type="email" class="footer-input" placeholder="Your email address">
+
+        <a href="#" class="footer-subscribe-text" style="background:#4159bb;border-radius:99px;padding:10px;text-align:center;display:block">&#10095; Subscribe for deals</a>
+
+      </div>
+
+      <div class="footer-google">
+
+        <span class="gg-icon">G</span>
+
+        <span>Trusted by 50,000+ readers monthly. <a href="category-trending.html" class="footer-link">See all reviews</a></span>
+
+      </div>
+
+      <div class="footer-social">
+
+        <a href="#" class="social-icon" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+
+        <a href="#" class="social-icon" aria-label="Twitter"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M4 4l6 8-6 8h1.5l5.5-7 5.5 7H22l-6-8 6-8h-1.5L15 11.5 9.5 4H4z"/></svg></a>
+
+        <a href="#" class="social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2"/></svg></a>
+
+        <a href="#" class="social-icon" aria-label="Pinterest"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.237 2.636 7.855 6.356 9.312-.087-.791-.166-2.005.035-2.869.182-.78 1.172-4.97 1.172-4.97s-.299-.599-.299-1.484c0-1.39.806-2.428 1.81-2.428.852 0 1.264.64 1.264 1.408 0 .857-.546 2.139-.828 3.328-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.394-1.72-4.068-4.177-4.068-2.845 0-4.515 2.135-4.515 4.34 0 .859.331 1.781.744 2.282a.3.3 0 0 1 .069.288l-.278 1.133c-.044.183-.145.223-.335.134-1.249-.582-2.03-2.408-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.78 0 3.448-2.173 6.224-5.19 6.224-1.013 0-1.965-.527-2.292-1.15l-.624 2.378c-.226.87-.835 1.958-1.244 2.622.935.29 1.93.446 2.96.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
+
+      </div>
+
+    </div>
+
+    <div>
+
+      <div class="footer-title">Top Categories</div>
+
+      <ul class="footer-nav">
+
+        <li><a href="category-storage-cabinet.html">Storage Cabinet</a></li>
+
+        <li><a href="category-office-furniture.html">Office Furniture</a></li>
+
+        <li><a href="category-bunk-bed.html">Bunk Bed</a></li>
+
+        <li><a href="category-kitchen.html">Kitchen</a></li>
+
+        <li><a href="category-electronics.html">Electronics</a></li>
+
+      </ul>
+
+    </div>
+
+    <div>
+
+      <div class="footer-title">Quick Links</div>
+
+      <ul class="footer-nav">
+
+        <li><a href="page-about.html">About Us</a></li>
+
+        <li><a href="page-contact.html">Contact</a></li>
+
+        <li><a href="page-privacy-policy.html">Privacy Policy</a></li>
+
+        <li><a href="page-terms.html">Terms of Service</a></li>
+
+        <li><a href="page-about.html">Affiliate Disclosure</a></li>
+
+      </ul>
+
+    </div>
+
   </div>
   <div class="footer-bottom">
     <span class="footer-copyright">&copy; 2026 <strong>SmrtDesk</strong>. All rights reserved.</span>
     <span class="affiliate-disclosure">SmrtDesk is reader-supported. As an Amazon Associate, we earn from qualifying purchases. <a href="page-about.html">Learn more &rarr;</a></span>
-  </div>
-</footer>
-
-<script>!function(){var z=document.querySelectorAll(".top-row-right .btn-search");Array.prototype.forEach.call(z,function(b){var i=b.parentNode.querySelector(".search-input");if(!i)return;b.onclick=function(){var v=i.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}};i.onkeydown=function(e){if(e.key==="Enter"){var v=i.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}}};});var s=document.querySelector(".btn-search");if(s&&s.parentNode.className.indexOf("top-row-right")===-1){s.onclick=function(){var i=s.parentNode.querySelector(".search-input");if(!i)return;var v=i.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}};var x=s.parentNode.querySelector(".search-input");x.onkeydown=function(e){if(e.key==="Enter"){var v=x.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}}};}</script>
-
-
-
-</body>
-</html>
+  </div>
+
+</footer>
+
+
+
+<script>!function(){var z=document.querySelectorAll(".top-row-right .btn-search");Array.prototype.forEach.call(z,function(b){var i=b.parentNode.querySelector(".search-input");if(!i)return;b.onclick=function(){var v=i.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}};i.onkeydown=function(e){if(e.key==="Enter"){var v=i.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}}};});var s=document.querySelector(".btn-search");if(s&&s.parentNode.className.indexOf("top-row-right")===-1){s.onclick=function(){var i=s.parentNode.querySelector(".search-input");if(!i)return;var v=i.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}};var x=s.parentNode.querySelector(".search-input");x.onkeydown=function(e){if(e.key==="Enter"){var v=x.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}}};}</script>
+
+
+
+
+
+
+
+</body>
+
+</html>
+

@@ -1,124 +1,245 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ErGear Electric Standing Desk Review &mdash; SmrtDesk</title>
-<meta name="description" content="Our honest ErGear Electric Standing Desk review. Tested for build quality, height adjustment, stability, and value. Pros, cons, and where to buy.">
-<link rel="stylesheet" href="main.css?v=16">
-<style>
-/* ===== REVIEW INNER PAGE STYLES ===== */
-.page-wrap { max-width: var(--max-width); margin: 0 auto; padding: 30px 24px 60px; }
-
-/* Breadcrumb */
-.breadcrumb { font-size: 0.82rem; color: var(--text-light); margin-bottom: 20px; }
-.breadcrumb a { color: var(--orange); }
-.breadcrumb a:hover { text-decoration: underline; }
-.breadcrumb span { color: #999; }
-
-/* Layout: Main + Sidebar */
-.review-layout { display: flex; gap: 40px; }
-.review-main { flex: 1; min-width: 0; }
-.review-sidebar { width: 300px; flex-shrink: 0; }
-
-/* Review Header */
-.review-header { margin-bottom: 28px; }
-.review-header h1 { font-size: 2rem; font-weight: 800; line-height: 1.3; margin-bottom: 10px; }
-.review-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 0.85rem; color: var(--text-light); margin-bottom: 10px; }
-.review-meta .rating-stars { color: var(--orange); font-size: 1.1rem; letter-spacing: 2px; }
-.review-meta .rating-score { font-weight: 700; color: var(--text); }
-.review-meta .sep { color: #ddd; }
-.review-meta .updated { color: #999; }
-
-/* Score Box */
-.score-box { display: flex; gap: 24px; background: #f8f9fc; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 28px; align-items: center; }
-.score-big { text-align: center; flex-shrink: 0; }
-.score-big .number { font-size: 2.4rem; font-weight: 800; color: var(--orange); line-height: 1; }
-.score-big .label { font-size: 0.75rem; color: var(--text-light); margin-top: 4px; }
-.score-details { flex: 1; }
-.score-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
-.score-row .score-name { font-size: 0.82rem; color: var(--text-light); width: 100px; flex-shrink: 0; }
-.score-row .score-bar { flex: 1; height: 8px; background: #e0e0e0; border-radius: 4px; overflow: hidden; }
-.score-row .score-fill { height: 100%; background: var(--orange); border-radius: 4px; }
-.score-row .score-val { font-size: 0.8rem; font-weight: 700; color: var(--text); width: 30px; text-align: right; }
-.score-verdict { font-size: 0.85rem; color: var(--text-light); margin-top: 6px; }
-
-/* Buy Box */
-.buy-box { background: #fff; border: 2px solid var(--orange); border-radius: var(--radius); padding: 24px; margin-bottom: 28px; }
-.buy-box .buy-badge { display: inline-block; background: var(--orange); color: #fff; font-size: 0.7rem; font-weight: 700; padding: 3px 14px; border-radius: 10px; margin-bottom: 10px; }
-.buy-box h2 { font-size: 1.2rem; font-weight: 800; margin-bottom: 6px; }
-.buy-box .buy-price { font-size: 1.6rem; font-weight: 800; color: var(--orange); margin-bottom: 6px; }
-.buy-box .buy-price .orig { font-size: 0.95rem; color: #999; text-decoration: line-through; font-weight: 400; }
-.buy-box .buy-save { display: inline-block; background: #ffebee; color: #c62828; font-size: 0.8rem; font-weight: 700; padding: 2px 12px; border-radius: 10px; margin-bottom: 14px; }
-.buy-box p { font-size: 0.85rem; color: var(--text-light); margin-bottom: 16px; }
-.buy-box .btn-lg { display: block; width: 100%; background: var(--orange); color: #fff; text-align: center; padding: 14px; border-radius: 8px; font-weight: 700; font-size: 1rem; transition: background .2s; }
-.buy-box .btn-lg:hover { background: var(--orange-hover); }
-
-/* Pros & Cons */
-.pc-section { display: flex; gap: 20px; margin-bottom: 28px; }
-.pc-box { flex: 1; border-radius: var(--radius); padding: 20px; }
-.pc-box.pros-box { background: #f1f9f0; border: 1px solid #c8e6c9; }
-.pc-box.cons-box { background: #fef2f2; border: 1px solid #ffcdd2; }
-.pc-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 8px; }
-.pc-box.pros-box h3 { color: #2e7d32; }
-.pc-box.cons-box h3 { color: #c62828; }
-.pc-box ul { list-style: none; padding: 0; }
-.pc-box li { font-size: 0.85rem; color: var(--text-light); padding: 4px 0; line-height: 1.4; }
-.pc-box.pros-box li::before { content: "? "; color: #2e7d32; font-weight: 700; }
-.pc-box.cons-box li::before { content: "? "; color: #c62828; font-weight: 700; }
-
-/* Content Body */
-.review-body { font-size: 0.95rem; color: var(--text); line-height: 1.8; }
-.review-body h2 { font-size: 1.4rem; font-weight: 800; margin: 36px 0 14px; }
-.review-body h3 { font-size: 1.1rem; font-weight: 700; margin: 24px 0 10px; }
-.review-body p { margin-bottom: 14px; }
-.review-body ul { padding-left: 20px; margin-bottom: 14px; }
-.review-body li { margin-bottom: 6px; }
-.review-body .expert-tip { background: #fff8e8; border-left: 4px solid var(--orange); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 16px 20px; margin: 20px 0; }
-.review-body .tip-label { font-size: 0.75rem; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
-.review-body .expert-tip p { font-size: 0.88rem; margin-bottom: 0; }
-
-/* Specs Table */
-.specs-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.88rem; }
-.specs-table th, .specs-table td { padding: 10px 14px; border: 1px solid var(--border); text-align: left; }
-.specs-table th { background: #f8f9fc; font-weight: 700; width: 160px; }
-
-/* Image placeholder */
-.review-image { background: #f5f5f7; border-radius: var(--radius); padding: 40px; text-align: center; color: #ccc; font-size: 1.2rem; margin: 20px 0; border: 1px dashed var(--border); }
-
-/* Sidebar */
-.review-sidebar { position: sticky; top: 70px; align-self: start; }
-.sidebar-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
-.sidebar-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 10px; }
-.sidebar-card ol { padding-left: 18px; font-size: 0.85rem; }
-.sidebar-card li { margin-bottom: 6px; }
-.sidebar-card li a { color: var(--text); }
-.sidebar-card li a:hover { color: var(--orange); }
-.sidebar-product { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); }
-.sidebar-product:last-child { border-bottom: none; }
-.sidebar-product .sp-thumb { width: 50px; height: 50px; background: #f5f5f7; border-radius: 6px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: #ccc; font-size: 1.2rem; }
-.sidebar-product .sp-info { flex: 1; }
-.sidebar-product .sp-info h4 { font-size: 0.82rem; font-weight: 700; margin-bottom: 2px; }
-.sidebar-product .sp-info .sp-rating { color: var(--orange); font-size: 0.75rem; }
-.sidebar-product .sp-info .sp-price { font-size: 0.8rem; font-weight: 600; color: var(--text); }
-
-/* Responsive */
-@media(max-width:768px){
-  .review-layout { flex-direction: column; }
-  .review-sidebar { width: 100%; position: static; }
-  .pc-section { flex-direction: column; }
-  .score-box { flex-direction: column; align-items: stretch; }
-  .review-header h1 { font-size: 1.5rem; }
-}
-</style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "ErGear Electric Standing Desk Review &mdash; SmrtDesk",
-  "description": "Our honest ErGear Electric Standing Desk review. Tested for build quality, height adjustment, stability, and value. Pros, cons, and where to buy."
-}
-</script>
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ErGear Electric Standing Desk Review &mdash; SmrtDesk</title>
+
+<meta name="description" content="Our honest ErGear Electric Standing Desk review. Tested for build quality, height adjustment, stability, and value. Pros, cons, and where to buy.">
+
+<link rel="stylesheet" href="main.css?v=16">
+
+<style>
+
+/* ===== REVIEW INNER PAGE STYLES ===== */
+
+.page-wrap { max-width: var(--max-width); margin: 0 auto; padding: 30px 24px 60px; }
+
+
+
+/* Breadcrumb */
+
+.breadcrumb { font-size: 0.82rem; color: var(--text-light); margin-bottom: 20px; }
+
+.breadcrumb a { color: var(--orange); }
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.breadcrumb span { color: #999; }
+
+
+
+/* Layout: Main + Sidebar */
+
+.review-layout { display: flex; gap: 40px; }
+
+.review-main { flex: 1; min-width: 0; }
+
+.review-sidebar { width: 300px; flex-shrink: 0; }
+
+
+
+/* Review Header */
+
+.review-header { margin-bottom: 28px; }
+
+.review-header h1 { font-size: 2rem; font-weight: 800; line-height: 1.3; margin-bottom: 10px; }
+
+.review-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 0.85rem; color: var(--text-light); margin-bottom: 10px; }
+
+.review-meta .rating-stars { color: var(--orange); font-size: 1.1rem; letter-spacing: 2px; }
+
+.review-meta .rating-score { font-weight: 700; color: var(--text); }
+
+.review-meta .sep { color: #ddd; }
+
+.review-meta .updated { color: #999; }
+
+
+
+/* Score Box */
+
+.score-box { display: flex; gap: 24px; background: #f8f9fc; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 28px; align-items: center; }
+
+.score-big { text-align: center; flex-shrink: 0; }
+
+.score-big .number { font-size: 2.4rem; font-weight: 800; color: var(--orange); line-height: 1; }
+
+.score-big .label { font-size: 0.75rem; color: var(--text-light); margin-top: 4px; }
+
+.score-details { flex: 1; }
+
+.score-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+
+.score-row .score-name { font-size: 0.82rem; color: var(--text-light); width: 100px; flex-shrink: 0; }
+
+.score-row .score-bar { flex: 1; height: 8px; background: #e0e0e0; border-radius: 4px; overflow: hidden; }
+
+.score-row .score-fill { height: 100%; background: var(--orange); border-radius: 4px; }
+
+.score-row .score-val { font-size: 0.8rem; font-weight: 700; color: var(--text); width: 30px; text-align: right; }
+
+.score-verdict { font-size: 0.85rem; color: var(--text-light); margin-top: 6px; }
+
+
+
+/* Buy Box */
+
+.buy-box { background: #fff; border: 2px solid var(--orange); border-radius: var(--radius); padding: 24px; margin-bottom: 28px; }
+
+.buy-box .buy-badge { display: inline-block; background: var(--orange); color: #fff; font-size: 0.7rem; font-weight: 700; padding: 3px 14px; border-radius: 10px; margin-bottom: 10px; }
+
+.buy-box h2 { font-size: 1.2rem; font-weight: 800; margin-bottom: 6px; }
+
+.buy-box .buy-price { font-size: 1.6rem; font-weight: 800; color: var(--orange); margin-bottom: 6px; }
+
+.buy-box .buy-price .orig { font-size: 0.95rem; color: #999; text-decoration: line-through; font-weight: 400; }
+
+.buy-box .buy-save { display: inline-block; background: #ffebee; color: #c62828; font-size: 0.8rem; font-weight: 700; padding: 2px 12px; border-radius: 10px; margin-bottom: 14px; }
+
+.buy-box p { font-size: 0.85rem; color: var(--text-light); margin-bottom: 16px; }
+
+.buy-box .btn-lg { display: block; width: 100%; background: var(--orange); color: #fff; text-align: center; padding: 14px; border-radius: 8px; font-weight: 700; font-size: 1rem; transition: background .2s; }
+
+.buy-box .btn-lg:hover { background: var(--orange-hover); }
+
+
+
+/* Pros & Cons */
+
+.pc-section { display: flex; gap: 20px; margin-bottom: 28px; }
+
+.pc-box { flex: 1; border-radius: var(--radius); padding: 20px; }
+
+.pc-box.pros-box { background: #f1f9f0; border: 1px solid #c8e6c9; }
+
+.pc-box.cons-box { background: #fef2f2; border: 1px solid #ffcdd2; }
+
+.pc-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 8px; }
+
+.pc-box.pros-box h3 { color: #2e7d32; }
+
+.pc-box.cons-box h3 { color: #c62828; }
+
+.pc-box ul { list-style: none; padding: 0; }
+
+.pc-box li { font-size: 0.85rem; color: var(--text-light); padding: 4px 0; line-height: 1.4; }
+
+.pc-box.pros-box li::before { content: "? "; color: #2e7d32; font-weight: 700; }
+
+.pc-box.cons-box li::before { content: "? "; color: #c62828; font-weight: 700; }
+
+
+
+/* Content Body */
+
+.review-body { font-size: 0.95rem; color: var(--text); line-height: 1.8; }
+
+.review-body h2 { font-size: 1.4rem; font-weight: 800; margin: 36px 0 14px; }
+
+.review-body h3 { font-size: 1.1rem; font-weight: 700; margin: 24px 0 10px; }
+
+.review-body p { margin-bottom: 14px; }
+
+.review-body ul { padding-left: 20px; margin-bottom: 14px; }
+
+.review-body li { margin-bottom: 6px; }
+
+.review-body .expert-tip { background: #fff8e8; border-left: 4px solid var(--orange); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 16px 20px; margin: 20px 0; }
+
+.review-body .tip-label { font-size: 0.75rem; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+
+.review-body .expert-tip p { font-size: 0.88rem; margin-bottom: 0; }
+
+
+
+/* Specs Table */
+
+.specs-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.88rem; }
+
+.specs-table th, .specs-table td { padding: 10px 14px; border: 1px solid var(--border); text-align: left; }
+
+.specs-table th { background: #f8f9fc; font-weight: 700; width: 160px; }
+
+
+
+/* Image placeholder */
+
+.review-image { background: #f5f5f7; border-radius: var(--radius); padding: 40px; text-align: center; color: #ccc; font-size: 1.2rem; margin: 20px 0; border: 1px dashed var(--border); }
+
+
+
+/* Sidebar */
+
+.review-sidebar { position: sticky; top: 70px; align-self: start; }
+
+.sidebar-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+
+.sidebar-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 10px; }
+
+.sidebar-card ol { padding-left: 18px; font-size: 0.85rem; }
+
+.sidebar-card li { margin-bottom: 6px; }
+
+.sidebar-card li a { color: var(--text); }
+
+.sidebar-card li a:hover { color: var(--orange); }
+
+.sidebar-product { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+
+.sidebar-product:last-child { border-bottom: none; }
+
+.sidebar-product .sp-thumb { width: 50px; height: 50px; background: #f5f5f7; border-radius: 6px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: #ccc; font-size: 1.2rem; }
+
+.sidebar-product .sp-info { flex: 1; }
+
+.sidebar-product .sp-info h4 { font-size: 0.82rem; font-weight: 700; margin-bottom: 2px; }
+
+.sidebar-product .sp-info .sp-rating { color: var(--orange); font-size: 0.75rem; }
+
+.sidebar-product .sp-info .sp-price { font-size: 0.8rem; font-weight: 600; color: var(--text); }
+
+
+
+/* Responsive */
+
+@media(max-width:768px){
+
+  .review-layout { flex-direction: column; }
+
+  .review-sidebar { width: 100%; position: static; }
+
+  .pc-section { flex-direction: column; }
+
+  .score-box { flex-direction: column; align-items: stretch; }
+
+  .review-header h1 { font-size: 1.5rem; }
+
+}
+
+</style>
+
+<script type="application/ld+json">
+
+{
+
+  "@context": "https://schema.org",
+
+  "@type": "WebPage",
+
+  "name": "ErGear Electric Standing Desk Review &mdash; SmrtDesk",
+
+  "description": "Our honest ErGear Electric Standing Desk review. Tested for build quality, height adjustment, stability, and value. Pros, cons, and where to buy."
+
+}
+
+</script>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ0GPH0Z15"></script>
 <script>
@@ -135,347 +256,700 @@
 <meta property="og:description" content="Our honest ErGear Electric Standing Desk review. Tested for build quality, height adjustment, stability, and value. Pros, cons, and where to buy." />
 <meta property="og:url" content="https://smrtdesk.xyz/review.html" />
 <meta property="og:type" content="website" />
-</head>
-<body>
-
-
-<!-- AFFILIATE BANNER -->
-<div class="affiliate-banner">
-  SmrtDesk is reader-supported. When you buy through links on our site, we may earn an affiliate commission.
-  <a href="#">Learn more</a>
-</div>
-
-<!-- TOP ROW -->
-<div class="top-row">
-  <div class="top-row-inner">
-    <a href="/" class="header-logo"><span class="logo-smrt">SMRT</span><span class="logo-desk">DESK</span></a>
-    <div class="top-row-right">
-      <input type="text" class="search-input" placeholder="What are you looking for today?" aria-label="Search">
-      <button class="btn-search">SEARCH</button>
-    </div>
-  </div>
-</div>
-<nav class="nav-bar">
-  <div class="nav-bar-inner">
-    <a href="/" class="nav-link">Home</a>
-    <div class="nav-link has-dropdown">
-      <a href="category-storage-cabinet.html">Storage Cabinet</a>
-      <div class="nav-dropdown">
-        <a href="category-vertical-file-cabinet.html">Vertical File Cabinet</a>
-        <a href="category-steel-lockers.html">Steel Lockers</a>
-        <a href="category-storage-shelves.html">Storage Shelves</a>
-        <a href="category-garage-cabinets.html">Garage Cabinets</a>
-      </div>
-    </div>
-    <div class="nav-link has-dropdown">
-      <a href="category-office-furniture.html">Office Furniture</a>
-      <div class="nav-dropdown">
-        <a href="category-standing-desk.html">Standing Desk</a>
-        <a href="category-office-chair.html">Office Chair</a>
-        <a href="category-executive-desk.html">Executive Desk</a>
-        <a href="category-monitor-stand.html">Monitor Stand</a>
-      </div>
-    </div>
-    <div class="nav-link has-dropdown">
-      <a href="category-bunk-bed.html">Bunk Bed</a>
-      <div class="nav-dropdown">
-        <a href="category-twin-over-twin.html">Twin Over Twin</a>
-        <a href="category-twin-over-full.html">Twin Over Full</a>
-        <a href="category-loft-bed.html">Loft Bed</a>
-        <a href="category-heavy-duty-bunk.html">Heavy Duty Bunk</a>
-      </div>
-    </div>
-    <div class="nav-link has-dropdown">
-      <a href="category-kitchen.html">Kitchen</a>
-      <div class="nav-dropdown">
-        <a href="category-small-appliances.html">Small Appliances</a>
-        <a href="category-cookware-bakeware.html">Cookware Bakeware</a>
-        <a href="category-kitchen-utensils-gadgets.html">Kitchen Utensils &amp; Gadgets</a>
-        <a href="category-kitchen-storage-organization.html">Kitchen Storage &amp; Organization</a>
-        <a href="category-coffee-tea-espresso.html">Coffee, Tea &amp; Espresso</a>
-        <a href="category-bbq-grilling-tools.html">BBQ &amp; Grilling Tools</a>
-      </div>
-    </div>
-    <div class="nav-link has-dropdown">
-      <a href="category-electronics.html">Electronics</a>
-      <div class="nav-dropdown">
-        <a href="category-cell-phones.html">Cell Phones &amp; Accessories</a>
-        <a href="category-computers-tablets.html">Computers &amp; Tablets</a>
-        <a href="category-audio-headphones.html">Audio &amp; Headphones</a>
-        <a href="category-cameras.html">Cameras</a>
-        <a href="category-wearable-tech.html">Wearable Tech</a>
-        <a href="category-car-electronics.html">Car Electronics</a>
-        <a href="category-office-electronics.html">Office Electronics</a>
-        <a href="category-smart-home.html">Smart Home</a>
-        <a href="category-gaming.html">Gaming</a>
-        <a href="category-portable-devices.html">Portable Devices</a>
-      </div>
-    </div>
-    <a href="category-gifts.html" class="nav-link nav-gold">Gifts</a>
-  </div>
-</nav>
-
-<!-- PAGE CONTENT -->
-<div class="page-wrap">
-
-  <!-- BREADCRUMB -->
-  <div class="breadcrumb">
-    <a href="/">Home</a> <span>/</span>
-    <a href="category.html">Office Furniture</a> <span>/</span>
-    <span>ErGear Electric Standing Desk</span>
-  </div>
-
-  <!-- LAYOUT: Main + Sidebar -->
-  <div class="review-layout">
-
-    <!-- MAIN -->
-    <div class="review-main">
-
-      <!-- REVIEW HEADER -->
-      <div class="review-header">
-        <h1>ErGear Electric Standing Desk Review</h1>
-        <div class="review-meta">
-          <span class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <span class="rating-score">4.6</span>
-          <span class="sep">|</span>
-          <span class="updated">Updated June 2026</span>
-          <span class="sep">|</span>
-          <span>by <strong>Laura Nguyen</strong></span>
-        </div>
-      </div>
-
-      <!-- SCORE BOX -->
-      <div class="score-box">
-        <div class="score-big">
-          <div class="number">8.8</div>
-          <div class="label">out of 10</div>
-        </div>
-        <div class="score-details">
-          <div class="score-row">
-            <span class="score-name">Build Quality</span>
-            <div class="score-bar"><div class="score-fill" style="width:90%"></div></div>
-            <span class="score-val">9.0</span>
-          </div>
-          <div class="score-row">
-            <span class="score-name">Value</span>
-            <div class="score-bar"><div class="score-fill" style="width:95%"></div></div>
-            <span class="score-val">9.5</span>
-          </div>
-          <div class="score-row">
-            <span class="score-name">Features</span>
-            <div class="score-bar"><div class="score-fill" style="width:80%"></div></div>
-            <span class="score-val">8.0</span>
-          </div>
-          <div class="score-row">
-            <span class="score-name">Durability</span>
-            <div class="score-bar"><div class="score-fill" style="width:85%"></div></div>
-            <span class="score-val">8.5</span>
-          </div>
-        </div>
-        <div class="score-verdict">An outstanding value pick &mdash; close to premium brands at half the price.</div>
-      </div>
-
-      <!-- PROS & CONS -->
-      <div class="pc-section">
-        <div class="pc-box pros-box">
-          <h3>PROS</h3>
-          <ul>
-            <li>Smooth dual-motor electric lift system</li>
-            <li>Spacious 55" x 28" desktop surface</li>
-            <li>Easy assembly &mdash; under 30 minutes</li>
-            <li>Excellent cable management tray included</li>
-            <li>Sturdy steel frame supports up to 265 lbs</li>
-          </ul>
-        </div>
-        <div class="pc-box cons-box">
-          <h3>CONS</h3>
-          <ul>
-            <li>No programmable height memory</li>
-            <li>Desktop surface shows fingerprints</li>
-            <li>Only one color option</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- BUY BOX -->
-      <div class="buy-box">
-        <div class="buy-badge">BEST VALUE &mdash; EDITOR'S PICK</div>
-        <h2>ErGear Electric Standing Desk</h2>
-        <div class="buy-price">$199.99 <span class="orig">$299.99</span></div>
-        <div class="buy-save">SAVE 33%</div>
-        <p>Free shipping on Amazon Prime. 5-year warranty included. Over 4,500 verified reviews with a 4.5-star average rating.</p>
-        <a href="#" class="btn-lg">Check Price on Amazon &rarr;</a>
-      </div>
-
-      <!-- REVIEW BODY -->
-      <div class="review-body">
-
-        <h2>Why We Chose This Desk</h2>
-        <p>After testing 12 standing desks across different price ranges, the ErGear Electric Standing Desk emerged as our top value pick. It offers nearly all the features of desks costing twice as much, with smooth dual-motor operation and a spacious work surface that fits most home offices.</p>
-
-        <div class="expert-tip">
-          <div class="tip-label">TESTING INSIGHT</div>
-          <p>We assembled this desk in 22 minutes using the included tools. The instructions are clear and all screw holes aligned perfectly &mdash; a sign of good manufacturing quality control.</p>
-        </div>
-
-        <h2>Specifications</h2>
-        <table class="specs-table">
-          <tr><th>Desktop Size</th><td>55" x 28"</td></tr>
-          <tr><th>Height Range</th><td>28.3" ?C 47.6"</td></tr>
-          <tr><th>Motor Type</th><td>Dual electric motors</td></tr>
-          <tr><th>Weight Capacity</th><td>265 lbs</td></tr>
-          <tr><th>Speed</th><td>1.5" per second</td></tr>
-          <tr><th>Noise Level</th><td>&lt; 50 dB</td></tr>
-          <tr><th>Warranty</th><td>5 years</td></tr>
-          <tr><th>Weight</th><td>78 lbs (assembled)</td></tr>
-        </table>
-
-        <div class="review-image">[ Product Image &mdash; ErGear Standing Desk ]</div>
-
-        <h2>Build Quality & Design</h2>
-        <p>The frame is constructed from heavy-gauge steel with a powder-coated finish. The desktop uses a commercial-grade particle board with a laminate surface that resists scratches and stains. The overall impression is solid &mdash; there's no wobble at standing height even when typing vigorously.</p>
-
-        <p>Cable management is well thought out. A steel mesh tray attaches underneath the desk, keeping power strips and cables organized and out of sight. The control panel features up/down buttons with a digital height display, though this model lacks programmable memory presets (available on the upgraded version for $50 more).</p>
-
-        <h2>Performance & Usability</h2>
-        <p>The dual-motor system lifts smoothly even under load. In our tests, the desk went from sitting to standing height in approximately 13 seconds. The motors are quiet &mdash; measured at 48 dB, about the volume of a quiet conversation.</p>
-
-        <p>Stability is impressive. At maximum height (47.6"), there's minimal front-to-back wobble, and side-to-side movement is nearly imperceptible. This is rare at this price point &mdash; most sub-$300 desks show significant wobble at standing height.</p>
-
-        <div class="expert-tip">
-          <div class="tip-label">WORTH THE UPGRADE</div>
-          <p>The ErGear with memory presets is $50 more but saves you from having to hold the button every time. If two or more people share the desk, the memory version is worth it.</p>
-        </div>
-
-        <h2>Assembly</h2>
-        <p>We timed the assembly process at 22 minutes with two people. The included hex tools work fine, though a power drill with a hex bit would speed things up. Key pointers: lay the desktop face-down on a soft surface to avoid scratches, and partially tighten all bolts before fully tightening any.</p>
-
-        <h2>Final Verdict</h2>
-        <p>The ErGear Electric Standing Desk is hands-down the best value standing desk on the market. It delivers premium build quality, smooth operation, and thoughtful features like integrated cable management at a price that undercuts the competition. While it lacks programmable memory, that's a reasonable trade-off for saving $150?C$300 compared to brands like Uplift or Fully.</p>
-
-        <p><strong>Who should buy this:</strong> Home office workers, remote employees, and anyone who wants a quality standing desk without spending $500+.</p>
-        <p><strong>Who should skip:</strong> If you need multi-user memory presets, a wider desktop (72"+), or commercial-grade weight capacity (350+ lbs), consider the Uplift V2 or Jarvis.</p>
-
-        <div class="buy-box">
-          <div class="buy-badge">BEST VALUE &mdash; EDITOR'S PICK</div>
-          <h2>ErGear Electric Standing Desk</h2>
-          <div class="buy-price">$199.99 <span class="orig">$299.99</span></div>
-          <div class="buy-save">SAVE 33%</div>
-          <a href="#" class="btn-lg">Check Price on Amazon &rarr;</a>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- SIDEBAR -->
-    <div class="review-sidebar">
-      <div class="sidebar-card">
-        <h3>Table of Contents</h3>
-        <ol>
-          <li><a href="#why">Why We Chose This</a></li>
-          <li><a href="#specs">Specifications</a></li>
-          <li><a href="#build">Build Quality</a></li>
-          <li><a href="#performance">Performance</a></li>
-          <li><a href="#assembly">Assembly</a></li>
-          <li><a href="#verdict">Final Verdict</a></li>
-        </ol>
-      </div>
-
-      <div class="sidebar-card">
-        <h3>Compare Similar Products</h3>
-        <div class="sidebar-product">
-          <div class="sp-thumb">&mdash;</div>
-          <div class="sp-info">
-            <h4>BestOffice Ergonomic Chair</h4>
-            <div class="sp-rating">&#9733;&#9733;&#9733;&#9733;&#9733; 4.5/5</div>
-            <div class="sp-price">$129.99</div>
-          </div>
-        </div>
-        <div class="sidebar-product">
-          <div class="sp-thumb">&mdash;</div>
-          <div class="sp-info">
-            <h4>Mount-It! Monitor Mount</h4>
-            <div class="sp-rating">&#9733;&#9733;&#9733;&#9733;? 4.4/5</div>
-            <div class="sp-price">$49.99</div>
-          </div>
-        </div>
-        <div class="sidebar-product">
-          <div class="sp-thumb">&mdash;?</div>
-          <div class="sp-info">
-            <h4>Uplift V2 Standing Desk</h4>
-            <div class="sp-rating">&#9733;&#9733;&#9733;&#9733;&#9733; 4.7/5</div>
-            <div class="sp-price">$499.99</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="sidebar-card">
-        <h3>Share This Review</h3>
-        <p style="font-size:0.85rem;color:var(--text-light);">Know someone who'll find this helpful</p>
-        <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap;">
-          <a href="#" style="display:inline-block;padding:6px 14px;background:#1877f2;color:#fff;border-radius:6px;font-size:0.8rem;font-weight:600;">Facebook</a>
-          <a href="#" style="display:inline-block;padding:6px 14px;background:#000;color:#fff;border-radius:6px;font-size:0.8rem;font-weight:600;">X</a>
-          <a href="#" style="display:inline-block;padding:6px 14px;background:#0a66c2;color:#fff;border-radius:6px;font-size:0.8rem;font-weight:600;">LinkedIn</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div>
-      <div class="footer-title">About SmrtDesk</div>
-      <p class="footer-sub-text">
-        We research and recommend the best home &amp; office products. 
-        <a href="page-about.html" class="footer-link">Read our story</a>
-      </p>
-      <div class="footer-form">
-        <input type="email" class="footer-input" placeholder="Your email address">
-        <a href="#" class="footer-subscribe-text" style="background:#4159bb;border-radius:99px;padding:10px;text-align:center;display:block">&#10095; Subscribe for deals</a>
-      </div>
-      <div class="footer-google">
-        <span class="gg-icon">G</span>
-        <span>Trusted by 50,000+ readers monthly. <a href="category-trending.html" class="footer-link">See all reviews</a></span>
-      </div>
-      <div class="footer-social">
-        <a href="#" class="social-icon" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-        <a href="#" class="social-icon" aria-label="Twitter"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M4 4l6 8-6 8h1.5l5.5-7 5.5 7H22l-6-8 6-8h-1.5L15 11.5 9.5 4H4z"/></svg></a>
-        <a href="#" class="social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2"/></svg></a>
-        <a href="#" class="social-icon" aria-label="Pinterest"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.237 2.636 7.855 6.356 9.312-.087-.791-.166-2.005.035-2.869.182-.78 1.172-4.97 1.172-4.97s-.299-.599-.299-1.484c0-1.39.806-2.428 1.81-2.428.852 0 1.264.64 1.264 1.408 0 .857-.546 2.139-.828 3.328-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.394-1.72-4.068-4.177-4.068-2.845 0-4.515 2.135-4.515 4.34 0 .859.331 1.781.744 2.282a.3.3 0 0 1 .069.288l-.278 1.133c-.044.183-.145.223-.335.134-1.249-.582-2.03-2.408-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.78 0 3.448-2.173 6.224-5.19 6.224-1.013 0-1.965-.527-2.292-1.15l-.624 2.378c-.226.87-.835 1.958-1.244 2.622.935.29 1.93.446 2.96.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
-      </div>
-    </div>
-    <div>
-      <div class="footer-title">Top Categories</div>
-      <ul class="footer-nav">
-        <li><a href="category-storage-cabinet.html">Storage Cabinet</a></li>
-        <li><a href="category-office-furniture.html">Office Furniture</a></li>
-        <li><a href="category-bunk-bed.html">Bunk Bed</a></li>
-        <li><a href="category-kitchen.html">Kitchen</a></li>
-        <li><a href="category-electronics.html">Electronics</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-title">Quick Links</div>
-      <ul class="footer-nav">
-        <li><a href="page-about.html">About Us</a></li>
-        <li><a href="page-contact.html">Contact</a></li>
-        <li><a href="page-privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="page-terms.html">Terms of Service</a></li>
-        <li><a href="page-about.html">Affiliate Disclosure</a></li>
-      </ul>
-    </div>
+</head>
+
+<body>
+
+
+
+
+
+<!-- AFFILIATE BANNER -->
+
+<div class="affiliate-banner">
+
+  SmrtDesk is reader-supported. When you buy through links on our site, we may earn an affiliate commission.
+
+  <a href="#">Learn more</a>
+
+</div>
+
+
+
+<!-- TOP ROW -->
+
+<div class="top-row">
+
+  <div class="top-row-inner">
+
+    <a href="/" class="header-logo"><span class="logo-smrt">SMRT</span><span class="logo-desk">DESK</span></a>
+
+    <div class="top-row-right">
+
+      <input type="text" class="search-input" placeholder="What are you looking for today?" aria-label="Search">
+
+      <button class="btn-search">SEARCH</button>
+      <button class="hamburger-menu" aria-label="Toggle navigation menu" onclick="document.getElementById('mobileNav').classList.toggle('active');this.classList.toggle('open');">&#9776;</button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Mobile navigation overlay -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-inner">
+    <a href="/">Home</a>
+    <a href="category-storage-cabinet.html">Storage Cabinet</a>
+    <a href="category-office-furniture.html">Office Furniture</a>
+    <a href="category-bunk-bed.html">Bunk Bed</a>
+    <a href="category-kitchen.html">Kitchen</a>
+    <a href="category-electronics.html">Electronics</a>
+    <a href="category-gifts.html" class="nav-gold">Gifts</a>
+  </div>
+</div>
+<nav class="nav-bar">
+
+  <div class="nav-bar-inner">
+
+    <a href="/" class="nav-link">Home</a>
+
+    <div class="nav-link has-dropdown">
+
+      <a href="category-storage-cabinet.html">Storage Cabinet</a>
+
+      <div class="nav-dropdown">
+
+        <a href="category-vertical-file-cabinet.html">Vertical File Cabinet</a>
+
+        <a href="category-steel-lockers.html">Steel Lockers</a>
+
+        <a href="category-storage-shelves.html">Storage Shelves</a>
+
+        <a href="category-garage-cabinets.html">Garage Cabinets</a>
+
+      </div>
+
+    </div>
+
+    <div class="nav-link has-dropdown">
+
+      <a href="category-office-furniture.html">Office Furniture</a>
+
+      <div class="nav-dropdown">
+
+        <a href="category-standing-desk.html">Standing Desk</a>
+
+        <a href="category-office-chair.html">Office Chair</a>
+
+        <a href="category-executive-desk.html">Executive Desk</a>
+
+        <a href="category-monitor-stand.html">Monitor Stand</a>
+
+      </div>
+
+    </div>
+
+    <div class="nav-link has-dropdown">
+
+      <a href="category-bunk-bed.html">Bunk Bed</a>
+
+      <div class="nav-dropdown">
+
+        <a href="category-twin-over-twin.html">Twin Over Twin</a>
+
+        <a href="category-twin-over-full.html">Twin Over Full</a>
+
+        <a href="category-loft-bed.html">Loft Bed</a>
+
+        <a href="category-heavy-duty-bunk.html">Heavy Duty Bunk</a>
+
+      </div>
+
+    </div>
+
+    <div class="nav-link has-dropdown">
+
+      <a href="category-kitchen.html">Kitchen</a>
+
+      <div class="nav-dropdown">
+
+        <a href="category-small-appliances.html">Small Appliances</a>
+
+        <a href="category-cookware-bakeware.html">Cookware Bakeware</a>
+
+        <a href="category-kitchen-utensils-gadgets.html">Kitchen Utensils &amp; Gadgets</a>
+
+        <a href="category-kitchen-storage-organization.html">Kitchen Storage &amp; Organization</a>
+
+        <a href="category-coffee-tea-espresso.html">Coffee, Tea &amp; Espresso</a>
+
+        <a href="category-bbq-grilling-tools.html">BBQ &amp; Grilling Tools</a>
+
+      </div>
+
+    </div>
+
+    <div class="nav-link has-dropdown">
+
+      <a href="category-electronics.html">Electronics</a>
+
+      <div class="nav-dropdown">
+
+        <a href="category-cell-phones.html">Cell Phones &amp; Accessories</a>
+
+        <a href="category-computers-tablets.html">Computers &amp; Tablets</a>
+
+        <a href="category-audio-headphones.html">Audio &amp; Headphones</a>
+
+        <a href="category-cameras.html">Cameras</a>
+
+        <a href="category-wearable-tech.html">Wearable Tech</a>
+
+        <a href="category-car-electronics.html">Car Electronics</a>
+
+        <a href="category-office-electronics.html">Office Electronics</a>
+
+        <a href="category-smart-home.html">Smart Home</a>
+
+        <a href="category-gaming.html">Gaming</a>
+
+        <a href="category-portable-devices.html">Portable Devices</a>
+
+      </div>
+
+    </div>
+
+    <a href="category-gifts.html" class="nav-link nav-gold">Gifts</a>
+
+  </div>
+
+</nav>
+
+
+
+<!-- PAGE CONTENT -->
+
+<div class="page-wrap">
+
+
+
+  <!-- BREADCRUMB -->
+
+  <div class="breadcrumb">
+
+    <a href="/">Home</a> <span>/</span>
+
+    <a href="category.html">Office Furniture</a> <span>/</span>
+
+    <span>ErGear Electric Standing Desk</span>
+
+  </div>
+
+
+
+  <!-- LAYOUT: Main + Sidebar -->
+
+  <div class="review-layout">
+
+
+
+    <!-- MAIN -->
+
+    <div class="review-main">
+
+
+
+      <!-- REVIEW HEADER -->
+
+      <div class="review-header">
+
+        <h1>ErGear Electric Standing Desk Review</h1>
+
+        <div class="review-meta">
+
+          <span class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+
+          <span class="rating-score">4.6</span>
+
+          <span class="sep">|</span>
+
+          <span class="updated">Updated June 2026</span>
+
+          <span class="sep">|</span>
+
+          <span>by <strong>Laura Nguyen</strong></span>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- SCORE BOX -->
+
+      <div class="score-box">
+
+        <div class="score-big">
+
+          <div class="number">8.8</div>
+
+          <div class="label">out of 10</div>
+
+        </div>
+
+        <div class="score-details">
+
+          <div class="score-row">
+
+            <span class="score-name">Build Quality</span>
+
+            <div class="score-bar"><div class="score-fill" style="width:90%"></div></div>
+
+            <span class="score-val">9.0</span>
+
+          </div>
+
+          <div class="score-row">
+
+            <span class="score-name">Value</span>
+
+            <div class="score-bar"><div class="score-fill" style="width:95%"></div></div>
+
+            <span class="score-val">9.5</span>
+
+          </div>
+
+          <div class="score-row">
+
+            <span class="score-name">Features</span>
+
+            <div class="score-bar"><div class="score-fill" style="width:80%"></div></div>
+
+            <span class="score-val">8.0</span>
+
+          </div>
+
+          <div class="score-row">
+
+            <span class="score-name">Durability</span>
+
+            <div class="score-bar"><div class="score-fill" style="width:85%"></div></div>
+
+            <span class="score-val">8.5</span>
+
+          </div>
+
+        </div>
+
+        <div class="score-verdict">An outstanding value pick &mdash; close to premium brands at half the price.</div>
+
+      </div>
+
+
+
+      <!-- PROS & CONS -->
+
+      <div class="pc-section">
+
+        <div class="pc-box pros-box">
+
+          <h3>PROS</h3>
+
+          <ul>
+
+            <li>Smooth dual-motor electric lift system</li>
+
+            <li>Spacious 55" x 28" desktop surface</li>
+
+            <li>Easy assembly &mdash; under 30 minutes</li>
+
+            <li>Excellent cable management tray included</li>
+
+            <li>Sturdy steel frame supports up to 265 lbs</li>
+
+          </ul>
+
+        </div>
+
+        <div class="pc-box cons-box">
+
+          <h3>CONS</h3>
+
+          <ul>
+
+            <li>No programmable height memory</li>
+
+            <li>Desktop surface shows fingerprints</li>
+
+            <li>Only one color option</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- BUY BOX -->
+
+      <div class="buy-box">
+
+        <div class="buy-badge">BEST VALUE &mdash; EDITOR'S PICK</div>
+
+        <h2>ErGear Electric Standing Desk</h2>
+
+        <div class="buy-price">$199.99 <span class="orig">$299.99</span></div>
+
+        <div class="buy-save">SAVE 33%</div>
+
+        <p>Free shipping on Amazon Prime. 5-year warranty included. Over 4,500 verified reviews with a 4.5-star average rating.</p>
+
+        <a href="#" class="btn-lg">Check Price on Amazon &rarr;</a>
+
+      </div>
+
+
+
+      <!-- REVIEW BODY -->
+
+      <div class="review-body">
+
+
+
+        <h2>Why We Chose This Desk</h2>
+
+        <p>After testing 12 standing desks across different price ranges, the ErGear Electric Standing Desk emerged as our top value pick. It offers nearly all the features of desks costing twice as much, with smooth dual-motor operation and a spacious work surface that fits most home offices.</p>
+
+
+
+        <div class="expert-tip">
+
+          <div class="tip-label">TESTING INSIGHT</div>
+
+          <p>We assembled this desk in 22 minutes using the included tools. The instructions are clear and all screw holes aligned perfectly &mdash; a sign of good manufacturing quality control.</p>
+
+        </div>
+
+
+
+        <h2>Specifications</h2>
+
+        <table class="specs-table">
+
+          <tr><th>Desktop Size</th><td>55" x 28"</td></tr>
+
+          <tr><th>Height Range</th><td>28.3" ?C 47.6"</td></tr>
+
+          <tr><th>Motor Type</th><td>Dual electric motors</td></tr>
+
+          <tr><th>Weight Capacity</th><td>265 lbs</td></tr>
+
+          <tr><th>Speed</th><td>1.5" per second</td></tr>
+
+          <tr><th>Noise Level</th><td>&lt; 50 dB</td></tr>
+
+          <tr><th>Warranty</th><td>5 years</td></tr>
+
+          <tr><th>Weight</th><td>78 lbs (assembled)</td></tr>
+
+        </table>
+
+
+
+        <div class="review-image">[ Product Image &mdash; ErGear Standing Desk ]</div>
+
+
+
+        <h2>Build Quality & Design</h2>
+
+        <p>The frame is constructed from heavy-gauge steel with a powder-coated finish. The desktop uses a commercial-grade particle board with a laminate surface that resists scratches and stains. The overall impression is solid &mdash; there's no wobble at standing height even when typing vigorously.</p>
+
+
+
+        <p>Cable management is well thought out. A steel mesh tray attaches underneath the desk, keeping power strips and cables organized and out of sight. The control panel features up/down buttons with a digital height display, though this model lacks programmable memory presets (available on the upgraded version for $50 more).</p>
+
+
+
+        <h2>Performance & Usability</h2>
+
+        <p>The dual-motor system lifts smoothly even under load. In our tests, the desk went from sitting to standing height in approximately 13 seconds. The motors are quiet &mdash; measured at 48 dB, about the volume of a quiet conversation.</p>
+
+
+
+        <p>Stability is impressive. At maximum height (47.6"), there's minimal front-to-back wobble, and side-to-side movement is nearly imperceptible. This is rare at this price point &mdash; most sub-$300 desks show significant wobble at standing height.</p>
+
+
+
+        <div class="expert-tip">
+
+          <div class="tip-label">WORTH THE UPGRADE</div>
+
+          <p>The ErGear with memory presets is $50 more but saves you from having to hold the button every time. If two or more people share the desk, the memory version is worth it.</p>
+
+        </div>
+
+
+
+        <h2>Assembly</h2>
+
+        <p>We timed the assembly process at 22 minutes with two people. The included hex tools work fine, though a power drill with a hex bit would speed things up. Key pointers: lay the desktop face-down on a soft surface to avoid scratches, and partially tighten all bolts before fully tightening any.</p>
+
+
+
+        <h2>Final Verdict</h2>
+
+        <p>The ErGear Electric Standing Desk is hands-down the best value standing desk on the market. It delivers premium build quality, smooth operation, and thoughtful features like integrated cable management at a price that undercuts the competition. While it lacks programmable memory, that's a reasonable trade-off for saving $150?C$300 compared to brands like Uplift or Fully.</p>
+
+
+
+        <p><strong>Who should buy this:</strong> Home office workers, remote employees, and anyone who wants a quality standing desk without spending $500+.</p>
+
+        <p><strong>Who should skip:</strong> If you need multi-user memory presets, a wider desktop (72"+), or commercial-grade weight capacity (350+ lbs), consider the Uplift V2 or Jarvis.</p>
+
+
+
+        <div class="buy-box">
+
+          <div class="buy-badge">BEST VALUE &mdash; EDITOR'S PICK</div>
+
+          <h2>ErGear Electric Standing Desk</h2>
+
+          <div class="buy-price">$199.99 <span class="orig">$299.99</span></div>
+
+          <div class="buy-save">SAVE 33%</div>
+
+          <a href="#" class="btn-lg">Check Price on Amazon &rarr;</a>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+
+
+    <!-- SIDEBAR -->
+
+    <div class="review-sidebar">
+
+      <div class="sidebar-card">
+
+        <h3>Table of Contents</h3>
+
+        <ol>
+
+          <li><a href="#why">Why We Chose This</a></li>
+
+          <li><a href="#specs">Specifications</a></li>
+
+          <li><a href="#build">Build Quality</a></li>
+
+          <li><a href="#performance">Performance</a></li>
+
+          <li><a href="#assembly">Assembly</a></li>
+
+          <li><a href="#verdict">Final Verdict</a></li>
+
+        </ol>
+
+      </div>
+
+
+
+      <div class="sidebar-card">
+
+        <h3>Compare Similar Products</h3>
+
+        <div class="sidebar-product">
+
+          <div class="sp-thumb">&mdash;</div>
+
+          <div class="sp-info">
+
+            <h4>BestOffice Ergonomic Chair</h4>
+
+            <div class="sp-rating">&#9733;&#9733;&#9733;&#9733;&#9733; 4.5/5</div>
+
+            <div class="sp-price">$129.99</div>
+
+          </div>
+
+        </div>
+
+        <div class="sidebar-product">
+
+          <div class="sp-thumb">&mdash;</div>
+
+          <div class="sp-info">
+
+            <h4>Mount-It! Monitor Mount</h4>
+
+            <div class="sp-rating">&#9733;&#9733;&#9733;&#9733;? 4.4/5</div>
+
+            <div class="sp-price">$49.99</div>
+
+          </div>
+
+        </div>
+
+        <div class="sidebar-product">
+
+          <div class="sp-thumb">&mdash;?</div>
+
+          <div class="sp-info">
+
+            <h4>Uplift V2 Standing Desk</h4>
+
+            <div class="sp-rating">&#9733;&#9733;&#9733;&#9733;&#9733; 4.7/5</div>
+
+            <div class="sp-price">$499.99</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="sidebar-card">
+
+        <h3>Share This Review</h3>
+
+        <p style="font-size:0.85rem;color:var(--text-light);">Know someone who'll find this helpful</p>
+
+        <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap;">
+
+          <a href="#" style="display:inline-block;padding:6px 14px;background:#1877f2;color:#fff;border-radius:6px;font-size:0.8rem;font-weight:600;">Facebook</a>
+
+          <a href="#" style="display:inline-block;padding:6px 14px;background:#000;color:#fff;border-radius:6px;font-size:0.8rem;font-weight:600;">X</a>
+
+          <a href="#" style="display:inline-block;padding:6px 14px;background:#0a66c2;color:#fff;border-radius:6px;font-size:0.8rem;font-weight:600;">LinkedIn</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+  <div class="footer-inner">
+
+    <div>
+
+      <div class="footer-title">About SmrtDesk</div>
+
+      <p class="footer-sub-text">
+
+        We research and recommend the best home &amp; office products. 
+
+        <a href="page-about.html" class="footer-link">Read our story</a>
+
+      </p>
+
+      <div class="footer-form">
+
+        <input type="email" class="footer-input" placeholder="Your email address">
+
+        <a href="#" class="footer-subscribe-text" style="background:#4159bb;border-radius:99px;padding:10px;text-align:center;display:block">&#10095; Subscribe for deals</a>
+
+      </div>
+
+      <div class="footer-google">
+
+        <span class="gg-icon">G</span>
+
+        <span>Trusted by 50,000+ readers monthly. <a href="category-trending.html" class="footer-link">See all reviews</a></span>
+
+      </div>
+
+      <div class="footer-social">
+
+        <a href="#" class="social-icon" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+
+        <a href="#" class="social-icon" aria-label="Twitter"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M4 4l6 8-6 8h1.5l5.5-7 5.5 7H22l-6-8 6-8h-1.5L15 11.5 9.5 4H4z"/></svg></a>
+
+        <a href="#" class="social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2"/></svg></a>
+
+        <a href="#" class="social-icon" aria-label="Pinterest"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.237 2.636 7.855 6.356 9.312-.087-.791-.166-2.005.035-2.869.182-.78 1.172-4.97 1.172-4.97s-.299-.599-.299-1.484c0-1.39.806-2.428 1.81-2.428.852 0 1.264.64 1.264 1.408 0 .857-.546 2.139-.828 3.328-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.394-1.72-4.068-4.177-4.068-2.845 0-4.515 2.135-4.515 4.34 0 .859.331 1.781.744 2.282a.3.3 0 0 1 .069.288l-.278 1.133c-.044.183-.145.223-.335.134-1.249-.582-2.03-2.408-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.78 0 3.448-2.173 6.224-5.19 6.224-1.013 0-1.965-.527-2.292-1.15l-.624 2.378c-.226.87-.835 1.958-1.244 2.622.935.29 1.93.446 2.96.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
+
+      </div>
+
+    </div>
+
+    <div>
+
+      <div class="footer-title">Top Categories</div>
+
+      <ul class="footer-nav">
+
+        <li><a href="category-storage-cabinet.html">Storage Cabinet</a></li>
+
+        <li><a href="category-office-furniture.html">Office Furniture</a></li>
+
+        <li><a href="category-bunk-bed.html">Bunk Bed</a></li>
+
+        <li><a href="category-kitchen.html">Kitchen</a></li>
+
+        <li><a href="category-electronics.html">Electronics</a></li>
+
+      </ul>
+
+    </div>
+
+    <div>
+
+      <div class="footer-title">Quick Links</div>
+
+      <ul class="footer-nav">
+
+        <li><a href="page-about.html">About Us</a></li>
+
+        <li><a href="page-contact.html">Contact</a></li>
+
+        <li><a href="page-privacy-policy.html">Privacy Policy</a></li>
+
+        <li><a href="page-terms.html">Terms of Service</a></li>
+
+        <li><a href="page-about.html">Affiliate Disclosure</a></li>
+
+      </ul>
+
+    </div>
+
   </div>
   <div class="footer-bottom">
     <span class="footer-copyright">&copy; 2026 <strong>SmrtDesk</strong>. All rights reserved.</span>
     <span class="affiliate-disclosure">SmrtDesk is reader-supported. As an Amazon Associate, we earn from qualifying purchases. <a href="page-about.html">Learn more &rarr;</a></span>
-  </div>
-</footer>
-
-<script>!function(){var z=document.querySelectorAll(".top-row-right .btn-search");Array.prototype.forEach.call(z,function(b){var i=b.parentNode.querySelector(".search-input");if(!i)return;b.onclick=function(){var v=i.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}};i.onkeydown=function(e){if(e.key==="Enter"){var v=i.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}}};});var s=document.querySelector(".btn-search");if(s&&s.parentNode.className.indexOf("top-row-right")===-1){s.onclick=function(){var i=s.parentNode.querySelector(".search-input");if(!i)return;var v=i.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}};var x=s.parentNode.querySelector(".search-input");x.onkeydown=function(e){if(e.key==="Enter"){var v=x.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}}};}</script>
-
-
-
-</body>
-</html>
+  </div>
+
+</footer>
+
+
+
+<script>!function(){var z=document.querySelectorAll(".top-row-right .btn-search");Array.prototype.forEach.call(z,function(b){var i=b.parentNode.querySelector(".search-input");if(!i)return;b.onclick=function(){var v=i.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}};i.onkeydown=function(e){if(e.key==="Enter"){var v=i.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}}};});var s=document.querySelector(".btn-search");if(s&&s.parentNode.className.indexOf("top-row-right")===-1){s.onclick=function(){var i=s.parentNode.querySelector(".search-input");if(!i)return;var v=i.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}};var x=s.parentNode.querySelector(".search-input");x.onkeydown=function(e){if(e.key==="Enter"){var v=x.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}}};}</script>
+
+
+
+
+
+
+
+</body>
+
+</html>
+

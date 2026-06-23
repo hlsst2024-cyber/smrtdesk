@@ -42,7 +42,20 @@
     <div class="top-row-right">
       <input type="text" class="search-input" placeholder="What are you looking for today?" aria-label="Search">
       <button class="btn-search">SEARCH</button>
+      <button class="hamburger-menu" aria-label="Toggle navigation menu" onclick="document.getElementById('mobileNav').classList.toggle('active');this.classList.toggle('open');">&#9776;</button>
     </div>
+  </div>
+</div>
+<!-- Mobile navigation overlay -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-inner">
+    <a href="/">Home</a>
+    <a href="category-storage-cabinet.html">Storage Cabinet</a>
+    <a href="category-office-furniture.html">Office Furniture</a>
+    <a href="category-bunk-bed.html">Bunk Bed</a>
+    <a href="category-kitchen.html">Kitchen</a>
+    <a href="category-electronics.html">Electronics</a>
+    <a href="category-gifts.html" class="nav-gold">Gifts</a>
   </div>
 </div>
 <nav class="nav-bar">
