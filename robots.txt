@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /page-privacy-policy.html
+Disallow: /page-terms.html
+Sitemap: https://smrtdesk.xyz/sitemap.xml

@@ -1,0 +1,57 @@
+# 部署脚本（仅本地使用，不上传）
+deploy.py
+deploy2.py
+deploy_async.py
+deploy_paramiko.py
+deploy_retry.py
+deploy_tcp.py
+deploy_v3.py
+deploy.sh
+dl_cloudflared.py
+hostinger_api.py
+hostinger_api2.py
+hostinger_api3.py
+mcp_vps.py
+serve_local.py
+upload_chunks.py
+upload_http.py
+upload_http2.py
+upload_single.py
+
+# PowerShell 脚本
+*.ps1
+
+# 大文件
+smrtdesk-deploy.zip
+
+# 备份目录
+backups/
+product_images/
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyc.bak
+
+# 测试/临时文件
+test-ssh.ps1
+test.txt
+_compliance_audit_report.txt
+
+# MCP 日志
+mcp_stderr.txt
+mcp_stdin.txt
+mcp_stdout.txt
+
+# Markdown 计划文件（本地参考）
+SEO_PLAN.md
+GA_DEPLOY_STATUS.md
+xiaohongshu-ai.md
+xiaohongshu-content.md
+
+# 部署指南（本地参考）
+GITHUB_DEPLOY.md
+
+# 系统文件
+.DS_Store
+Thumbs.db
