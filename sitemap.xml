@@ -74,13 +74,7 @@
     <loc>https://smrtdesk.xyz/category-audio-headphones.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://smrtdesk.xyz/category-bbq-grilling-tools.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
+  </url><url>
     <loc>https://smrtdesk.xyz/category-bunk-bed.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -89,48 +83,19 @@
     <loc>https://smrtdesk.xyz/category-cabinet-organizer.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://smrtdesk.xyz/category-cameras.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
+  </url><url>
     <loc>https://smrtdesk.xyz/category-camping-outdoors.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://smrtdesk.xyz/category-car-electronics.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
+  </url><url>
     <loc>https://smrtdesk.xyz/category-cell-phones.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://smrtdesk.xyz/category-coffee-tea-espresso.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://smrtdesk.xyz/category-computer-accessories.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
+  </url><url>
     <loc>https://smrtdesk.xyz/category-computers-tablets.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://smrtdesk.xyz/category-cookware-bakeware.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
+  </url><url>
     <loc>https://smrtdesk.xyz/category-deals.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -164,13 +129,7 @@
     <loc>https://smrtdesk.xyz/category-garage-cabinets.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://smrtdesk.xyz/category-gifts.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
+  </url><url>
     <loc>https://smrtdesk.xyz/category-heavy-duty-bunk.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -181,12 +140,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://smrtdesk.xyz/category-kitchen.html</loc>
+    <loc>https://smrtdesk.xyz/category-kitchen-storage-organizer.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://smrtdesk.xyz/category-kitchen-storage-organization.html</loc>
+    <loc>https://smrtdesk.xyz/category-food-storage-container.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -196,6 +155,15 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://smrtdesk.xyz/category-countertop-storage-rack.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smrtdesk.xyz/category-bbq-grilling-tools.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url><url>
     <loc>https://smrtdesk.xyz/category-laptop-accessories.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -209,13 +177,7 @@
     <loc>https://smrtdesk.xyz/category-monitor-and-monitor-mount.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://smrtdesk.xyz/category-monitor-stand.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
+  </url><url>
     <loc>https://smrtdesk.xyz/category-office-chair.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -239,13 +201,7 @@
     <loc>https://smrtdesk.xyz/category-portable-devices.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://smrtdesk.xyz/category-small-appliances.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
+  </url><url>
     <loc>https://smrtdesk.xyz/category-smart-home.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -274,13 +230,7 @@
     <loc>https://smrtdesk.xyz/category-storage-shelves.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://smrtdesk.xyz/category-trending.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
+  </url><url>
     <loc>https://smrtdesk.xyz/category-twin-over-full.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -294,13 +244,7 @@
     <loc>https://smrtdesk.xyz/category-vertical-file-cabinet.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://smrtdesk.xyz/category-wearable-tech.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
+  </url><url>
     <loc>https://smrtdesk.xyz/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -359,13 +303,7 @@
     <loc>https://smrtdesk.xyz/product-5-pcs-large-fruit-containers-for-fridge-leakproof-with-removable-colander.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://smrtdesk.xyz/product-adorneve-bunk-bed-twin-over-twin-with-2-person-desk-led-lights-4-drawers.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
+  </url><url>
     <loc>https://smrtdesk.xyz/product-ailun-3-pack-screen-protector-for-iphone-17-pro-max-69-inch-with-installation-fr.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -444,18 +382,7 @@
     <loc>https://smrtdesk.xyz/product-bonnlo-heavy-duty-bunk-bed-twin-over-twin-for-kids-teens-adults-1000-lbs-capacit.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://smrtdesk.xyz/product-branch-duo-standing-desk.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://smrtdesk.xyz/product-branch-ergonomic-chair-pro.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
+  </url><url>
     <loc>https://smrtdesk.xyz/product-brightech-ambience-pro-solar-string-lights-48ft-waterproof.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -564,33 +491,11 @@
     <loc>https://smrtdesk.xyz/product-elegear-cumbrex-4-thick-self-inflating-sleeping-pad.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://smrtdesk.xyz/product-ergear-dual-monitor-stand-heavy-duty.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://smrtdesk.xyz/product-ergear-height-adjustable-electric-standing-desk-48x24.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
+  </url><url>
     <loc>https://smrtdesk.xyz/product-ergear-single-monitor-arm-fully-adjustable-for-13-34-inch-screens.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://smrtdesk.xyz/product-ergotron-lx-single-monitor-arm.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://smrtdesk.xyz/product-eureka-ark-es-executive-standing-desk.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
+  </url><url>
     <loc>https://smrtdesk.xyz/product-fezibo-standing-desk-48x24-electric-adjustable.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -659,13 +564,7 @@
     <loc>https://smrtdesk.xyz/product-hon-2-drawer-vertical-file-cabinet-letter-size-locking-putty.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://smrtdesk.xyz/product-huanuo-flowlift-dual-monitor-stand.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
+  </url><url>
     <loc>https://smrtdesk.xyz/product-huanuo-flowlift-pro-monitor-arm-for-13-32-screens-mechaspring.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -754,13 +653,7 @@
     <loc>https://smrtdesk.xyz/product-newage-products-bold-3-piece-garage-cabinet-set-satin-gray.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://smrtdesk.xyz/product-opnice-desk-organizers-and-accessories-dual-monitor-stand-riser-with-drawer-and-.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
+  </url><url>
     <loc>https://smrtdesk.xyz/product-paper-towel-holder-black-premium-stainless-steel-kitchen-roll-dispenser-countert.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -824,13 +717,7 @@
     <loc>https://smrtdesk.xyz/product-simple-houseware-4-tier-heavy-duty-garage-shelving-unit.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://smrtdesk.xyz/product-simple-houseware-desk-dual-monitor-stand-riser-with-drawer-rustic-brown.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
+  </url><url>
     <loc>https://smrtdesk.xyz/product-single-lcd-computer-monitor-free-standing-desk-stand-mount-riser-for-13-32-inch-.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -949,13 +836,7 @@
     <loc>https://smrtdesk.xyz/product-vtoy-portable-camping-chair-with-canopy-sun-shade.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://smrtdesk.xyz/product-wali-computer-monitor-stand-for-desk-adjustable-laptop-riser-with-underneath-sto.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
+  </url><url>
     <loc>https://smrtdesk.xyz/product-wali-single-monitor-mount-for-13-34-inch-screens-adjustable-arm-gsmp001n.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -990,11 +871,10 @@
     <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smrtdesk.xyz/index.html</loc>
+  </url>  <url>
+    <loc>https://smrtdesk.xyz/category-trending.html</loc>
     <lastmod>2026-06-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

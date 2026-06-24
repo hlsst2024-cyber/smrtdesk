@@ -2,8 +2,8 @@
 // SmrtDesk Mailchimp Ajax Subscribe - 部署就绪版
 // ============================================================
 // 使用方法：
-// 1. 大哥在 Mailchimp 注册后获取 u 和 id 参数
-// 2. 填入下面 mcU 和 mcId
+// 1. 大哥在 Mailchimp Subscribe to get u 和 id 参数
+// 2. Fill in below mcU 和 mcId
 // 3. 运行批量替换脚本 replace-subscribe.ps1 部署到所有页面
 // ============================================================
 
@@ -16,7 +16,7 @@ var dc = mcU.length > 3 ? mcU.charAt(3) : '1';
 var mcURL = 'https://smrtdesk.us' + dc + '.list-manage.com/subscribe/post-json?u='
   + encodeURIComponent(mcU) + '&id=' + encodeURIComponent(mcId) + '&c=?';
 
-// Footer subscribe - Mailchimp 真实版
+// Footer subscribe - Mailchimp the real
 (function(){
   var subBtn = document.querySelector('.footer-subscribe-text');
   var emailInput = document.querySelector('.footer-input');
