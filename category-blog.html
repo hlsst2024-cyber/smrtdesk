@@ -91,6 +91,17 @@
   flex-direction: column;
   justify-content: space-between;
 }
+.section-heading {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #091946;
+  margin: 48px 0 0;
+  padding-top: 8px;
+  border-top: 3px solid #DEA148;
+}
+.blog-section:first-child .section-heading {
+  margin-top: 0;
+}
 .blog-card__tag {
   display: inline-block;
   background: #DEA148;
@@ -292,105 +303,182 @@
 
 <!-- Blog Article Grid -->
 <div class="container">
-  <div class="blog-grid">
 
-    <!-- Article 1 -->
-    <article class="blog-card">
-      <div class="blog-card__image">
-        <img src="product_images/B081H3Y5NW.jpg" alt="Office chair review guide" loading="lazy">
-      </div>
-      <div class="blog-card__body">
-        <div>
-          <span class="blog-card__tag">Office Furniture</span>
-          <h2 class="blog-card__title">The Ultimate Guide to Choosing the Perfect Office Chair</h2>
-          <div class="blog-card__meta"><span>June 24, 2026</span> · <span>SmrtDesk Team</span></div>
-          <p class="blog-card__excerpt">Your office chair is the most-used piece of furniture in your home workspace. We break down lumbar support, seat depth, materials, and budget so you can find the perfect fit.</p>
+  <!-- Category: Office Furniture -->
+  <div class="blog-section">
+    <h2 class="section-heading">Office Furniture</h2>
+    <div class="blog-grid">
+      <article class="blog-card">
+        <div class="blog-card__image">
+          <img src="product_images/B081H3Y5NW.jpg" alt="Office chair review guide" loading="lazy">
         </div>
-        <a href="#" class="blog-card__read-more">Read Article <span class="arrow">�?/span></a>
-      </div>
-    </article>
-
-    <!-- Article 2 -->
-    <article class="blog-card">
-      <div class="blog-card__image">
-        <img src="product_images/B0D9XYD75W.jpg" alt="Storage solutions for home office" loading="lazy">
-      </div>
-      <div class="blog-card__body">
-        <div>
-          <span class="blog-card__tag">Storage &amp; Organization</span>
-          <h2 class="blog-card__title">5 Storage Solutions That Will Transform Your Home Office</h2>
-          <div class="blog-card__meta"><span>June 22, 2026</span> · <span>SmrtDesk Team</span></div>
-          <p class="blog-card__excerpt">A cluttered workspace kills productivity. From vertical file cabinets to rolling storage carts, here are five solutions that actually work.</p>
+        <div class="blog-card__body">
+          <div>
+            <span class="blog-card__tag">Office Furniture</span>
+            <h2 class="blog-card__title">The Ultimate Guide to Choosing the Perfect Office Chair</h2>
+            <div class="blog-card__meta"><span>June 24, 2026</span> · <span>SmrtDesk Team</span></div>
+            <p class="blog-card__excerpt">Your office chair is the most-used piece of furniture in your home workspace. We break down lumbar support, seat depth, materials, and budget so you can find the perfect fit.</p>
+          </div>
+          <a href="article-home-office-setup.html" class="blog-card__read-more">Read Article <span class="arrow">→</span></a>
         </div>
-        <a href="#" class="blog-card__read-more">Read Article <span class="arrow">�?/span></a>
-      </div>
-    </article>
-
-    <!-- Article 3 -->
-    <article class="blog-card">
-      <div class="blog-card__image">
-        <img src="product_images/B0DSDXBV89.jpg" alt="Bunk bed vs loft bed comparison" loading="lazy">
-      </div>
-      <div class="blog-card__body">
-        <div>
-          <span class="blog-card__tag">Beds &amp; Bedroom</span>
-          <h2 class="blog-card__title">How to Choose Between a Bunk Bed and a Loft Bed</h2>
-          <div class="blog-card__meta"><span>June 20, 2026</span> · <span>SmrtDesk Team</span></div>
-          <p class="blog-card__excerpt">Space-saving sleep solutions aren't just for kids. We compare bunk beds vs. loft beds for adults, teens, and small apartments.</p>
+      </article>
+      <article class="blog-card">
+        <div class="blog-card__image">
+          <img src="product_images/B0D9XYD75W.jpg" alt="Storage solutions for home office" loading="lazy">
         </div>
-        <a href="#" class="blog-card__read-more">Read Article <span class="arrow">�?/span></a>
-      </div>
-    </article>
-
-    <!-- Article 4 -->
-    <article class="blog-card">
-      <div class="blog-card__image">
-        <img src="product_images/B0B4K1XH8Y.jpg" alt="Affordable kitchen gadgets" loading="lazy">
-      </div>
-      <div class="blog-card__body">
-        <div>
-          <span class="blog-card__tag">Kitchen &amp; Dining</span>
-          <h2 class="blog-card__title">10 Must-Have Kitchen Gadgets Under $30</h2>
-          <div class="blog-card__meta"><span>June 18, 2026</span> · <span>SmrtDesk Team</span></div>
-          <p class="blog-card__excerpt">You don't need to spend a fortune to upgrade your kitchen. These 10 affordable gadgets solve real cooking problems.</p>
+        <div class="blog-card__body">
+          <div>
+            <span class="blog-card__tag">Storage &amp; Organization</span>
+            <h2 class="blog-card__title">5 Storage Solutions That Will Transform Your Home Office</h2>
+            <div class="blog-card__meta"><span>June 22, 2026</span> · <span>SmrtDesk Team</span></div>
+            <p class="blog-card__excerpt">A cluttered workspace kills productivity. From vertical file cabinets to rolling storage carts, here are five solutions that actually work.</p>
+          </div>
+          <a href="article-best-patio-furniture.html" class="blog-card__read-more">Read Article <span class="arrow">→</span></a>
         </div>
-        <a href="#" class="blog-card__read-more">Read Article <span class="arrow">�?/span></a>
-      </div>
-    </article>
-
-    <!-- Article 5 -->
-    <article class="blog-card">
-      <div class="blog-card__image">
-        <img src="product_images/B004J2GUP4.jpg" alt="Family camping gear checklist" loading="lazy">
-      </div>
-      <div class="blog-card__body">
-        <div>
-          <span class="blog-card__tag">Camping &amp; Outdoors</span>
-          <h2 class="blog-card__title">Family Camping 101: What Gear You Actually Need</h2>
-          <div class="blog-card__meta"><span>June 16, 2026</span> · <span>SmrtDesk Team</span></div>
-          <p class="blog-card__excerpt">From tents to coolers to lighting, here's our family-tested camping gear checklist for a stress-free outdoor adventure.</p>
-        </div>
-        <a href="#" class="blog-card__read-more">Read Article <span class="arrow">�?/span></a>
-      </div>
-    </article>
-
-    <!-- Article 6 -->
-    <article class="blog-card">
-      <div class="blog-card__image">
-        <img src="product_images/B0DGXHWWSV.jpg" alt="Smart home devices worth buying" loading="lazy">
-      </div>
-      <div class="blog-card__body">
-        <div>
-          <span class="blog-card__tag">Electronics</span>
-          <h2 class="blog-card__title">Smart Home Devices Worth Your Money in 2026</h2>
-          <div class="blog-card__meta"><span>June 14, 2026</span> · <span>SmrtDesk Team</span></div>
-          <p class="blog-card__excerpt">Not every smart home gadget delivers on its promise. We tested 30+ devices to find the ones that actually make your life easier.</p>
-        </div>
-        <a href="#" class="blog-card__read-more">Read Article <span class="arrow">�?/span></a>
-      </div>
-    </article>
-
+      </article>
+    </div>
   </div>
+
+  <!-- Category: Kitchen & Dining -->
+  <div class="blog-section">
+    <h2 class="section-heading">Kitchen &amp; Dining</h2>
+    <div class="blog-grid">
+      <article class="blog-card">
+        <div class="blog-card__image">
+          <img src="product_images/B0B4K1XH8Y.jpg" alt="Affordable kitchen gadgets" loading="lazy">
+        </div>
+        <div class="blog-card__body">
+          <div>
+            <span class="blog-card__tag">Kitchen &amp; Dining</span>
+            <h2 class="blog-card__title">10 Must-Have Kitchen Gadgets Under $30</h2>
+            <div class="blog-card__meta"><span>June 18, 2026</span> · <span>SmrtDesk Team</span></div>
+            <p class="blog-card__excerpt">You don't need to spend a fortune to upgrade your kitchen. These 10 affordable gadgets solve real cooking problems.</p>
+          </div>
+          <a href="article-dutch-oven-recipes.html" class="blog-card__read-more">Read Article <span class="arrow">→</span></a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-card__image">
+          <img src="product_images/B0DSDXBV89.jpg" alt="Self-watering planters guide" loading="lazy">
+        </div>
+        <div class="blog-card__body">
+          <div>
+            <span class="blog-card__tag">Kitchen &amp; Dining</span>
+            <h2 class="blog-card__title">Best Self-Watering Planters for Your Kitchen Garden</h2>
+            <div class="blog-card__meta"><span>June 12, 2026</span> · <span>SmrtDesk Team</span></div>
+            <p class="blog-card__excerpt">Keep your herbs and plants thriving with self-watering planters. We review the top options for kitchen countertops and windowsills.</p>
+          </div>
+          <a href="article-self-watering-planters.html" class="blog-card__read-more">Read Article <span class="arrow">→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- Category: Camping & Outdoors -->
+  <div class="blog-section">
+    <h2 class="section-heading">Camping &amp; Outdoors</h2>
+    <div class="blog-grid">
+      <article class="blog-card">
+        <div class="blog-card__image">
+          <img src="product_images/B004J2GUP4.jpg" alt="Family camping gear checklist" loading="lazy">
+        </div>
+        <div class="blog-card__body">
+          <div>
+            <span class="blog-card__tag">Camping &amp; Outdoors</span>
+            <h2 class="blog-card__title">Family Camping 101: What Gear You Actually Need</h2>
+            <div class="blog-card__meta"><span>June 16, 2026</span> · <span>SmrtDesk Team</span></div>
+            <p class="blog-card__excerpt">From tents to coolers to lighting, here's our family-tested camping gear checklist for a stress-free outdoor adventure.</p>
+          </div>
+          <a href="article-top-camping-chairs.html" class="blog-card__read-more">Read Article <span class="arrow">→</span></a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-card__image">
+          <img src="product_images/B0D9XYD75W.jpg" alt="Beach canopy guide" loading="lazy">
+        </div>
+        <div class="blog-card__body">
+          <div>
+            <span class="blog-card__tag">Camping &amp; Outdoors</span>
+            <h2 class="blog-card__title">Best Beach Canopies for Shade and Comfort</h2>
+            <div class="blog-card__meta"><span>June 8, 2026</span> · <span>SmrtDesk Team</span></div>
+            <p class="blog-card__excerpt">Don't let the sun ruin your beach day. We tested the best beach canopies for wind resistance, UV protection, and easy setup.</p>
+          </div>
+          <a href="article-beach-canopy-guide.html" class="blog-card__read-more">Read Article <span class="arrow">→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- Category: Electronics -->
+  <div class="blog-section">
+    <h2 class="section-heading">Electronics</h2>
+    <div class="blog-grid">
+      <article class="blog-card">
+        <div class="blog-card__image">
+          <img src="product_images/B0DGXHWWSV.jpg" alt="Smart home devices worth buying" loading="lazy">
+        </div>
+        <div class="blog-card__body">
+          <div>
+            <span class="blog-card__tag">Electronics</span>
+            <h2 class="blog-card__title">Smart Home Devices Worth Your Money in 2026</h2>
+            <div class="blog-card__meta"><span>June 14, 2026</span> · <span>SmrtDesk Team</span></div>
+            <p class="blog-card__excerpt">Not every smart home gadget delivers on its promise. We tested 30+ devices to find the ones that actually make your life easier.</p>
+          </div>
+          <a href="article-bluetooth-speaker-guide.html" class="blog-card__read-more">Read Article <span class="arrow">→</span></a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-card__image">
+          <img src="product_images/B0D9XYD75W.jpg" alt="Noise canceling earbuds review" loading="lazy">
+        </div>
+        <div class="blog-card__body">
+          <div>
+            <span class="blog-card__tag">Electronics</span>
+            <h2 class="blog-card__title">Best Noise-Canceling Earbuds for Work and Travel</h2>
+            <div class="blog-card__meta"><span>June 5, 2026</span> · <span>SmrtDesk Team</span></div>
+            <p class="blog-card__excerpt">Whether you're working from a noisy cafe or commuting, these noise-canceling earbuds deliver premium sound and comfort.</p>
+          </div>
+          <a href="article-noise-canceling-earbuds.html" class="blog-card__read-more">Read Article <span class="arrow">→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- Category: Home & Garden -->
+  <div class="blog-section">
+    <h2 class="section-heading">Home &amp; Garden</h2>
+    <div class="blog-grid">
+      <article class="blog-card">
+        <div class="blog-card__image">
+          <img src="product_images/B0DSDXBV89.jpg" alt="Outdoor string lights guide" loading="lazy">
+        </div>
+        <div class="blog-card__body">
+          <div>
+            <span class="blog-card__tag">Home &amp; Garden</span>
+            <h2 class="blog-card__title">Best Outdoor String Lights for Backyard Ambiance</h2>
+            <div class="blog-card__meta"><span>June 2, 2026</span> · <span>SmrtDesk Team</span></div>
+            <p class="blog-card__excerpt">Create the perfect outdoor atmosphere with weatherproof string lights. We compare brightness, durability, and installation ease.</p>
+          </div>
+          <a href="article-outdoor-string-lights.html" class="blog-card__read-more">Read Article <span class="arrow">→</span></a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-card__image">
+          <img src="product_images/B0B4K1XH8Y.jpg" alt="Grill buying guide" loading="lazy">
+        </div>
+        <div class="blog-card__body">
+          <div>
+            <span class="blog-card__tag">Home &amp; Garden</span>
+            <h2 class="blog-card__title">Complete Grill Buying Guide for Every Budget</h2>
+            <div class="blog-card__meta"><span>May 28, 2026</span> · <span>SmrtDesk Team</span></div>
+            <p class="blog-card__excerpt">Gas, charcoal, or pellet? We break down the pros and cons of each grill type and recommend the best picks under $500.</p>
+          </div>
+          <a href="article-grill-guide.html" class="blog-card__read-more">Read Article <span class="arrow">→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+
 </div>
 
 <footer class="site-footer">
