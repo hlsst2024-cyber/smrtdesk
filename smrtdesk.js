@@ -2157,7 +2157,7 @@ var ARTICLES = [
   var cd = document.querySelector('[data-bind="catDesc"]');
   if (cd) cd.textContent = 'This product is part of our ' + p.categoryName + ' reviews.';
   var cb = document.querySelector('[data-bind="catBtn"]');
-  if (cb) { cb.href = catPage; cb.textContent = 'View All ' + p.categoryName + ' \u2192'; }
+  if (cb) { cb.href = catPage; cb.textContent = 'View All ' + p.categoryName; }
 
   // Structured data (LD+JSON)
   var ldjson = document.getElementById('ldjson');
@@ -2696,7 +2696,7 @@ var CAT_SLUG_ALIAS = {
           '<p class="blog-card__excerpt">' + (a.excerpt || '') + '</p>' +
           '<div class="blog-card__meta">' +
             '<span>' + (a.date || '') + '</span>' +
-            '<a href="article.html?slug=' + a.slug + '" class="blog-card__read-more">Read More &rarr;</a>' +
+            '<a href="article.html?slug=' + a.slug + '" class="blog-card__read-more">Read More </a>' +
           '</div>' +
         '</div>' +
       '</div>';

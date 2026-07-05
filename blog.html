@@ -211,7 +211,7 @@
   <div class="container blog-banner__grid">
     <div>
       <h1 class="blog-banner__title">SmrtDesk <span class="blog-banner__accent">Blog</span></h1>
-      <p class="blog-banner__subtitle">Expert Reviews, Buying Guides &amp; More �?honest, hands-on advice to help you choose better products.</p>
+      <p class="blog-banner__subtitle">Expert Reviews, Buying Guides &amp; More ?honest, hands-on advice to help you choose better products.</p>
     </div>
     <div class="blog-banner__search">
       <input type="text" id="blogSearchInput" class="blog-banner__search-input" placeholder="Search blog articles..." aria-label="Search blog articles">
@@ -234,7 +234,7 @@
       <!-- Empty State -->
       <div class="blog-empty" id="blogEmpty">
         <p>No articles found matching your search or filter.</p>
-        <button class="blog-empty__reset" id="blogEmptyReset">View all articles &rarr;</button>
+        <button class="blog-empty__reset" id="blogEmptyReset">View all articles </button>
       </div>
     </main>
 
@@ -303,7 +303,7 @@
   </div>
   <div class="footer-bottom">
     <span class="footer-copyright">&copy; 2026 <strong>SmrtDesk</strong>. All rights reserved.</span>
-    <span class="affiliate-disclosure">SmrtDesk is reader-supported. As an Amazon Associate, we earn from qualifying purchases. <a href="page-about.html">Learn more &rarr;</a></span>
+    <span class="affiliate-disclosure">SmrtDesk is reader-supported. As an Amazon Associate, we earn from qualifying purchases. <a href="page-about.html">Learn more </a></span>
   </div>
 </footer>
 
@@ -403,7 +403,7 @@
         currentPage = 1;
         renderFilterBar();
         filterAndRender();
-        // 不跳�?
+        // 不跳?
       });
     });
   }
@@ -460,7 +460,7 @@
       html += '<h3 class="article-card__title">' + a.title + '</h3>';
       html += '<div class="article-card__meta"><span>' + a.date + '</span> <span class="article-card__meta-sep">&middot;</span> <span>SmrtDesk Team</span></div>';
       html += '<p class="article-card__excerpt">' + a.excerpt + '</p>';
-      html += '<a href="article.html?slug=' + encodeURIComponent(a.slug) + '" class="article-card__cta">Read More &rarr;</a>';
+      html += '<a href="article.html?slug=' + encodeURIComponent(a.slug) + '" class="article-card__cta">Read More </a>';
       html += '</div>';
       html += '</article>';
     });
@@ -485,7 +485,7 @@
     }
 
     // Next button
-    html += '<button class="blog-page-btn' + (currentPage === totalPages ? ' disabled' : '') + '" data-page="' + (currentPage + 1) + '" ' + (currentPage === totalPages ? 'disabled' : '') + '>Next &rarr;</button>';
+    html += '<button class="blog-page-btn' + (currentPage === totalPages ? ' disabled' : '') + '" data-page="' + (currentPage + 1) + '" ' + (currentPage === totalPages ? 'disabled' : '') + '>Next </button>';
 
     pagination.innerHTML = html;
 
