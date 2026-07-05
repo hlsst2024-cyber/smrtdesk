@@ -83,7 +83,7 @@ try:
             f'cp -r /root/smrtdesk/extracted/* /root/smrtdesk/ 2>&1 && '
             f'echo COPY_OK && '
             f'# Copy to nginx document root (actual serving location) && '
-            f'cp -r /root/smrtdesk/extracted/*.html /root/smrtdesk/extracted/main.css /var/www/smrtdesk/ 2>&1 && '
+            f'cp -r /root/smrtdesk/extracted/* /var/www/smrtdesk/ 2>&1 && '
             f'echo WWW_COPY_OK && '
             f'nginx -t 2>&1 && '
             f'nginx -s reload 2>&1 && '

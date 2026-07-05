@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmrtDesk Blog - Expert Reviews &amp; Buying Guides</title>
+<meta name="description" content="Expert product reviews, buying guides, and comparison articles to help you make smarter purchases. Camping, electronics, home office, and more.">
+<link rel="stylesheet" href="main.css?v=31">
+<style>
+/* Uniform card sizes */
+.blog-articles--fixed .article-card {
+  min-height: 280px;
+}
+.blog-articles--fixed .article-card__image {
+  flex: 0 0 380px;
+  max-width: 380px;
+  min-height: 280px;
+}
+.blog-articles--fixed .article-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.blog-articles--fixed .article-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 28px 36px;
+  gap: 8px;
+}
+.blog-articles--fixed .article-card__excerpt {
+  flex: 1;
+}
+
+/* Pagination */
+.blog-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 32px;
+  padding: 16px 0;
+  flex-wrap: wrap;
+}
+.blog-page-btn {
+  padding: 8px 16px;
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  color: var(--text-body);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font);
+  user-select: none;
+}
+.blog-page-btn:hover:not(.disabled):not(.active) {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+.blog-page-btn.active {
+  background: var(--orange);
+  color: #fff;
+  border-color: var(--orange);
+}
+.blog-page-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.blog-page-num {
+  min-width: 40px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .blog-articles--fixed .article-card {
+    flex-direction: column;
+  }
+  .blog-articles--fixed .article-card--reverse {
+    flex-direction: column;
+  }
+  .blog-articles--fixed .article-card__image {
+    flex: 0 0 200px;
+    max-width: 100%;
+    min-height: 200px;
+  }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "SmrtDesk Blog",
+  "description": "Expert Reviews, Buying Guides & More",
+  "url": "https://smrtdesk.xyz/blog.html"
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ0GPH0Z15"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-NQ0GPH0Z15');
+</script>
+<meta name="google-site-verification" content="Bxzbnrpb6heWVhL6yBCQGT00E4vAVT2LL9tl0RJiTyk" />
+<link rel="canonical" href="https://smrtdesk.xyz/blog.html" />
+<link rel="alternate" type="application/rss+xml" title="SmrtDesk RSS Feed" href="/rss.xml" />
+<meta property="og:title" content="SmrtDesk Blog - Expert Reviews &amp; Buying Guides" />
+<meta property="og:description" content="Expert product reviews, buying guides, and comparison articles to help you make smarter purchases." />
+<meta property="og:url" content="https://smrtdesk.xyz/blog.html" />
+<meta property="og:type" content="website" />
+</head>
+<body>
+
+<!-- TOP ROW -->
+<div class="top-row">
+  <div class="top-row-inner">
+    <a href="/" class="header-logo"><span class="logo-smrt">SMRT</span><span class="logo-desk">DESK</span></a>
+    <div class="top-row-right">
+      <input type="text" class="search-input" placeholder="What are you looking for today?" aria-label="Search">
+      <button class="btn-search">SEARCH</button>
+      <button class="hamburger-menu" aria-label="Toggle navigation menu" onclick="document.getElementById('mobileNav').classList.toggle('active');this.classList.toggle('open');">&#9776;</button>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-inner">
+    <a href="/">Home</a>
+    <a href="category.html?slug=office-furniture">Office Furniture</a>
+    <a href="category.html?slug=beds">Beds</a>
+    <a href="category.html?slug=kitchen-dining">Kitchen &amp; Dining</a>
+    <a href="category.html?slug=camping">Camping</a>
+    <a href="category.html?slug=electronics">Electronics</a>
+    <a href="blog.html">Blog</a>
+  </div>
+</div>
+
+<!-- Nav Bar -->
+<nav class="nav-bar">
+  <div class="nav-bar-inner">
+    <a href="/" class="nav-link">Home</a>
+    <div class="nav-link has-dropdown">
+      <a href="category.html?slug=office-furniture">Office Furniture</a>
+      <div class="nav-dropdown">
+        <a href="category.html?slug=standing-desk">Office Desks</a>
+        <a href="category.html?slug=office-chair">Office Chairs</a>
+        <a href="category.html?slug=storage-cabinet">Storage Cabinets</a>
+        <a href="category.html?slug=storage-shelves">Storage Shelves &amp; Bookcases</a>
+        <a href="category.html?slug=executive-desk">Conference &amp; Reception</a>
+      </div>
+    </div>
+    <div class="nav-link has-dropdown">
+      <a href="category.html?slug=beds">Beds</a>
+      <div class="nav-dropdown">
+        <a href="category.html?slug=twin-over-twin">Single Beds</a>
+        <a href="category.html?slug=bunk-bed">Bunk Beds</a>
+        <a href="category.html?slug=loft-bed">Loft Beds</a>
+        <a href="category.html?slug=heavy-duty-bunk">Storage Metal Bed Frames</a>
+      </div>
+    </div>
+    <div class="nav-link has-dropdown">
+      <a href="category.html?slug=kitchen-dining">Kitchen &amp; Dining</a>
+      <div class="nav-dropdown">
+        <a href="category.html?slug=kitchen-storage-organizer">Kitchen Storage Furniture</a>
+        <a href="category.html?slug=food-storage-container">Food Storage Container</a>
+        <a href="category.html?slug=kitchen-utensils-gadgets">Kitchen Organizer</a>
+        <a href="category.html?slug=countertop-storage-rack">Small Accessories</a>
+        <a href="category.html?slug=bbq-grilling-tools">Cookware &amp; Grilling</a>
+      </div>
+    </div>
+    <div class="nav-link has-dropdown">
+      <a href="category.html?slug=camping">Camping</a>
+      <div class="nav-dropdown">
+        <a href="category.html?slug=camping-outdoors">Tents &amp; Shelters</a>
+        <a href="category.html?slug=sleeping-gear">Sleeping Gear</a>
+        <a href="category.html?slug=camp-furniture">Camp Furniture</a>
+        <a href="category.html?slug=camp-cooking">Camp Cooking</a>
+        <a href="category.html?slug=camping-lighting">Camping Lighting</a>
+        <a href="category.html?slug=safety-tools">Safety &amp; Tools</a>
+        <a href="category.html?slug=camping-accessories">Camping Accessories</a>
+      </div>
+    </div>
+    <div class="nav-link has-dropdown">
+      <a href="category.html?slug=electronics">Electronics</a>
+      <div class="nav-dropdown">
+        <a href="category.html?slug=cell-phones">Cell Phones &amp; Accessories</a>
+        <a href="category.html?slug=computers-tablets">Computers &amp; Tablets</a>
+        <a href="category.html?slug=audio-headphones">Audio &amp; Headphones</a>
+        <a href="category.html?slug=cameras">Cameras</a>
+        <a href="category.html?slug=wearable-tech">Wearable Tech</a>
+        <a href="category.html?slug=car-electronics">Car Electronics</a>
+        <a href="category.html?slug=office-electronics">Office Electronics</a>
+        <a href="category.html?slug=monitor-stand">Monitor Stand</a>
+        <a href="category.html?slug=smart-home">Smart Home</a>
+        <a href="category.html?slug=gaming">Gaming</a>
+        <a href="category.html?slug=portable-devices">Portable Devices</a>
+      </div>
+    </div>
+    <a href="blog.html" class="nav-link active">Blog</a>
+  </div>
+</nav>
+
+<!-- BLOG BANNER -->
+<section class="blog-banner">
+  <div class="container blog-banner__grid">
+    <div>
+      <h1 class="blog-banner__title">SmrtDesk <span class="blog-banner__accent">Blog</span></h1>
+      <p class="blog-banner__subtitle">Expert Reviews, Buying Guides &amp; More ‚Ä?honest, hands-on advice to help you choose better products.</p>
+    </div>
+    <div class="blog-banner__search">
+      <input type="text" id="blogSearchInput" class="blog-banner__search-input" placeholder="Search blog articles..." aria-label="Search blog articles">
+      <button id="blogSearchBtn" class="blog-banner__search-btn">Search</button>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG CONTENT -->
+<div class="container">
+  <div class="blog-layout">
+    <!-- MAIN: Article List -->
+    <main class="blog-main" id="blogMain">
+      <!-- Category Filter Pills -->
+      <div class="blog-filter-bar" id="blogFilterBar"></div>
+      <!-- Article Cards -->
+      <div class="blog-articles blog-articles--fixed" id="blogArticles"></div>
+      <!-- Pagination -->
+      <nav class="blog-pagination" id="blogPagination"></nav>
+      <!-- Empty State -->
+      <div class="blog-empty" id="blogEmpty">
+        <p>No articles found matching your search or filter.</p>
+        <button class="blog-empty__reset" id="blogEmptyReset">View all articles &rarr;</button>
+      </div>
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="blog-sidebar" id="blogSidebar">
+      <div class="blog-sidebar-widget">
+        <h3 class="blog-sidebar-widget__title">About SmrtDesk</h3>
+        <p>We research and recommend the best home &amp; office products. Our team tests hundreds of products each year to help you make smarter buying decisions.</p>
+      </div>
+      <div class="blog-sidebar-widget" id="blogCategoryWidget">
+        <h3 class="blog-sidebar-widget__title">Categories</h3>
+        <ul class="blog-sidebar-list" id="blogCategoryList"></ul>
+      </div>
+      <div class="blog-sidebar-widget" id="blogHotWidget">
+        <h3 class="blog-sidebar-widget__title">Popular Articles</h3>
+        <ul class="blog-sidebar-list" id="blogHotList"></ul>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-title">About SmrtDesk</div>
+      <p class="footer-sub-text">
+        We research and recommend the best home &amp; office products.
+        <a href="page-about.html" class="footer-link">Read our story</a>
+      </p>
+      <div class="footer-form">
+        <input type="email" class="footer-input" placeholder="Your email address">
+        <a href="#" class="footer-subscribe-text" style="background:#4159bb;border-radius:99px;padding:10px;text-align:center;display:block">&#10095; Subscribe for deals</a>
+      </div>
+      <div class="footer-google">
+        <span class="gg-icon">G</span>
+        <span>Trusted by 50,000+ readers monthly. <a href="blog.html" class="footer-link">See all reviews</a></span>
+      </div>
+      <div class="footer-social">
+        <a href="#" class="social-icon" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" class="social-icon" aria-label="Twitter"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M4 4l6 8-6 8h1.5l5.5-7 5.5 7H22l-6-8 6-8h-1.5L15 11.5 9.5 4H4z"/></svg></a>
+        <a href="#" class="social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2"/></svg></a>
+        <a href="#" class="social-icon" aria-label="Pinterest"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.237 2.636 7.855 6.356 9.312-.087-.791-.166-2.005.035-2.869.182-.78 1.172-4.97 1.172-4.97s-.299-.599-.299-1.484c0-1.39.806-2.428 1.81-2.428.852 0 1.264.64 1.264 1.408 0 .857-.546 2.139-.828 3.328-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.394-1.72-4.068-4.177-4.068-2.845 0-4.515 2.135-4.515 4.34 0 .859.331 1.781.744 2.282a.3.3 0 0 1 .069.288l-.278 1.133c-.044.183-.145.223-.335.134-1.249-.582-2.03-2.408-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.78 0 3.448-2.173 6.224-5.19 6.224-1.013 0-1.965-.527-2.292-1.15l-.624 2.378c-.226.87-.835 1.958-1.244 2.622.935.29 1.93.446 2.96.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-title">Top Categories</div>
+      <ul class="footer-nav">
+        <li><a href="category.html?slug=office-furniture">Office Furniture</a></li>
+        <li><a href="category.html?slug=beds">Beds</a></li>
+        <li><a href="category.html?slug=kitchen-dining">Kitchen &amp; Dining</a></li>
+        <li><a href="category.html?slug=camping">Camping Products</a></li>
+        <li><a href="category.html?slug=electronics">Electronics</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-title">Quick Links</div>
+      <ul class="footer-nav">
+        <li><a href="page-about.html">About Us</a></li>
+        <li><a href="page-contact.html">Contact</a></li>
+        <li><a href="page-privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="page-terms.html">Terms of Service</a></li>
+        <li><a href="page-about.html">Affiliate Disclosure</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copyright">&copy; 2026 <strong>SmrtDesk</strong>. All rights reserved.</span>
+    <span class="affiliate-disclosure">SmrtDesk is reader-supported. As an Amazon Associate, we earn from qualifying purchases. <a href="page-about.html">Learn more &rarr;</a></span>
+  </div>
+</footer>
+
+<script src="smrtdesk.js"></script>
+<script>
+/* Search handler for blog page */
+(function(){
+  var z=document.querySelectorAll(".top-row-right .btn-search");
+  for(var i=0;i<z.length;i++){(function(b){
+    var inp=b.parentNode.querySelector(".search-input");
+    if(!inp)return;
+    b.onclick=function(){var v=inp.value.trim();if(v)window.location="/search.html?s="+encodeURIComponent(v)};
+    inp.onkeydown=function(e){if(e.key==="Enter"){var v=inp.value.trim();if(v)window.location="/search.html?s="+encodeURIComponent(v)}}
+  })(z[i])}
+})();
+
+/* Blog page - dynamic article rendering */
+(function(){
+  if (typeof ARTICLES === 'undefined') return;
+
+  // Map article categoryNames to 5 main categories
+  var MAIN_CATS = ['Camping', 'Kitchen & Dining', 'Electronics', 'Office Furniture', 'Beds'];
+  function mapToMainCat(categoryName){
+    if (!categoryName) return categoryName;
+    // Direct match
+    if (MAIN_CATS.indexOf(categoryName) !== -1) return categoryName;
+    // Camping family
+    if (['Camping & Outdoors','Camping Lighting','Camp Furniture','Camp Cooking','Sleeping Gear'].indexOf(categoryName) !== -1) return 'Camping';
+    // Kitchen & Dining family
+    if (['Food Storage Container','Kitchen Storage Furniture','Kitchen Organizer','Countertop Storage Rack','Small Accessories'].indexOf(categoryName) !== -1) return 'Kitchen & Dining';
+    // Electronics family
+    if (['Phone Accessories','Monitor Stand','Laptop Accessories','Smart Home Gadgets','Electronics & Tech'].indexOf(categoryName) !== -1) return 'Electronics';
+    // Office Furniture family
+    if (['Standing Desk','Office Desks','Office Chair','Storage Shelves','Filing Cabinet','Vertical File Cabinet','Steel Lockers','Garage Cabinets'].indexOf(categoryName) !== -1) return 'Office Furniture';
+    // Beds family
+    if (['Bunk Bed','Heavy Duty Bunk','Loft Bed'].indexOf(categoryName) !== -1) return 'Beds';
+    // Fallback
+    if (categoryName === 'Home & Garden') return 'Office Furniture';
+    return categoryName;
+  }
+
+  var articles = ARTICLES;
+  var activeCategory = null;
+  var searchQuery = '';
+  var currentPage = 1;
+  var pageSize = 2;
+
+  // Build category map using mapped main categories
+  var MAIN_CATEGORIES = ['Camping','Kitchen & Dining','Electronics','Office Furniture','Beds'];
+  var catMap = {};
+  MAIN_CATEGORIES.forEach(function(c){ catMap[c] = { count: 0 }; });
+  articles.forEach(function(a){
+    var mc = mapToMainCat(a.categoryName);
+    catMap[mc].count++;
+  });
+
+  function renderFilterBar(){
+    var bar = document.getElementById('blogFilterBar');
+    if (!bar) return;
+    var html = '<button class="blog-filter-pill' + (activeCategory === null ? ' active' : '') + '" data-cat="">All</button>';
+    MAIN_CATS.forEach(function(cat){
+      html += '<button class="blog-filter-pill' + (activeCategory === cat ? ' active' : '') + '" data-cat="' + cat.replace(/"/g,'&quot;') + '">' + cat + '</button>';
+    });
+    bar.innerHTML = html;
+    bar.querySelectorAll('.blog-filter-pill').forEach(function(pill){
+      pill.addEventListener('click', function(){
+        activeCategory = this.getAttribute('data-cat') || null;
+        if (activeCategory === '') activeCategory = null;
+        currentPage = 1;
+        renderFilterBar();
+        filterAndRender();
+      });
+    });
+  }
+
+  var CATEGORY_SLUG_MAP = {
+    'Camping': 'camping',
+    'Electronics': 'electronics',
+    'Kitchen & Dining': 'kitchen-dining',
+    'Office Furniture': 'office-furniture',
+    'Beds': 'beds'
+  };
+
+  function renderSidebarCategories(){
+    var list = document.getElementById('blogCategoryList');
+    if (!list) return;
+    var html = '';
+    MAIN_CATS.forEach(function(cat){
+      var slug = CATEGORY_SLUG_MAP[cat] || '';
+      html += '<li><a href="category.html?slug=' + slug + '">' + cat + '<span class="blog-sidebar-count">' + (catMap[cat] ? catMap[cat].count : 0) + '</span></a></li>';
+    });
+    list.innerHTML = html;
+    list.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        activeCategory = this.textContent.replace(/\d+$/,'').trim();
+        currentPage = 1;
+        renderFilterBar();
+        filterAndRender();
+        // ‰∏çË∑≥ËΩ?
+      });
+    });
+  }
+
+  function renderHotArticles(){
+    var list = document.getElementById('blogHotList');
+    if (!list) return;
+    var hot = articles.slice(0, 5);
+    var html = '';
+    hot.forEach(function(a){
+      html += '<li><a href="article.html?slug=' + encodeURIComponent(a.slug) + '">' + a.title + '</a></li>';
+    });
+    list.innerHTML = html;
+  }
+
+  function filterAndRender(){
+    var query = document.getElementById('blogSearchInput');
+    searchQuery = query ? query.value.trim().toLowerCase() : '';
+
+    var filtered = articles.filter(function(a){
+      if (activeCategory && mapToMainCat(a.categoryName) !== activeCategory) return false;
+      if (searchQuery && a.title.toLowerCase().indexOf(searchQuery) === -1 && a.excerpt.toLowerCase().indexOf(searchQuery) === -1) return false;
+      return true;
+    });
+
+    var container = document.getElementById('blogArticles');
+    var empty = document.getElementById('blogEmpty');
+    var pagination = document.getElementById('blogPagination');
+    if (!container) return;
+
+    if (filtered.length === 0) {
+      container.innerHTML = '';
+      if (pagination) pagination.innerHTML = '';
+      empty.style.display = 'block';
+      return;
+    }
+
+    empty.style.display = 'none';
+
+    // Pagination
+    var totalPages = Math.ceil(filtered.length / pageSize);
+    if (currentPage > totalPages) currentPage = 1;
+    var startIdx = (currentPage - 1) * pageSize;
+    var pageItems = filtered.slice(startIdx, startIdx + pageSize);
+
+    var html = '';
+    pageItems.forEach(function(a, idx){
+      var isReverse = (idx % 2 === 1);
+      var cls = isReverse ? 'article-card article-card--reverse' : 'article-card';
+      html += '<article class="' + cls + '">';
+      html += '<div class="article-card__image"><img src="' + a.image + '" alt="' + a.title.replace(/"/g,'&quot;') + '" loading="lazy"></div>';
+      html += '<div class="article-card__body">';
+      html += '<span class="article-card__tag">' + mapToMainCat(a.categoryName) + '</span>';
+      html += '<h3 class="article-card__title">' + a.title + '</h3>';
+      html += '<div class="article-card__meta"><span>' + a.date + '</span> <span class="article-card__meta-sep">&middot;</span> <span>SmrtDesk Team</span></div>';
+      html += '<p class="article-card__excerpt">' + a.excerpt + '</p>';
+      html += '<a href="article.html?slug=' + encodeURIComponent(a.slug) + '" class="article-card__cta">Read More &rarr;</a>';
+      html += '</div>';
+      html += '</article>';
+    });
+    container.innerHTML = html;
+
+    // Render pagination
+    renderPagination(totalPages);
+  }
+
+  function renderPagination(totalPages){
+    var pagination = document.getElementById('blogPagination');
+    if (!pagination) return;
+    if (totalPages <= 1) { pagination.innerHTML = ''; return; }
+
+    var html = '';
+    // Prev button
+    html += '<button class="blog-page-btn' + (currentPage === 1 ? ' disabled' : '') + '" data-page="' + (currentPage - 1) + '" ' + (currentPage === 1 ? 'disabled' : '') + '>&larr; Prev</button>';
+
+    // Page numbers
+    for (var i = 1; i <= totalPages; i++) {
+      html += '<button class="blog-page-btn blog-page-num' + (i === currentPage ? ' active' : '') + '" data-page="' + i + '">' + i + '</button>';
+    }
+
+    // Next button
+    html += '<button class="blog-page-btn' + (currentPage === totalPages ? ' disabled' : '') + '" data-page="' + (currentPage + 1) + '" ' + (currentPage === totalPages ? 'disabled' : '') + '>Next &rarr;</button>';
+
+    pagination.innerHTML = html;
+
+    pagination.querySelectorAll('.blog-page-btn:not(.disabled)').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var p = parseInt(this.getAttribute('data-page'));
+        if (p >= 1 && p <= totalPages) {
+          currentPage = p;
+          filterAndRender();
+        }
+      });
+    });
+  }
+
+  // Bind search
+  var searchInput = document.getElementById('blogSearchInput');
+  var searchBtn = document.getElementById('blogSearchBtn');
+  if (searchBtn && searchInput) {
+    searchBtn.addEventListener('click', function(){
+      searchQuery = searchInput.value.trim().toLowerCase();
+      currentPage = 1;
+      filterAndRender();
+    });
+    searchInput.addEventListener('keydown', function(e){
+      if (e.key === 'Enter') {
+        searchQuery = searchInput.value.trim().toLowerCase();
+        currentPage = 1;
+        filterAndRender();
+      }
+    });
+    // Live search on input
+    searchInput.addEventListener('input', function(){
+      searchQuery = searchInput.value.trim().toLowerCase();
+      currentPage = 1;
+      filterAndRender();
+    });
+  }
+
+  // Reset button
+  var resetBtn = document.getElementById('blogEmptyReset');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function(){
+      activeCategory = null;
+      currentPage = 1;
+      var si = document.getElementById('blogSearchInput');
+      if (si) si.value = '';
+      searchQuery = '';
+      renderFilterBar();
+      filterAndRender();
+    });
+  }
+
+  // Init
+  renderFilterBar();
+  renderSidebarCategories();
+  renderHotArticles();
+  filterAndRender();
+})();
+</script>
+
+</body>
+</html>
