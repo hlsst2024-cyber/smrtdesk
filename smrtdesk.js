@@ -2291,11 +2291,20 @@ var CAT_SLUG_ALIAS = {
     topPickEl.style.display = "none";
   }
 
-  // Subcategory tags hidden on main categories; only show for subcategory pages
+  // Subcategory filter pills: show on main category (mobile), hide on subcategory pages
   var subcatRow = document.querySelector('[data-bind="subcatRow"]');
   if (subcatRow) {
     if (!isSubcategory && cat.subcategories) {
-      subcatRow.style.display = "none";
+      // Mobile: show subcategory filter buttons
+      subcatRow.style.display = "block";
+      subcatRow.innerHTML = "";
+      cat.subcategories.forEach(function(sc){
+        var pill = document.createElement("a");
+        pill.href = "category.html?slug=" + sc.slug;
+        pill.className = "blog-filter-pill";
+        pill.textContent = sc.name;
+        subcatRow.appendChild(pill);
+      });
     } else if (isSubcategory) {
       subcatRow.style.display = "none";
     }
