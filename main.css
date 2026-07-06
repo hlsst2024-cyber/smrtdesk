@@ -1,5 +1,5 @@
 /* SmrtDesk.xyz - Refined Orange & Navy Design */
-/* Last modified: 2026-07-06 19:04 — Blog图片加链接 + 手机端产品卡片统一1:1比例 */
+/* Last modified: 2026-07-06 19:16 — 手机端产品卡片统一1:1.4比例 + object-fit:cover */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
@@ -2519,6 +2519,7 @@ p,.text-body{font-size:15px;line-height:1.6;color:#333}
   .product-card .card-img-square {
     aspect-ratio: 1/1;
     height: auto;
+    object-fit: cover;
   }
   .product-card .card-body {
     padding: 8px 10px;
@@ -2710,10 +2711,11 @@ p,.text-body{font-size:15px;line-height:1.6;color:#333}
       width: 100% !important;
       flex: none !important;
   }
-  /* 所有产品卡片统一比例 */
+  /* 所有产品卡片手机端统一比例: 图片1:1 + 文字0.4 = 卡片总高1.4 */
   .product-card .card-img-square {
     aspect-ratio: 1/1;
     height: auto;
+    object-fit: cover;
   }
   .product-card .card-body {
     padding: 8px 10px;
@@ -3406,24 +3408,27 @@ p,.text-body{font-size:15px;line-height:1.6;color:#333}
 .subcat-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 20px;
+    gap: 10px;
+    margin-bottom: 24px;
     padding: 0 16px;
 }
 .subcat-row .blog-filter-pill {
-    padding: 6px 16px;
+    padding: 8px 20px;
     border-radius: 99px;
-    font-size: 0.82rem;
-    font-weight: 500;
-    border: 1.5px solid #e5e7eb;
-    background: #fff;
-    color: #666;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1.5px solid #d0d3d9;
+    background: #f8f9fb;
+    color: #333;
     text-decoration: none;
     transition: all 0.2s;
+    white-space: nowrap;
+    flex: 0 0 auto;
 }
 .subcat-row .blog-filter-pill:hover {
     border-color: #DEA148;
     color: #DEA148;
+    background: #fff8ed;
 }
 
 @media (min-width: 769px) {
