@@ -2094,13 +2094,13 @@ var ARTICLES = [
   var metaEl = document.querySelector('meta[name="description"]');
   if (metaEl) metaEl.setAttribute('content', metaDesc);
   var canEl = document.querySelector('[data-bind="canonical"]');
-  if (canEl) canEl.setAttribute('href', 'https://smrtdesk.xyz/product.html?asin=' + encodeURIComponent(p.asin));
+  if (canEl) canEl.setAttribute('href', 'https://www.smrtdesk.xyz/product.html?asin=' + encodeURIComponent(p.asin));
   var ogt = document.querySelector('[data-bind="ogTitle"]');
   if (ogt) ogt.setAttribute('content', displayTitle);
   var ogd = document.querySelector('[data-bind="ogDescription"]');
   if (ogd) ogd.setAttribute('content', metaDesc);
   var ogu = document.querySelector('[data-bind="ogUrl"]');
-  if (ogu) ogu.setAttribute('content', 'https://smrtdesk.xyz/product.html?asin=' + encodeURIComponent(p.asin));
+  if (ogu) ogu.setAttribute('content', 'https://www.smrtdesk.xyz/product.html?asin=' + encodeURIComponent(p.asin));
 
   // Breadcrumb
   var cl = document.querySelector('[data-bind="catLink"]');
@@ -2167,7 +2167,7 @@ var ARTICLES = [
       '@type': 'Product',
       'name': p.title,
       'description': metaDesc,
-      'image': 'https://smrtdesk.xyz/' + p.image,
+      'image': 'https://www.smrtdesk.xyz/' + p.image,
       'sku': p.asin,
       'brand': { '@type': 'Brand', 'name': p.brand },
       'offers': {
@@ -2390,7 +2390,7 @@ var CAT_SLUG_ALIAS = {
   // Canonical URL
   var canonicalEl = document.querySelector('[data-bind="catCanonical"]');
   if (canonicalEl) {
-    canonicalEl.setAttribute("href", "https://smrtdesk.xyz/category.html?slug=" + catSlug);
+    canonicalEl.setAttribute("href", "https://www.smrtdesk.xyz/category.html?slug=" + catSlug);
   }
 
   // OG tags
@@ -2399,7 +2399,7 @@ var CAT_SLUG_ALIAS = {
   var ogDesc2 = document.querySelector('[data-bind="ogDescription"]');
   if (ogDesc2 && cat.description) ogDesc2.setAttribute("content", cat.description);
   var ogUrl = document.querySelector('[data-bind="ogUrl"]');
-  if (ogUrl) ogUrl.setAttribute("content", "https://smrtdesk.xyz/category.html?slug=" + catSlug);
+  if (ogUrl) ogUrl.setAttribute("content", "https://www.smrtdesk.xyz/category.html?slug=" + catSlug);
 })();
 /* Article Page Renderer */
 (function(){
@@ -2542,7 +2542,7 @@ var CAT_SLUG_ALIAS = {
 
   // Canonical URL for article pages
   var canon = document.querySelector('[data-bind="canonical"]');
-  if (canon) canon.setAttribute('href', 'https://smrtdesk.xyz/article.html?slug=' + article.slug);
+  if (canon) canon.setAttribute('href', 'https://www.smrtdesk.xyz/article.html?slug=' + article.slug);
 
   // JSON-LD structured data
   var ldJson = document.getElementById('ldjson');
@@ -2553,7 +2553,7 @@ var CAT_SLUG_ALIAS = {
     ld.datePublished = '2026-06-01';
     ld.dateModified = '2026-06-01';
     if (product) {
-      ld.image = 'https://smrtdesk.xyz/' + product.image;
+      ld.image = 'https://www.smrtdesk.xyz/' + product.image;
       ld.about = {
         '@type': 'Product',
         'name': product.title,
@@ -2571,7 +2571,7 @@ var CAT_SLUG_ALIAS = {
   var ogDescEl = document.querySelector('[data-bind="ogDescription"]');
   if (ogDescEl && article.excerpt) ogDescEl.setAttribute('content', article.excerpt);
   var ogUrlEl = document.querySelector('[data-bind="ogUrl"]');
-  if (ogUrlEl) ogUrlEl.setAttribute('content', 'https://smrtdesk.xyz/article.html?slug=' + article.slug);
+  if (ogUrlEl) ogUrlEl.setAttribute('content', 'https://www.smrtdesk.xyz/article.html?slug=' + article.slug);
 })();
 
 /* Blog Page Renderer */

@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
-Disallow: /page-privacy-policy.html
-Disallow: /page-terms.html
-Sitemap: https://smrtdesk.xyz/sitemap.xml
+Disallow: /search.html
+Disallow: /desk-height-calculator.html
+Disallow: /page-*
+
+Sitemap: https://www.smrtdesk.xyz/sitemap.xml
