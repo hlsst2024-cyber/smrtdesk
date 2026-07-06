@@ -2515,7 +2515,11 @@ p,.text-body{font-size:15px;line-height:1.6;color:#333}
     padding: 8px 10px;
     min-height: 0;
   }
-  /* 所有产品卡片手机端统一比例: 图片1:1 + 文字0.4 = 卡片总高1.4 */
+  /* 所有产品卡片手机端统一比例: 图片1:1 + cover铺满 */
+  .product-card .card-img-link {
+    aspect-ratio: 1/1 !important;
+    max-height: none !important;
+  }
   .product-card .card-img-square {
     aspect-ratio: 1/1 !important;
     height: auto !important;
@@ -2712,6 +2716,10 @@ p,.text-body{font-size:15px;line-height:1.6;color:#333}
       flex: none !important;
   }
   /* 所有产品卡片手机端统一比例: 图片1:1 + 文字0.4 = 卡片总高1.4 */
+  .product-card .card-img-link {
+    aspect-ratio: 1/1 !important;
+    max-height: none !important;
+  }
   .product-card .card-img-square {
     aspect-ratio: 1/1 !important;
     height: auto !important;
