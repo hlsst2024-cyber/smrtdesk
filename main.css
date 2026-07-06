@@ -1,5 +1,5 @@
 /* SmrtDesk.xyz - Refined Orange & Navy Design */
-/* Last modified: 2026-07-06 19:16 — 手机端产品卡片统一1:1.4比例 + object-fit:cover */
+/* Last modified: 2026-07-06 19:43 — 手机端产品卡片1:1比例object-fit:cover (含480px断点补丁) */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
@@ -1423,7 +1423,7 @@ p,.text-body{font-size:15px;line-height:1.6;color:#333}
   left: 0;
 }
 @media (max-width: 480px) {
-  .banner-slide { background-size: contain; }
+  .banner-slide { background-size: cover; background-position: center center; }
 }
 .banner-slide.active {
   display: block;
@@ -2826,6 +2826,16 @@ p,.text-body{font-size:15px;line-height:1.6;color:#333}
     margin-bottom: 14px; }
   /* Card image */
   .card-img-link { max-height: 260px; }
+  /* 所有产品卡片手机端统一比例: 图片1:1 + cover铺满 */
+  .product-card .card-img-link {
+    aspect-ratio: 1/1 !important;
+    max-height: none !important;
+  }
+  .product-card .card-img-square {
+    aspect-ratio: 1/1 !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
   .card-body { padding: 10px 12px 14px; }
   .card-body .pro-title { font-size: 15px; }
   /* Related products */
