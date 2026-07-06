@@ -1,4 +1,5 @@
 /* SmrtDesk.xyz - Refined Orange & Navy Design */
+/* Last modified: 2026-07-06 18:20 — 首页博文图片加链接 + hover缩放阴影效果 */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
@@ -1895,8 +1896,8 @@ p,.text-body{font-size:15px;line-height:1.6;color:#333}
 
 /* Image column */
 .article-card__image {
-  flex: 0 0 400px;
-  max-width: 400px;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   background: #eef0f4;
 }
@@ -1917,6 +1918,19 @@ p,.text-body{font-size:15px;line-height:1.6;color:#333}
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Image link wrapper — enables clickable image with hover zoom + shadow */
+.article-card__image-link {
+  display: block;
+  flex: 0 0 400px;
+  max-width: 400px;
+  overflow: hidden;
+}
+.article-card__image-link:hover .article-card__image img {
+  transform: scale(1.08);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
 /* Text column */
@@ -2467,10 +2481,31 @@ p,.text-body{font-size:15px;line-height:1.6;color:#333}
   .cat-grid { grid-template-columns: 1fr; }
   .top-picks-grid { grid-template-columns: 1fr; }
   .hero-text h1 { font-size: 1.8rem; }
-  .category-carousel-track { overflow-x: auto;
-    gap: 12px;
-    padding-bottom: 4px; }
-  .category-carousel-track .product-card { flex: 0 0 calc(50% - 6px); }
+  .category-carousel-wrap {
+    margin: 0 -8px;
+  }
+  .category-carousel-track {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 0;
+    padding-bottom: 4px;
+  }
+  .category-carousel-track .product-card {
+    min-width: calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
+    flex: 0 0 calc(100vw - 32px);
+    scroll-snap-align: start;
+    margin: 0 8px;
+  }
+  /* 分类轮播卡片: 图片1:1 + 文字0.4 = 卡片总高1.4 */
+  .category-carousel-wrap .product-card .card-img-square {
+    aspect-ratio: 1/1;
+    height: auto;
+  }
+  .category-carousel-wrap .product-card .card-body {
+    padding: 8px 10px;
+    min-height: 0;
+  }
   .cat-prev,
   .cat-next,
   .category-carousel-arrow { display: none; }
@@ -2629,6 +2664,34 @@ p,.text-body{font-size:15px;line-height:1.6;color:#333}
   .blog-card__image { flex: 0 0 auto; height: 200px; min-height: auto; }
   .blog-card__body { padding: 20px; }
   .blog-card__title { font-size: 1.05rem; }
+
+  /* 产品内页手机端：隐藏侧边栏，改为单列 */
+  .product-layout {
+    grid-template-columns: 1fr !important;
+  }
+  .product-layout .sidebar-card {
+    display: none !important;
+  }
+  .product-layout .sidebar-card:first-child {
+    display: none !important;
+  }
+  .product-layout [class*="sidebar"] {
+    display: none !important;
+  }
+  /* 产品内页手机端：去掉侧边栏 */
+  .product-aside, .product-sidebar, 
+  .product-layout-sidebar, .product-layout-aside,
+  .product-main + aside, .product-main ~ aside,
+  [class*="sidebar"], [class*="side-bar"],
+  /* 去掉左右布局，改为单列 */
+  .product-content-wrapper, .product-content-area,
+  .product-layout {
+      flex-direction: column !important;
+  }
+  .product-main, .product-content-main {
+      width: 100% !important;
+      flex: none !important;
+  }
 }
 
 @media (max-width: 1024px) {

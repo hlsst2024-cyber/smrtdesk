@@ -2084,7 +2084,7 @@ var ARTICLES = [
   }
 
   var amazonUrl = p.amazonLink || 'https://www.amazon.com/dp/' + p.asin + '?tag=smrtdesk-20&linkCode=ogi&th=1&psc=1';
-  var catPage = 'category-' + p.categorySlug + '.html';
+  var catPage = 'category.html?slug=' + p.categorySlug;
   // Page <title> — use same title as category page card for consistency
   var displayTitle = p.titleShort || p.title;
   var metaDesc = 'Read our expert review of ' + p.title + '. Expert-tested with honest pros, cons, specs, and buying guide.';
