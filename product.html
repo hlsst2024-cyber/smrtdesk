@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-bind="title">Loading...</title>
-<meta name="description" data-bind="description" content="Read our expert product review.">
+<title data-bind="prodTitle">Product Review - SmrtDesk</title>
+<meta name="description" data-bind="prodDescription" content="Read our expert review. Honest pros, cons, specs, and buying guide.">
 <link rel="stylesheet" href="main.css?v=31">
 <script>
 (function(){
@@ -16,6 +16,8 @@
     function setName() {
       var h1 = document.querySelector('h1[data-bind="title"]');
       if (h1) { h1.textContent = name; }
+      var pt = document.querySelector('[data-bind="prodTitle"]');
+      if (pt) pt.textContent = name;
     }
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', setName);
@@ -37,10 +39,15 @@
 <meta name="google-site-verification" content="Bxzbnrpb6heWVhL6yBCQGT00E4vAVT2LL9tl0RJiTyk" />
 <link rel="canonical" data-bind="canonical" href="https://www.smrtdesk.xyz/product.html" />
 <link rel="alternate" type="application/rss+xml" title="SmrtDesk RSS Feed" href="/rss.xml" />
-<meta property="og:title" data-bind="ogTitle" content="" />
+<meta property="og:title" data-bind="ogTitle" content="Product Review - SmrtDesk" />
 <meta property="og:description" data-bind="ogDescription" content="Read our expert review." />
+<meta property="og:image" data-bind="ogImage" content="https://www.smrtdesk.xyz/og-default.jpg" />
 <meta property="og:url" data-bind="ogUrl" content="https://www.smrtdesk.xyz/product.html" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta name="twitter:card" data-bind="twCard" content="summary_large_image" />
+<meta name="twitter:title" data-bind="twTitle" content="Product Review - SmrtDesk" />
+<meta name="twitter:description" data-bind="twDescription" content="Read our expert review." />
+<meta name="twitter:image" data-bind="twImage" content="https://www.smrtdesk.xyz/og-default.jpg" />
 </head>
 <body>
 

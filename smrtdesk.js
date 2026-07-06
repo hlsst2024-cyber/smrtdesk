@@ -2080,6 +2080,8 @@ var ARTICLES = [
     var nf = document.querySelector('[data-bind="notFound"]');
     if (nf) nf.style.display = 'block';
     document.title = 'Product Not Found | SmrtDesk';
+    var prodTitleEl2 = document.querySelector('[data-bind="prodTitle"]');
+    if (prodTitleEl2) prodTitleEl2.textContent = 'Product Not Found | SmrtDesk';
     return;
   }
 
@@ -2089,10 +2091,15 @@ var ARTICLES = [
   var displayTitle = p.titleShort || p.title;
   var metaDesc = 'Read our expert review of ' + p.title + '. Expert-tested with honest pros, cons, specs, and buying guide.';
   document.title = displayTitle;
+  // Update static data-bind placeholders for crawlers
+  var prodTitleEl = document.querySelector('[data-bind="prodTitle"]');
+  if (prodTitleEl) prodTitleEl.textContent = displayTitle;
 
   // Meta
   var metaEl = document.querySelector('meta[name="description"]');
   if (metaEl) metaEl.setAttribute('content', metaDesc);
+  var prodDescEl = document.querySelector('[data-bind="prodDescription"]');
+  if (prodDescEl) prodDescEl.setAttribute('content', metaDesc);
   var canEl = document.querySelector('[data-bind="canonical"]');
   if (canEl) canEl.setAttribute('href', 'https://www.smrtdesk.xyz/product.html?asin=' + encodeURIComponent(p.asin));
   var ogt = document.querySelector('[data-bind="ogTitle"]');
@@ -2162,6 +2169,13 @@ var ARTICLES = [
   // Structured data (LD+JSON)
   var ldjson = document.getElementById('ldjson');
   if (ldjson) {
+    // Extract numeric price from p.price (e.g., "$20.49" -> "20.49")
+    var priceNum = '99.99';
+    if (p.price) {
+      var match = p.price.match(/[\d,]+\.?\d*/);
+      if (match) priceNum = match[0].replace(/,/g, '');
+    }
+    var reviewCountInt = parseInt(p.reviewCount, 10) || 0;
     ldjson.textContent = JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'Product',
@@ -2174,19 +2188,24 @@ var ARTICLES = [
         '@type': 'Offer',
         'url': amazonUrl,
         'priceCurrency': 'USD',
-        'price': '99.99',
+        'price': priceNum,
         'availability': 'https://schema.org/InStock',
         'itemCondition': 'https://schema.org/NewCondition'
       },
       'aggregateRating': {
         '@type': 'AggregateRating',
         'ratingValue': p.rating,
-        'reviewCount': p.reviewCount
+        'bestRating': '5',
+        'worstRating': '1',
+        'reviewCount': reviewCountInt,
+        'reviewCountSpecified': reviewCountInt
       },
       'review': {
         '@type': 'Review',
-        'reviewRating': { '@type': 'Rating', 'ratingValue': p.rating },
-        'author': { '@type': 'Organization', 'name': 'SmrtDesk' }
+        'name': 'Expert Review of ' + p.title,
+        'reviewBody': metaDesc,
+        'reviewRating': { '@type': 'Rating', 'ratingValue': p.rating, 'bestRating': '5', 'worstRating': '1' },
+        'author': { '@type': 'Organization', 'name': 'SmrtDesk', 'url': 'https://www.smrtdesk.xyz/' }
       }
     }, null, 2);
   }
@@ -2378,6 +2397,8 @@ var CAT_SLUG_ALIAS = {
   // Page title
   if (cat.name) {
     document.title = cat.name + " - Expert Tested | SmrtDesk";
+    var catTitleEl = document.querySelector('[data-bind="catTitle"]');
+    if (catTitleEl) catTitleEl.textContent = cat.name + " - Expert Tested | SmrtDesk";
   }
 
   // Meta description
