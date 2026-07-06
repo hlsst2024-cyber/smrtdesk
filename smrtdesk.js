@@ -2102,12 +2102,24 @@ var ARTICLES = [
   if (prodDescEl) prodDescEl.setAttribute('content', metaDesc);
   var canEl = document.querySelector('[data-bind="canonical"]');
   if (canEl) canEl.setAttribute('href', 'https://www.smrtdesk.xyz/product.html?asin=' + encodeURIComponent(p.asin));
+  // OG tags
   var ogt = document.querySelector('[data-bind="ogTitle"]');
   if (ogt) ogt.setAttribute('content', displayTitle);
   var ogd = document.querySelector('[data-bind="ogDescription"]');
   if (ogd) ogd.setAttribute('content', metaDesc);
+  var ogi = document.querySelector('[data-bind="ogImage"]');
+  if (ogi) ogi.setAttribute('content', 'https://www.smrtdesk.xyz/' + p.image);
   var ogu = document.querySelector('[data-bind="ogUrl"]');
   if (ogu) ogu.setAttribute('content', 'https://www.smrtdesk.xyz/product.html?asin=' + encodeURIComponent(p.asin));
+  // Twitter Card tags
+  var twCard = document.querySelector('[data-bind="twCard"]');
+  if (twCard) twCard.setAttribute('content', 'summary_large_image');
+  var twTitle = document.querySelector('[data-bind="twTitle"]');
+  if (twTitle) twTitle.setAttribute('content', displayTitle);
+  var twDesc = document.querySelector('[data-bind="twDescription"]');
+  if (twDesc) twDesc.setAttribute('content', metaDesc);
+  var twImg = document.querySelector('[data-bind="twImage"]');
+  if (twImg) twImg.setAttribute('content', 'https://www.smrtdesk.xyz/' + p.image);
 
   // Breadcrumb
   var cl = document.querySelector('[data-bind="catLink"]');
@@ -2415,12 +2427,12 @@ var CAT_SLUG_ALIAS = {
   }
 
   // OG tags
-  var ogTitle = document.querySelector('[data-bind="ogTitle"]');
-  if (ogTitle && cat.name) ogTitle.setAttribute("content", cat.name + " - Expert Tested | SmrtDesk");
-  var ogDesc2 = document.querySelector('[data-bind="ogDescription"]');
-  if (ogDesc2 && cat.description) ogDesc2.setAttribute("content", cat.description);
-  var ogUrl = document.querySelector('[data-bind="ogUrl"]');
-  if (ogUrl) ogUrl.setAttribute("content", "https://www.smrtdesk.xyz/category.html?slug=" + catSlug);
+  var catOgTitle = document.querySelector('[data-bind="catOgTitle"]');
+  if (catOgTitle && cat.name) catOgTitle.setAttribute("content", cat.name + " - Expert Tested | SmrtDesk");
+  var catOgDesc = document.querySelector('[data-bind="catOgDescription"]');
+  if (catOgDesc && cat.description) catOgDesc.setAttribute("content", cat.description);
+  var catOgUrl = document.querySelector('[data-bind="catOgUrl"]');
+  if (catOgUrl) catOgUrl.setAttribute("content", "https://www.smrtdesk.xyz/category.html?slug=" + catSlug);
 })();
 /* Article Page Renderer */
 (function(){
