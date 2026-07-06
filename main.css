@@ -2624,8 +2624,8 @@ p,.text-body{font-size:15px;line-height:1.6;color:#333}
   .category-home-title { font-size: 1.05rem; }
   .category-home-subtitle { font-size: 0.78rem;
     min-width: 0; }
-  /* Banner carousel: 按图片比例自适应 */
-  .top-banner-carousel { height: auto; aspect-ratio: 3/1; }
+  /* Banner carousel: 手机端适配 */
+  .top-banner-carousel { height: 320px; }
   .banner-prev { left: 12px; }
   .banner-next { right: 12px; }
   /* Service nav - show simple mobile nav placeholder */
@@ -2783,8 +2783,8 @@ p,.text-body{font-size:15px;line-height:1.6;color:#333}
   .category-home-subtitle { font-size: 0.75rem; }
   .category-home-header { gap: 4px 10px;
     margin-bottom: 10px; }
-  /* Banner: 按图片比例自适应 */
-  .top-banner-carousel { height: auto; aspect-ratio: 3/1; }
+  /* Banner: 手机端适配 */
+  .top-banner-carousel { height: 320px; }
   .banner-arrow { width: 28px;
     height: 28px;
     font-size: 0.9rem; }
