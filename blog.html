@@ -454,7 +454,7 @@
       var isReverse = (idx % 2 === 1);
       var cls = isReverse ? 'article-card article-card--reverse' : 'article-card';
       html += '<article class="' + cls + '">';
-      html += '<div class="article-card__image"><img src="' + a.image + '" alt="' + a.title.replace(/"/g,'&quot;') + '" loading="lazy"></div>';
+      html += '<a href="article.html?slug=' + encodeURIComponent(a.slug) + '" class="article-card__image-link"><div class="article-card__image"><img src="' + a.image + '" alt="' + a.title.replace(/"/g,'&quot;') + '" loading="lazy"></div></a>';
       html += '<div class="article-card__body">';
       html += '<span class="article-card__tag">' + mapToMainCat(a.categoryName) + '</span>';
       html += '<h3 class="article-card__title">' + a.title + '</h3>';

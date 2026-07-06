@@ -1,5 +1,5 @@
 /* SmrtDesk.xyz - Refined Orange & Navy Design */
-/* Last modified: 2026-07-06 18:20 — 首页博文图片加链接 + hover缩放阴影效果 */
+/* Last modified: 2026-07-06 19:04 — Blog图片加链接 + 手机端产品卡片统一1:1比例 */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
@@ -2400,15 +2400,24 @@ p,.text-body{font-size:15px;line-height:1.6;color:#333}
   .blog-banner {
     padding: 40px 0 36px;
   }
+  .blog-banner__grid {
+    flex-direction: column;
+    gap: 20px;
+  }
   .blog-banner__title {
     font-size: 1.6rem;
+    text-align: center;
   }
   .blog-banner__subtitle {
     font-size: 0.92rem;
     padding: 0 16px;
+    text-align: center;
+    max-width: 100%;
   }
   .blog-banner__search {
     padding: 0 16px;
+    max-width: 100%;
+    width: 100%;
   }
   .blog-layout {
     padding: 24px 0 36px;
@@ -2503,6 +2512,15 @@ p,.text-body{font-size:15px;line-height:1.6;color:#333}
     height: auto;
   }
   .category-carousel-wrap .product-card .card-body {
+    padding: 8px 10px;
+    min-height: 0;
+  }
+  /* 所有产品卡片统一比例 */
+  .product-card .card-img-square {
+    aspect-ratio: 1/1;
+    height: auto;
+  }
+  .product-card .card-body {
     padding: 8px 10px;
     min-height: 0;
   }
@@ -2691,6 +2709,15 @@ p,.text-body{font-size:15px;line-height:1.6;color:#333}
   .product-main, .product-content-main {
       width: 100% !important;
       flex: none !important;
+  }
+  /* 所有产品卡片统一比例 */
+  .product-card .card-img-square {
+    aspect-ratio: 1/1;
+    height: auto;
+  }
+  .product-card .card-body {
+    padding: 8px 10px;
+    min-height: 0;
   }
 }
 
