@@ -2410,7 +2410,7 @@ var CAT_SLUG_ALIAS = {
   if (cat.name) {
     document.title = cat.name + " - Expert Tested | SmrtDesk";
     var catTitleEl = document.querySelector('[data-bind="catTitle"]');
-    if (catTitleEl) catTitleEl.textContent = cat.name + " - Expert Tested | SmrtDesk";
+    if (catTitleEl) catTitleEl.textContent = cat.name;
   }
 
   // Meta description
