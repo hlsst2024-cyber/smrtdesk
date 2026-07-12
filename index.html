@@ -1,3 +1,4 @@
+<!-- Last modified: 2026-07-12 16:29 — P1 OneLink占位+GA4点击追踪 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +23,31 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-NQ0GPH0Z15');
+</script>
+
+<!-- Amazon OneLink - Active -->
+<script type="text/javascript">
+window.onload = function() {
+  if (window.AmazonUIPageJS) {
+    window.AmazonUIPageJS.when('A', '$.util.oneLink').done(function(A, oneLink) {
+      oneLink({
+        merchantId: 'A3FFE2VXXPQFRF',
+        storeId: 'smrtdesk-20',
+        localization: {
+          "CA": "smrtdesk-20",
+          "FR": "smrtdesk-20",
+          "DE": "smrtdesk-20",
+          "IT": "smrtdesk-20",
+          "NL": "smrtdesk-20",
+          "PL": "smrtdesk-20",
+          "ES": "smrtdesk-20",
+          "SE": "smrtdesk-20",
+          "GB": "smrtdesk-20"
+        }
+      });
+    });
+  }
+};
 </script>
 
 <meta name="google-site-verification" content="Bxzbnrpb6heWVhL6yBCQGT00E4vAVT2LL9tl0RJiTyk" />
@@ -181,7 +207,7 @@
             <h1>Heavy-Duty <span class="highlight">Metal Bunk Beds</span> &amp; Loft Frames</h1>
             <p>Space-saving solutions for kids, teens, and adults. Our top picks for metal bunk beds with high weight capacity, safety guardrails, and easy assembly.</p>
             <div class="hero-cta-row">
-              <a href="https://www.amazon.com/dp/B0C8K67H8V" target="_blank" rel="noopener sponsored" class="btn-primary">Check Price on Amazon</a>
+              <a href="https://www.amazon.com/dp/B0C8K67H8V?tag=smrtdesk-20&linkCode=ogi&th=1&psc=1" target="_blank" rel="noopener sponsored" class="btn-primary">Check Price on Amazon</a>
               <a href="category.html?slug=beds" class="btn-secondary">Read Reviews</a>
             </div>
           </div>
@@ -737,7 +763,7 @@
           '<h3 class="pro-title"><a href="product.html?asin=' + encodeURIComponent(p.asin) + '&name=' + encodeURIComponent(p.titleShort || p.title) + '">' + (p.titleShort || p.title) + '</a></h3>' +
           '<div class="stars">' + (p.stars || '') + ' <span class="rating-text">' + p.rating + '/5</span></div>' +
           '<div class="price-range">' + (p.price ? p.price : 'Check Price') + '</div>' +
-          '<a href="https://www.amazon.com/dp/' + encodeURIComponent(p.asin) + '?tag=smrtdesk-20" class="btn-amz" target="_blank" rel="noopener sponsored">Check Price </a>' +
+          '<a href="https://www.amazon.com/dp/' + encodeURIComponent(p.asin) + '?tag=smrtdesk-20&linkCode=ogi&th=1&psc=1" class="btn-amz" target="_blank" rel="noopener sponsored">Check Price </a>' +
         '</div>';
       track.appendChild(card);
     });

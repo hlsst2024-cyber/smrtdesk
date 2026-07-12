@@ -1,24 +1,5 @@
-/* SmrtDesk Product Data - Auto-generated 2026-06-25 23:03 */
+/* SmrtDesk Product Data — Last modified: 2026-07-12 16:29 — P1 OneLink占位+GA4点击追踪 */
 var PRODUCTS = {
-  'B0B27MDKXD': {
-    id: '5-pcs-large-fruit-containers-for-fridge-leakproof-with-removable-colander',
-    asin: 'B0B27MDKXD',
-    brand: 'Amazon',
-    title: '5 PCS Large Fruit Containers for Fridge - Leakproof with Removable Colander',
-    titleShort: '5 PCS Large Fruit Containers for Fridge - Leakproof with Removable Colander',
-    description: 'Our expert team has thoroughly evaluated this product. Read our honest review, check the pros and cons, and decide if it is the right choice for you.',
-    price: '$20.49',
-    rating: '4.5',
-    stars: '★★★★☆',
-    reviewCount: '850',
-    image: 'product_images/B0B27MDKXD.jpg',
-    amazonLink: 'https://www.amazon.com/dp/B0B27MDKXD?tag=smrtdesk-20&linkCode=ogi&th=1&psc=1',
-    categorySlug: 'food-storage-container',
-    categoryName: 'Food Storage Container',
-    pros: ['Expert-tested and verified quality', 'Highly rated (4.5/5) on Amazon', 'Great value at $20.49', 'Easy returns via Amazon'],
-    cons: ['Price may vary by seller', 'Check dimensions before ordering', 'Assembly may be required']
-  },
-
   'B0FDQK69GQ': {
     id: 'ailun-3-pack-screen-protector-for-iphone-17-pro-max-69-inch-with-installation-fr',
     asin: 'B0FDQK69GQ',
@@ -216,24 +197,6 @@ var PRODUCTS = {
     categorySlug: 'office-chair',
     categoryName: 'Office Chair',
     pros: ['Expert-tested and verified quality', 'Highly rated (4.5/5) on Amazon', 'Great value at $89.99', 'Easy returns via Amazon'],
-    cons: ['Price may vary by seller', 'Check dimensions before ordering', 'Assembly may be required']
-  },
-  'B0D9XYD75W': {
-    id: 'basics-vertical-file-cabinet-2-drawer-letter-size-locking-steel-black',
-    asin: 'B0D9XYD75W',
-    brand: 'Amazon',
-    title: 'Basics Vertical File Cabinet, 2-Drawer, Letter Size, Locking, Steel, Black',
-    titleShort: 'Basics Vertical File Cabinet, 2-Drawer, Letter Size, Locking, Steel, Black',
-    description: 'Our expert team has thoroughly evaluated this product. Read our honest review, check the pros and cons, and decide if it is the right choice for you.',
-    price: '$109.99',
-    rating: '4.5',
-    stars: '★★★★☆',
-    reviewCount: '850',
-    image: 'product_images/B0D9XYD75W.jpg',
-    amazonLink: 'https://www.amazon.com/dp/B0D9XYD75W?tag=smrtdesk-20&linkCode=ogi&th=1&psc=1',
-    categorySlug: 'vertical-file-cabinet',
-    categoryName: 'Vertical File Cabinet',
-    pros: ['Expert-tested and verified quality', 'Highly rated (4.5/5) on Amazon', 'Great value at $109.99', 'Easy returns via Amazon'],
     cons: ['Price may vary by seller', 'Check dimensions before ordering', 'Assembly may be required']
   },
 
@@ -2399,7 +2362,7 @@ var CAT_SLUG_ALIAS = {
             '<h3 class="pro-title"><a href="product.html?asin=' + encodeURIComponent(p.asin) + '&name=' + encodeURIComponent(p.titleShort || p.title) + '">' + (p.titleShort || p.title) + '</a></h3>' +
             '<div class="stars">' + (p.stars || '') + ' <span class="rating-text">' + p.rating + '/5</span></div>' +
             '<div class="price-range">' + (p.price ? p.price : 'Check Price') + '</div>' +
-            '<a href="https://www.amazon.com/dp/' + encodeURIComponent(p.asin) + '?tag=smrtdesk-20" class="btn-amz" target="_blank" rel="noopener">Check Price \u2192</a>' +
+            '<a href="https://www.amazon.com/dp/' + encodeURIComponent(p.asin) + '?tag=smrtdesk-20&linkCode=ogi&th=1&psc=1" onclick="gtag(\'event\', \'click\', {\'event_category\': \'outbound\', \'event_label\': \'Amazon - \' + (p.title || p.asin)});" class="btn-amz" target="_blank" rel="noopener sponsored">Check Price \u2192</a>' +
           '</div>';
         grid.appendChild(card);
       });
@@ -2513,7 +2476,7 @@ var CAT_SLUG_ALIAS = {
       var pibPrice = pib.querySelector('.product-info-box__price');
       if (pibPrice) pibPrice.innerHTML = '<strong>' + product.price + '</strong>';
       var pibBtn = pib.querySelector('.product-info-box__btn');
-      if (pibBtn) pibBtn.href = product.amazonLink || 'https://www.amazon.com/dp/' + product.asin + '?tag=smrtdesk-20';
+      if (pibBtn) pibBtn.href = product.amazonLink || 'https://www.amazon.com/dp/' + product.asin + '?tag=smrtdesk-20&linkCode=ogi&th=1&psc=1';
     }
 
     // Pros
