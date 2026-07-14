@@ -215,8 +215,8 @@
   for(var i=0;i<z.length;i++){(function(b){
     var inp=b.parentNode.querySelector(".search-input");
     if(!inp)return;
-    b.onclick=function(){var v=inp.value.trim();if(v)window.location("/search.html?s="+encodeURIComponent(v))};
-    inp.onkeydown=function(e){if(e.key==="Enter"){var v=inp.value.trim();if(v)window.location("/search.html?s="+encodeURIComponent(v))}}
+    b.onclick=function(){var v=inp.value.trim();if(v)window.location.href="/search.html?s="+encodeURIComponent(v)};
+    inp.onkeydown=function(e){if(e.key==="Enter"){var v=inp.value.trim();if(v)window.location.href="/search.html?s="+encodeURIComponent(v)}}
   })(z[i])}
 })();
 </script>
