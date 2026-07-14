@@ -1,60 +1,91 @@
-# 部署脚本（仅本地使用，不上传）
-deploy.py
-deploy2.py
-deploy_async.py
-deploy_paramiko.py
-deploy_retry.py
-deploy_tcp.py
-deploy_v3.py
-deploy.sh
-dl_cloudflared.py
-hostinger_api.py
-hostinger_api2.py
-hostinger_api3.py
+# ============================================
+# SmrtDesk .gitignore - 只保留线上核心文件
+# ============================================
+
+# --- 部署脚本（仅本地使用） ---
+deploy*.py
+deploy*.sh
+hostinger_api*.py
 mcp_vps.py
 serve_local.py
-upload_chunks.py
-upload_http.py
-upload_http2.py
-upload_single.py
+upload_*.py
+dl_cloudflared.py
+fix_*.py
+ssh_*.py
 
-# PowerShell 脚本
+# --- 脚本 ---
 *.ps1
+*.bat
+*.sh
 
-# 本地推送脚本
-git-push.bat
+# --- node_modules ---
+node_modules/
+package.json
+package-lock.json
 
-# 大文件
-smrtdesk-deploy.zip
-
-# 备份目录
+# --- 备份目录 ---
 backups/
-product_images/
+memory/
+chunks/
+chunks_small/
 
-# Python 缓存
+# --- product_images 保留（核心图片资源） ---
+
+# --- 备份文件 ---
+*.bak
+*.bak-*
+*.backup_*
+*_original.js
+
+# --- 临时/测试文件 ---
+_mismatches.json
+_temp_products.js
+__check_js.txt
+test_*.js
+test_*.html
+test.txt
+_compliance_audit_report.txt
+
+# --- ASIN 相关（本地数据） ---
+asin_validation_report.md
+bad_asins.txt
+invalid_asins.txt
+valid_asins.txt
+
+# --- 报告/文档 ---
+COMPARISON_REPORT.md
+STRUCTURE.md
+bing-webmaster-guide.md
+seo-audit-report.txt
+SEO_PLAN.md
+GA_DEPLOY_STATUS.md
+
+# --- 产品数据（本地生成） ---
+products.json
+product.css
+
+# --- 订阅脚本（已内联到 HTML） ---
+subscribe-mailchimp.js
+subscribe-mailchimp-inline.js
+
+# --- 小红书 ---
+xiaohongshu-ai.md
+xiaohongshu-content.md
+
+# --- 部署指南 ---
+GITHUB_DEPLOY.md
+
+# --- Python 缓存 ---
 __pycache__/
 *.pyc
 *.pyc.bak
 
-# 测试/临时文件
-test-ssh.ps1
-test.txt
-_compliance_audit_report.txt
+# --- MCP 日志 ---
+mcp_*.txt
 
-# MCP 日志
-mcp_stderr.txt
-mcp_stdin.txt
-mcp_stdout.txt
-
-# Markdown 计划文件（本地参考）
-SEO_PLAN.md
-GA_DEPLOY_STATUS.md
-xiaohongshu-ai.md
-xiaohongshu-content.md
-
-# 部署指南（本地参考）
-GITHUB_DEPLOY.md
-
-# 系统文件
+# --- 系统文件 ---
 .DS_Store
 Thumbs.db
+
+# --- 大文件 ---
+smrtdesk-deploy.zip
