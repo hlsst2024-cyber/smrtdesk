@@ -1,4 +1,9 @@
+﻿<!-- Last modified: 2026-07-14 23:12 : Subscribe connected to Mailchimp API (list: 7ade717988, us4) -->
 <!DOCTYPE html>
+<!-- Subscribe for deals added 2026-07-14 -->
+<!-- Last modified: 2026-07-14 21:59 �?Add Subscribe for deals; Subscribe style fix: 鍘绘帀鍐呰仈鏍峰紡 -->
+<!-- 2026-07-14 23:12 : Subscribe switched from localStorage to Mailchimp JSONP API (list: 7ade717988, us4) -->
+
 
 <html lang="en">
 
@@ -646,6 +651,7 @@
         <input type="email" class="footer-input" placeholder="Your email address">
 
         <a href="#" class="footer-subscribe-text" style="background:#4159bb;border-radius:99px;padding:10px;text-align:center;display:block">&#10095; Subscribe for deals</a>
+         <p class="footer-subscribe-msg" style="display:none;color:#4caf50;font-size:0.85rem;margin-top:8px;text-align:center;"></p>
 
       </div>
 
@@ -749,7 +755,17 @@
 
 
 
-<script>!function(){var z=document.querySelectorAll(".top-row-right .btn-search");Array.prototype.forEach.call(z,function(b){var i=b.parentNode.querySelector(".search-input");if(!i)return;b.onclick=function(){var v=i.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}};i.onkeydown=function(e){if(e.key==="Enter"){var v=i.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}}};});var s=document.querySelector(".btn-search");if(s&&s.parentNode.className.indexOf("top-row-right")===-1){s.onclick=function(){var i=s.parentNode.querySelector(".search-input");if(!i)return;var v=i.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}};var x=s.parentNode.querySelector(".search-input");x.onkeydown=function(e){if(e.key==="Enter"){var v=x.value.trim();if(v){window.location="/search.html?s="+encodeURIComponent(v)}}};}</script>
+<script>
+(function(){
+  var z=document.querySelectorAll(".top-row-right .btn-search");
+  for(var i=0;i<z.length;i++){(function(b){
+    var inp=b.parentNode.querySelector(".search-input");
+    if(!inp)return;
+    b.onclick=function(){var v=inp.value.trim();if(v)window.location("/search.html?s="+encodeURIComponent(v))};
+    inp.onkeydown=function(e){if(e.key==="Enter"){var v=inp.value.trim();if(v)window.location("/search.html?s="+encodeURIComponent(v))}}
+  })(z[i])}
+})();
+</script>
 
 
 
@@ -757,6 +773,72 @@
 
 
 
-<script src="smrtdesk.js"></script>`n</body>
+
+<script src="smrtdesk.js"></script>`n
+<script>// Footer subscribe - Mailchimp (Production)
+var mcJSONP = 'https://smrtdesk.us4.list-manage.com/subscribe/post-json?u=548b82c7d5b0398148ccebafa&id=7ade717988&c=?';
+var mcPostURL = 'https://smrtdesk.us4.list-manage.com/subscribe/post?u=548b82c7d5b0398148ccebafa&id=7ade717988';
+(function(){
+  var subBtn = document.querySelector('.footer-subscribe-text');
+  var emailInput = document.querySelector('.footer-input');
+  if (!subBtn || !emailInput) return;
+  subBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    var email = emailInput.value.trim();
+    if (!email || email.indexOf('@') === -1 || email.indexOf('.') === -1) {
+      alert('Please enter a valid email address');
+      return;
+    }
+    var originalText = subBtn.textContent;
+    subBtn.textContent = 'Subscribing...';
+    subBtn.style.pointerEvents = 'none';
+    subBtn.style.opacity = '0.7';
+    var script = document.createElement('script');
+    var cb = 'mc_cb_' + Math.random().toString(36).substr(2, 9);
+    window[cb] = function(data) {
+      delete window[cb];
+      if (script.parentNode) script.parentNode.removeChild(script);
+      subBtn.textContent = originalText;
+      subBtn.style.pointerEvents = '';
+      subBtn.style.opacity = '';
+      if (data.result === 'success') {
+        alert('Thanks for subscribing! Check your inbox to confirm.');
+        emailInput.value = '';
+      } else {
+        var m = data.msg || 'Something went wrong. Please try again.';
+        alert(m.replace(/<[^>]*>/g, ''));
+      }
+    };
+    script.src = mcJSONP + '&EMAIL=' + encodeURIComponent(email);
+    script.onerror = function(){
+      delete window[cb];
+      if (script.parentNode) script.parentNode.removeChild(script);
+      var f = document.createElement('form');
+      f.method = 'POST';
+      f.action = mcPostURL;
+      f.target = '_blank';
+      f.style.display = 'none';
+      var i = document.createElement('input');
+      i.type = 'hidden';
+      i.name = 'EMAIL';
+      i.value = email;
+      f.appendChild(i);
+      document.body.appendChild(f);
+      f.submit();
+      document.body.removeChild(f);
+      subBtn.textContent = originalText;
+      subBtn.style.pointerEvents = '';
+      subBtn.style.opacity = '';
+      emailInput.value = '';
+    };
+    document.head.appendChild(script);
+  });
+  emailInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') { e.preventDefault(); subBtn.click(); }
+  });
+})();
+
+</script>
+</body>
 
 </html>

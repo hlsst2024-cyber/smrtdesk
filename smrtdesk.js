@@ -1,4 +1,6 @@
 /* SmrtDesk Product Data — Last modified: 2026-07-12 16:29 — P1 OneLink占位+GA4点击追踪 */
+/* ===== CHANGE LOG ===== */
+/* 2026-07-14 23:02: Added trending category to CATEGORIES; All Reviews page now fully populates; Product grid logic updated to handle trending slug */
 var PRODUCTS = {
   'B0FDQK69GQ': {
     id: 'ailun-3-pack-screen-protector-for-iphone-17-pro-max-69-inch-with-installation-fr',
@@ -1701,6 +1703,12 @@ var CATEGORIES = {
       { name: "Gaming", slug: "gaming" },
       { name: "Portable Devices", slug: "portable-devices" }
     ]
+  },
+  "trending": {
+    name: "All Reviews",
+    parent: "Home",
+    description: "Browse all our expert product reviews in one place. We test for performance, quality, and value across every category so you can buy with confidence.",
+    banner: "/"
   }
 };
 
@@ -2321,7 +2329,20 @@ var CAT_SLUG_ALIAS = {
     var catProducts = [];
     var slugs = [];
 
-    if (isSubcategory) {
+    if (catSlug === "trending") {
+      // All reviews: collect all product slugs from every subcategory + CAT_SLUG_ALIAS
+      for (var sk in SUBCATEGORIES) {
+        if (SUBCATEGORIES.hasOwnProperty(sk)) {
+          slugs = slugs.concat(getSlugs(sk));
+        }
+      }
+      // Also collect from main categories
+      for (var ck in CATEGORIES) {
+        if (CATEGORIES.hasOwnProperty(ck) && CATEGORIES[ck].subcategories) {
+          slugs.push(ck);
+        }
+      }
+    } else if (isSubcategory) {
       slugs = getSlugs(catSlug);
     } else if (cat.subcategories) {
       cat.subcategories.forEach(function(sc){

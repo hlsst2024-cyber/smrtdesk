@@ -1,5 +1,8 @@
-<!-- Last modified: 2026-07-12 16:29 — P1 OneLink占位+GA4点击追踪 -->
+﻿<!-- Last modified: 2026-07-14 23:12 : Subscribe connected to Mailchimp API (list: 7ade717988, us4) -->
 <!DOCTYPE html>
+<!-- ===== CHANGE LOG ===== -->
+<!-- 2026-07-14 23:02: See all reviews link -> category.html?slug=trending; trending page now working in smrtdesk.js -->
+<!-- 2026-07-14 23:12 : Subscribe switched from localStorage to Mailchimp JSONP API (list: 7ade717988, us4) -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -480,7 +483,7 @@ window.onload = function() {
       </p>
       <div class="footer-form">
         <input type="email" class="footer-input" placeholder="Your email address" aria-label="Email for newsletter">
-        <button class="footer-subscribe-text" type="button" style="background:#4159bb;border-radius:99px;padding:10px;text-align:center;display:block;width:100%;border:none;cursor:pointer;color:#fff;font-size:0.9rem;">&#10095; Subscribe for deals</button>
+        <a href="#" class="footer-subscribe-text" style="background:#4159bb;border-radius:99px;padding:10px;text-align:center;display:block">&#10095; Subscribe for deals</a>
         <p class="footer-subscribe-msg" style="display:none;color:#4caf50;font-size:0.85rem;margin-top:8px;text-align:center;"></p>
       </div>
       <div class="footer-google">
@@ -558,48 +561,69 @@ window.onload = function() {
     }
   });
 })();
-
-// Footer subscribe
+// Footer subscribe - Mailchimp (Production)
+var mcJSONP = 'https://smrtdesk.us4.list-manage.com/subscribe/post-json?u=548b82c7d5b0398148ccebafa&id=7ade717988&c=?';
+var mcPostURL = 'https://smrtdesk.us4.list-manage.com/subscribe/post?u=548b82c7d5b0398148ccebafa&id=7ade717988';
 (function(){
   var subBtn = document.querySelector('.footer-subscribe-text');
   var emailInput = document.querySelector('.footer-input');
-  var msgEl = document.querySelector('.footer-subscribe-msg');
-  if (subBtn && emailInput) {
-    subBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      var v = emailInput.value.trim();
-      if (v && v.indexOf('@') > -1 && v.indexOf('.') > -1) {
-        // Log subscription locally
-        try {
-          var subs = JSON.parse(localStorage.getItem('smrtdesk_subscriptions') || '[]');
-          subs.push({ email: v, date: new Date().toISOString() });
-          localStorage.setItem('smrtdesk_subscriptions', JSON.stringify(subs));
-          console.log('[SmrtDesk] New subscriber:', v);
-        } catch(e) {
-          console.log('[SmrtDesk] Subscription saved to log');
-        }
-        if (msgEl) {
-          msgEl.textContent = 'Thank you for subscribing!';
-          msgEl.style.display = 'block';
-          msgEl.style.color = '#4caf50';
-          setTimeout(function(){ msgEl.style.display = 'none'; }, 5000);
-        }
-        subBtn.textContent = '?Subscribed!';
-        subBtn.style.background = '#4caf50';
+  if (!subBtn || !emailInput) return;
+  subBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    var email = emailInput.value.trim();
+    if (!email || email.indexOf('@') === -1 || email.indexOf('.') === -1) {
+      alert('Please enter a valid email address');
+      return;
+    }
+    var originalText = subBtn.textContent;
+    subBtn.textContent = 'Subscribing...';
+    subBtn.style.pointerEvents = 'none';
+    subBtn.style.opacity = '0.7';
+    var script = document.createElement('script');
+    var cb = 'mc_cb_' + Math.random().toString(36).substr(2, 9);
+    window[cb] = function(data) {
+      delete window[cb];
+      if (script.parentNode) script.parentNode.removeChild(script);
+      subBtn.textContent = originalText;
+      subBtn.style.pointerEvents = '';
+      subBtn.style.opacity = '';
+      if (data.result === 'success') {
+        alert('Thanks for subscribing! Check your inbox to confirm.');
         emailInput.value = '';
-        setTimeout(function(){
-          subBtn.textContent = '?Subscribe for deals';
-          subBtn.style.background = '#4159bb';
-        }, 3000);
-      } else if (msgEl) {
-        msgEl.textContent = 'Please enter a valid email address';
-        msgEl.style.display = 'block';
-        msgEl.style.color = '#f44336';
-        setTimeout(function(){ msgEl.style.display = 'none'; }, 4000);
+      } else {
+        var m = data.msg || 'Something went wrong. Please try again.';
+        alert(m.replace(/<[^>]*>/g, ''));
       }
-    });
-  }
+    };
+    script.src = mcJSONP + '&EMAIL=' + encodeURIComponent(email);
+    script.onerror = function(){
+      delete window[cb];
+      if (script.parentNode) script.parentNode.removeChild(script);
+      var f = document.createElement('form');
+      f.method = 'POST';
+      f.action = mcPostURL;
+      f.target = '_blank';
+      f.style.display = 'none';
+      var i = document.createElement('input');
+      i.type = 'hidden';
+      i.name = 'EMAIL';
+      i.value = email;
+      f.appendChild(i);
+      document.body.appendChild(f);
+      f.submit();
+      document.body.removeChild(f);
+      subBtn.textContent = originalText;
+      subBtn.style.pointerEvents = '';
+      subBtn.style.opacity = '';
+      emailInput.value = '';
+    };
+    document.head.appendChild(script);
+  });
+  emailInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') { e.preventDefault(); subBtn.click(); }
+  });
 })();
+
 
 // Hero carousel
 (function(){
